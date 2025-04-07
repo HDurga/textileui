@@ -17,7 +17,7 @@ const NavBar = () => {
     "Wholesale",
     "Hand Printed"
   ];
-
+//returns the categories for the dropdown menu
   return (
     <div className="nav-bar">
       <div className="logo">
