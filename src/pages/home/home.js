@@ -7,6 +7,7 @@ const images = [
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  // hiiii
 
   const categories = [
     "Raw Materials",
