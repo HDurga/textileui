@@ -12,25 +12,25 @@ const NavBar = () => (
 const Categories = () => {
   const categoryData = [
     {
-      title: "Raw Materials",
+      title: "mens wears",
       image: "/raw-materials.jpg",
       description: "High-quality textile raw materials for manufacturing",
       items: ["Cotton Fiber", "Wool", "Natural Silk", "Synthetic Fibers"]
     },
     {
-      title: "Cotton Fabrics",
+      title: "womens wears",
       image: "/cotton-fabrics.jpg",
       description: "Premium cotton fabrics for various applications",
       items: ["Organic Cotton", "Printed Cotton", "Denim", "Canvas"]
     },
     {
-      title: "Pure Handloom Fabrics",
+      title: "kids wears",
       image: "/handloom.jpg",
       description: "Traditional handwoven fabrics by skilled artisans",
       items: ["Khadi", "Banarasi", "Chanderi", "Pochampally"]
     },
     {
-      title: "Silk Fabrics",
+      title: "bedsheets",
       image: "/silk-fabrics.jpg",
       description: "Luxurious silk fabrics for elegant wear",
       items: ["Mulberry Silk", "Tussar Silk", "Crepe Silk", "Raw Silk"]
@@ -42,7 +42,7 @@ const Categories = () => {
       items: ["Bulk Fabrics", "Business Supplies", "Wholesale Pricing"]
     },
     {
-      title: "Hand Printed",
+      title: "blankets",
       image: "/hand-printed.jpg",
       description: "Unique hand-printed textile designs",
       items: ["Block Print", "Batik", "Screen Print", "Kalamkari"]
@@ -54,7 +54,7 @@ const Categories = () => {
       <NavBar />
       
       <div className="categories-hero">
-        <h1>Textile Categories</h1>
+        <h1>TYPES OF Fabrics</h1>
         <p>Explore our wide range of textile products</p>
       </div>
 

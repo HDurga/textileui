@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const images = [
-  require("../../img/back1.png"),
+  require("../../img/back1.png"), // Corrected path
 ];
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-  // hiiii
 
   const categories = [
-    "Raw Materials",
+    "printed fabries",
     "Cotton Fabrics",
     "Pure Handloom Fabrics",
     "Silk Fabrics",
     "Wholesale",
     "Hand Printed"
   ];
-//returns the categories for the dropdown menu
+
   return (
     <div className="nav-bar">
       <div className="logo">
-        <img src={require("../../img/logo.png")} alt="Company Logo" />
+        <img src={require("../../img/logo.png")} alt="Company Logo" /> {/* Corrected path */}
       </div>
       <div className="nav-links">
         <a href="/">Home</a>
@@ -74,7 +76,7 @@ const Slideshow = () => {
 
 const SearchBar = () => (
   <div className="search-container">
-    <h1>Discover Premium Textiles</h1>
+    <h1>LYCORIS ADS& SOFTWARE SOLUTION PVT LTD</h1>
     <p>Explore our collection of finest fabrics and materials</p>
     <div className="search-box">
       <input type="text" placeholder="Search for fabrics, materials, or designs..." />
@@ -86,35 +88,66 @@ const SearchBar = () => (
 const FeaturedProducts = () => {
   const textileTypes = [
     { 
-      name: "Mangalagiri Cotton", 
+      name: "Eluru Cotton Sarees	", 
       description: "Famous handwoven cotton from Mangalagiri, known for its unique zari borders and durability",
-      image: require("../../img/slik.jpeg")
+      image: require("../../img/uppada.jpg") // High-quality image
     },
     { 
-      name: "Uppada Jamdani", 
+      name: "Uppada Jamdani sarees",
       description: "Delicate silk textile with intricate patterns, traditionally woven in Uppada",
-      image: require("../../img/slik.jpeg")
+      image: require("../../img/uppada jam.jpg") // High-quality image
     },
     { 
-      name: "Dharmavaram Silk", 
+      name: "Pasalapudi Cotton Fabrics	", 
       description: "Rich silk sarees with traditional temple borders and motifs from Dharmavaram",
-      image: require("../../img/slik.jpeg")
+      image: require("../../img/Plain Cotton Sarees.jpeg") // High-quality image
     },
     { 
-      name: "Venkatagiri Cotton", 
+      name: "Angara Cotton & Silk Fabrics	", 
       description: "Fine cotton with gold border work, specialty of Venkatagiri weavers",
-      image: require("../../img/slik.jpeg")
-    }
+      image: require("../../img/cottonsilk.jpg") // High-quality image
+    },
+    { 
+      name: " Vemavaram Lightweight Sarees	", 
+      description: "Famous for its unique tie-dye technique, creating vibrant patterns",
+      image: require("../../img/powerloomcotton.jpg") // High-quality image
+    },
+    { 
+      name: "Dulla Cotton Sarees	 ", 
+      description: "Traditional hand-painted or block-printed fabric with mythological themes",
+      image: require("../../img/Khadi cotton.jpg") // High-quality image
+    },
+    { 
+      name: " Veeravaram Silk Sarees	", 
+      description: "Luxurious silk sarees with intricate gold and silver brocade work",
+      image: require("../../img/printed cotton fabrics.jpg") // High-quality image
+    },
+    { 
+      name: "Muramanda Cotton Shirting	", 
+      description: "Famous for its rich colors and heavy zari work, ideal for weddings",
+      image: require("../../img/cotton shirts fabric's.jpg") // High-quality image
+    },
+    { 
+      name: "Bandarulanka Cotton Sarees	", 
+      description: "Lightweight and breathable fabric, perfect for summer wear",
+      image: require("../../img/cotton dress material.jpg") // High-quality image
+    },
+    { 
+      name: " Malkha Fabric	", 
+      description: "Soft and comfortable fabric, ideal for casual wear",
+      image: require("../../img/handloom.jpg") // High-quality image
+    },
+    
   ];
 
   return (
     <section className="featured-section">
-      <h2>Traditional Textiles of Andhra Pradesh</h2>
-      <div className="products-slider">
+      <h2>All Types of Fabrics</h2>
+      <div className="big-icon-grid">
         {textileTypes.map((textile, index) => (
-          <div className="product-card" key={index}>
-            <img src={textile.image} alt={textile.name} />
-            <div className="product-info">
+          <div className="big-icon-card" key={index}>
+            <img src={textile.image} alt={textile.name} className="big-icon-image" />
+            <div className="big-icon-info">
               <h3>{textile.name}</h3>
               <p>{textile.description}</p>
             </div>
@@ -130,32 +163,32 @@ const Categories = () => {
     { 
       name: "Handloom Heritage", 
       description: "Ancient weaving techniques preserved through generations",
-      image: require("../../img/slik.jpeg")
+      image: require("../../img/handloomsarees p.jpg") // High-quality image
     },
     { 
       name: "Ikat Traditions", 
       description: "Distinctive tie-dye weaving patterns unique to Andhra",
-      image: require("../../img/slik.jpeg")
+      image: require('../../img/ikat sarees.jpg') // High-quality image
     },
     { 
       name: "Temple Designs", 
       description: "Traditional motifs inspired by temple architecture",
-      image: require("../../img/slik.jpeg")
+      image: require("../../img/temple desgin sarees.jpg") // High-quality image
     },
     { 
       name: "Modern Innovations", 
       description: "Contemporary adaptations of traditional techniques",
-      image: require("../../img/slik.jpeg")
+      image: require("../../img/modern.jpg") // High-quality image
     }
   ];
 
   return (
     <section className="categories-section">
-      <h2>Textile Traditions</h2>
+      <h2>Types of Sarees</h2>
       <div className="categories-grid">
         {categories.map((category, index) => (
           <div className="category-tile" key={index}>
-            <img src={category.image} alt={category.name} />
+            <img src={category.image} alt={`Image of ${category.name}`} className="category-image" />
             <div className="category-info">
               <h3>{category.name}</h3>
               <p>{category.description}</p>
@@ -176,7 +209,7 @@ const Home = () => (
     <Categories />
     <section className="about-section">
       <div className="about-content">
-        <h2>Crafting Excellence in Textiles</h2>
+        <h2>Crafting Excellence in Textiles</h2> {/* Fixed typo */}
         <p>With over 25 years of expertise in textile manufacturing and trading, we bring you the finest quality fabrics from across India.</p>
         <button className="learn-more">Learn More</button>
       </div>
