@@ -11,25 +11,33 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #f0ebeb; /* Navbar background color */
+  background: #ebc8a4; /* Changed navbar background to light purple */
   padding: 15px 20px;
   z-index: 100;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  color: #fff; /* Navbar text color */
+  color: #333; /* Changed text color to dark gray */
 }
 
 .logo {
   flex-shrink: 0;
   margin-right: auto;
+  background: linear-gradient(45deg, #c3c2c9, #922884);
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .logo img {
   height: 50px;
   width: auto;
   object-fit: contain;
-  filter: brightness(1.2);
+  filter: brightness(1.2) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2)) hue-rotate(280deg) saturate(1.5);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
 }
 
 .nav-links {
@@ -41,18 +49,24 @@ body {
 }
 
 .nav-links a {
-  color: #f4efef;
+  color: #df0ec3; /* Changed to match logo gradient pink */
   text-decoration: none;
   font-size: 1.2rem;
-  padding: 10px 20px;
+  padding: 12px 24px;
   transition: all 0.3s ease;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nav-bar a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  color: #ff9800; /* Navbar link hover color */
+  background-color: rgba(72, 46, 218, 0.1); /* Matching logo gradient blue with transparency */
+  border-radius: 25px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(228, 115, 213, 0.2);
+  color: #482eda; /* Changed to match logo gradient blue */
 }
 
 .dropdown-content {
@@ -77,7 +91,7 @@ body {
 
 /* Update nav links color for better visibility */
 .nav-links a {
-  color: #fff;
+  color: #482eda; /* Changed to saddle brown */
   text-decoration: none;
   font-size: 1.2rem;
   padding: 12px 24px;
@@ -87,6 +101,14 @@ body {
   letter-spacing: 1.2px;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-bar a:hover {
+  background-color: rgba(139, 69, 19, 0.1); /* Matching hover background */
+  border-radius: 25px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+  color: #d2691e; /* Changed to chocolate color on hover */
 }
 
 .dropdown-content a {
@@ -191,7 +213,6 @@ body {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
-
 .search-box {
   max-width: 800px;
   margin: 2rem auto;
@@ -221,7 +242,7 @@ body {
 
 .featured-section {
   padding: 4rem 2rem;
-  background: #fff;
+  background-color: #f8f9fa;  /* Changed from rgb(173, 100, 241) to a light gray color */
 }
 
 .featured-section h2 {
@@ -233,7 +254,7 @@ body {
 
 .product-card {
   min-width: 300px;
-  background: white;
+  background: rgb(243, 240, 240);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -379,6 +400,7 @@ body {
 }
 
 /* Featured Products Section */
+/* Remove or update this duplicate section */
 .featured-section {
   text-align: center;
   margin: 20px auto;
@@ -458,11 +480,23 @@ body {
 .icon-info h3 {
   font-size: 16px;
   margin: 5px 0;
+  color: #e473d5; /* Added pink color for icon titles */
 }
 
 .icon-info p {
   font-size: 12px;
-  color: #666;
+  color: #e25858; /* Changed to match the nav link color */
+}
+
+.big-icon-info h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #e473d5; /* Added pink color for big icon titles */
+}
+
+.big-icon-info p {
+  font-size: 14px;
+  color: #e25858; /* Changed to match the nav link color */
 }
 
 .big-icon-grid {
@@ -487,12 +521,20 @@ body {
 }
 
 .big-icon-image {
-  width: 150px; /* Adjust the size of the icon */
+  width: 150px;
   height: 150px;
   object-fit: cover;
   margin-bottom: 15px;
-  border-radius: 50%; /* Make the image circular */
-  border: 2px solid #ddd; /* Optional border around the circle */
+  border-radius: 50%;
+  border: 2px solid #e473d5; /* Changed border color to match icon title color */
+  box-shadow: 0 0 10px rgba(52, 9, 209, 0.3); /* Added pink glow effect */
+  background-color: #fff; /* Added white background */
+  padding: 5px; /* Added some padding around the image */
+}
+
+.big-icon-card:hover .big-icon-image {
+  border-color: #e25858; /* Change border color on hover to match text color */
+  transform: rotate(5deg); /* Added slight rotation on hover */
 }
 
 .big-icon-info h3 {

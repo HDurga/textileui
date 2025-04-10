@@ -12,12 +12,11 @@ const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const categories = [
-    "printed fabries",
-    "Cotton Fabrics",
-    "Pure Handloom Fabrics",
-    "Silk Fabrics",
-    "Wholesale",
-    "Hand Printed"
+    "womens wears",
+    "mens wears",
+    "kids wears",
+    "bedsheets",
+    "blankets",
   ];
 
   return (
@@ -88,52 +87,52 @@ const SearchBar = () => (
 const FeaturedProducts = () => {
   const textileTypes = [
     { 
-      name: "Eluru Cotton Sarees	", 
+      name: " Rajahmundry",
       description: "Famous handwoven cotton from Mangalagiri, known for its unique zari borders and durability",
       image: require("../../img/uppada.jpg") // High-quality image
     },
     { 
-      name: "Uppada Jamdani sarees",
+      name: "Uppada ",
       description: "Delicate silk textile with intricate patterns, traditionally woven in Uppada",
       image: require("../../img/uppada jam.jpg") // High-quality image
     },
     { 
-      name: "Pasalapudi Cotton Fabrics	", 
+      name: "pithapuram	", 
       description: "Rich silk sarees with traditional temple borders and motifs from Dharmavaram",
       image: require("../../img/Plain Cotton Sarees.jpeg") // High-quality image
     },
     { 
-      name: "Angara Cotton & Silk Fabrics	", 
+      name: "Tuni	", 
       description: "Fine cotton with gold border work, specialty of Venkatagiri weavers",
       image: require("../../img/cottonsilk.jpg") // High-quality image
     },
     { 
-      name: " Vemavaram Lightweight Sarees	", 
+      name: " KaKinada", 
       description: "Famous for its unique tie-dye technique, creating vibrant patterns",
       image: require("../../img/powerloomcotton.jpg") // High-quality image
     },
     { 
-      name: "Dulla Cotton Sarees	 ", 
+      name: "Mandapeta ", 
       description: "Traditional hand-painted or block-printed fabric with mythological themes",
       image: require("../../img/Khadi cotton.jpg") // High-quality image
     },
     { 
-      name: " Veeravaram Silk Sarees	", 
+      name: " Peddapalli	", 
       description: "Luxurious silk sarees with intricate gold and silver brocade work",
       image: require("../../img/printed cotton fabrics.jpg") // High-quality image
     },
     { 
-      name: "Muramanda Cotton Shirting	", 
+      name: "Peddaapuram	", 
       description: "Famous for its rich colors and heavy zari work, ideal for weddings",
       image: require("../../img/cotton shirts fabric's.jpg") // High-quality image
     },
     { 
-      name: "Bandarulanka Cotton Sarees	", 
+      name:  "Samallkot", 
       description: "Lightweight and breathable fabric, perfect for summer wear",
       image: require("../../img/cotton dress material.jpg") // High-quality image
     },
     { 
-      name: " Malkha Fabric	", 
+      name: " Rajanagaram	", 
       description: "Soft and comfortable fabric, ideal for casual wear",
       image: require("../../img/handloom.jpg") // High-quality image
     },

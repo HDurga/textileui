@@ -25,7 +25,7 @@ body {
 }
 
 .nav-bar a {
-    color: rgb(250, 28, 28);
+    color: rgb(193, 219, 75);
     text-decoration: none;
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -53,13 +53,15 @@ body {
 .products-wrapper {
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 20px;  
+    background-color: rgba(42, 168, 226, 0.5); /* Add a background color with transparency */
+  
 }
 
 .product-card {
-    display: flex;
+    display: flex; 
     margin-bottom: 40px;
-    background: white;
+    background: rgb(228, 235, 233);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
