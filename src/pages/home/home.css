@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #e6dada;
+  background-color: hsl(0, 48%, 51%);
   overflow: hidden;
 }
 
@@ -11,21 +11,23 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ebc8a4; /* Changed navbar background to light purple */
+  background: #ff6a0069;
   padding: 15px 20px;
   z-index: 100;
   display: flex;
-  align-items: center;
+  align-items: left;
   box-sizing: border-box;
   color: #333; /* Changed text color to dark gray */
 }
 
 .logo {
   flex-shrink: 0;
-  margin-right: auto;
+  margin-right: auto; /* Change from margin-left to margin-right */
+  margin-left: 0; /* Reset any left margin */
   background: linear-gradient(45deg, #c3c2c9, #922884);
   padding: 10px;
   border-radius: 8px;
+  order: 1; /* Ensure logo appears first */
 }
 
 .logo img {
@@ -36,8 +38,34 @@ body {
   transition: transform 0.3s ease;
 }
 
-.logo:hover img {
-  transform: scale(1.05);
+/* For the modern black navbar */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.nav-right {
+  margin-left: auto; /* Push user actions to the right */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.right-logo img {
+  height: 50px;
+  width: auto;
+  margin-left: 10px;
+  object-fit: contain;
+  filter: brightness(1.2) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2)) hue-rotate(280deg) saturate(1.5);
+  transition: transform 0.3s ease;
+}
+
+.right-logo:hover img {
+  transform: scale(1.1);
 }
 
 .nav-links {
@@ -248,7 +276,7 @@ body {
 .featured-section h2 {
   text-align: center;
   font-size: 2.2rem;
-  color: #333;
+  color: #160909;
   margin-bottom: 2rem;
 }
 
@@ -547,21 +575,373 @@ body {
   color: #666;
 }
 
-.home-container {
-  background-color: #f0f8ff; /* Change background color */
-  color: #333; /* Change text color */
+.header-container {
+  background-color: #000;
+  color: white;
 }
 
-.categories-container {
-  background-color: #f5f5f5; /* Change background color */
-  color: #444; /* Change text color */
+/* Main Navigation Bar */
+.nav-bar {
+  background-color: #000;
+  padding: 1rem 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.category-card {
-  background-color: #ffffff; /* Card background color */
-  color: #333; /* Card text color */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 2rem;
 }
 
-.category-card:hover {
-  background-color: #f0f0f0; /* Card hover background color */
+.logo {
+  flex: 0 0 auto;
+  order: 1;
+  margin-right: 2rem;
+  margin-left: 0;
+  padding-left: 0;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  order: 2;
+  margin-left: auto;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sign-in, .sign-up {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sign-in {
+  background: transparent;
+  border: 1px solid rgb(210, 214, 193);
+  color: white;
+}
+
+.sign-up {
+  background: #d6c314;
+  border: none;
+  color: white;
+}
+
+/* Remove any duplicate styles above this section */
+
+/* Sub Header */
+.header-section {
+  background-color: rgb(224, 115, 206); /* Changed from #000 to white */
+  border-top: 1px solid #c0c2c4; /* Changed from #333 to light gray */
+  padding: 0.6rem 0;
+  position: fixed;
+  top: 70px; /* Adjust based on navbar height */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: left center;
+  padding: 0 2rem;
+  background-color:  #ff6a0099; /* Changed from #000 to white */
+  color: #200c0c; /* Changed from white to dark gray for better visibility */
+}
+
+.header-link {
+  color: #1a1212;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  padding: 8px 16px;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.header-link:hover,
+.categories-btn:hover {
+  color: #FF6A00;
+}
+
+.categories-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #e0e0e0; /* Changed from #333 to light gray */
+  color: #333; /* Changed from white to dark gray */
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.header-link {
+  color: rgb(14, 12, 12);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.header-link:hover,
+.categories-btn:hover {
+  color: #161611;
+}
+
+/* Remove any conflicting styles from above and keep these new ones */
+.search-box {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 500px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+}
+
+.search-btn {
+  padding: 0.5rem 2rem;
+  background: #FF6A00;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sign-in, .sign-up {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sign-in {
+  background: none;
+  color: #333;
+}
+
+.sign-up {
+  background: #FF6A00;
+  color: white;
+}
+
+.cart {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+}
+/* Add these styles to your existing CSS file */
+
+.categories-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.categories-dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 8px;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+  padding: 8px 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-header {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  border-bottom: 2px solid #eebe8e;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-header:hover {
+  background-color: #eebe8e;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 4px 0;
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 15px 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.dropdown-description {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 4px;
+  font-weight: normal;
+}
+
+.dropdown-item:hover {
+  background-color: #f0c8a0;
+  color: #482eda;
+}
+
+.dropdown-item:hover .dropdown-description {
+  color: #482eda;
+}
+
+/* Header search styles for scrolling behavior */
+.header-search-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.header-search {
+  width: 400px;
+  margin: 0;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Show header search when scrolled class is added via JavaScript */
+.scrolled .header-search-container {
+  display: flex;
+  flex: 1;
+}
+
+/* Original search container visibility control */
+.search-container {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-top: 80px;
+  background: url("../../img/back1.png") center/cover fixed;
+  padding: 4rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+/* Hide original search when scrolled class is added */
+.scrolled .search-container {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Adjust nav container for search */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Search box styles for header */
+.header-search-container .search-box {
+  max-width: 500px;
+  margin: 0;
+  display: flex;
+  gap: 5px;
+}
+
+.header-search-container .search-box input {
+  flex: 1;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.header-search-container .search-box button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }

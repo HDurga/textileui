@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -8,44 +9,86 @@ const images = [
   require("../../img/back1.png"), // Corrected path
 ];
 
+// Remove the top-level useEffect
+
 const NavBar = () => {
+  const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  // Move the scroll effect inside the NavBar component
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 100) {
+        document.body.classList.add('scrolled');
+        setIsScrolled(true);
+      } else {
+        document.body.classList.remove('scrolled');
+        setIsScrolled(false);
+      }
+    };
 
-  const categories = [
-    "womens wears",
-    "mens wears",
-    "kids wears",
-    "bedsheets",
-    "blankets",
-  ];
-
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   return (
-    <div className="nav-bar">
-      <div className="logo">
-        <img src={require("../../img/logo.png")} alt="Company Logo" /> {/* Corrected path */}
-      </div>
-      <div className="nav-links">
-        <a href="/">Home</a>
-        <a href="products">Products</a>
-        <div className="dropdown">
-          <a href="#" onClick={(e) => {
-            e.preventDefault();
-            setShowDropdown(!showDropdown);
-          }}>
-            All Categories
-          </a>
-          {showDropdown && (
-            <div className="dropdown-content">
-              {categories.map((category, index) => (
-                <a key={index} href={`/categories/${category.toLowerCase().replace(/\s+/g, '-')}`}>
-                  {category}
-                </a>
-              ))}
+    <header className="site-header">
+      <nav className="nav-bar">
+        <div className="nav-container">
+          <div className="logo" onClick={() => navigate('/')}>
+            <img src={require("../../img/logo.png")} alt="Company Logo" />
+          </div>
+          
+          <div className="nav-links">
+            <button onClick={() => navigate('/')} className="nav-link">Home</button>
+            <button onClick={() => navigate('/products')} className="nav-link">Products</button>
+            <div className="dropdown">
+              <button 
+                className="dropbtn" 
+                onClick={() => setShowDropdown(!showDropdown)}
+              >
+                Categories
+              </button>
+              {showDropdown && (
+                <div className="dropdown-content">
+                  <button 
+                    onClick={() => navigate('/categories')} 
+                    className="dropdown-item dropdown-header"
+                  >
+                    <span className="dropdown-icon">🏷️</span> All Categories
+                    <span className="dropdown-description">View all textile categories</span>
+                  </button>
+                  <div className="dropdown-divider"></div>
+                  <button onClick={() => navigate('/categories/fabrics')} className="dropdown-item">Fabrics</button>
+                  <button onClick={() => navigate('/categories/laces')} className="dropdown-item">Laces</button>
+                  <button onClick={() => navigate('/categories/sarees')} className="dropdown-item">Sarees</button>
+                  <button onClick={() => navigate('/categories/carpets')} className="dropdown-item">Carpets</button>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {/* This will show when scrolling */}
+          {isScrolled && (
+            <div className="header-search-container">
+              <div className="search-box">
+                <input type="text" placeholder="Search for fabrics, materials, or designs..." />
+                <button><i className="fas fa-search"></i> Search</button>
+              </div>
             </div>
           )}
+          
+          <div className="nav-right">
+            <div className="user-actions">
+              <button className="sign-in">Sign In</button>
+              <button className="sign-up">Sign Up</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 
@@ -73,68 +116,72 @@ const Slideshow = () => {
   );
 };
 
-const SearchBar = () => (
-  <div className="search-container">
-    <h1>LYCORIS ADS& SOFTWARE SOLUTION PVT LTD</h1>
-    <p>Explore our collection of finest fabrics and materials</p>
-    <div className="search-box">
-      <input type="text" placeholder="Search for fabrics, materials, or designs..." />
-      <button><i className="fas fa-search"></i> Search</button>
+const SearchBar = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  
+  
+  return (
+    <div className={`search-container ${isVisible ? 'visible' : 'hidden'}`}>
+      <p>Explore our collection of finest fabrics and materials</p>
+      <div className="search-box">
+        <input type="text" placeholder="Search for fabrics, materials, or designs..." />
+        <button><i className="fas fa-search"></i> Search</button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const FeaturedProducts = () => {
   const textileTypes = [
     { 
       name: " Rajahmundry",
       description: "Famous handwoven cotton from Mangalagiri, known for its unique zari borders and durability",
-      image: require("../../img/uppada.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: "Uppada ",
       description: "Delicate silk textile with intricate patterns, traditionally woven in Uppada",
-      image: require("../../img/uppada jam.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: "pithapuram	", 
       description: "Rich silk sarees with traditional temple borders and motifs from Dharmavaram",
-      image: require("../../img/Plain Cotton Sarees.jpeg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: "Tuni	", 
       description: "Fine cotton with gold border work, specialty of Venkatagiri weavers",
-      image: require("../../img/cottonsilk.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: " KaKinada", 
       description: "Famous for its unique tie-dye technique, creating vibrant patterns",
-      image: require("../../img/powerloomcotton.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: "Mandapeta ", 
       description: "Traditional hand-painted or block-printed fabric with mythological themes",
-      image: require("../../img/Khadi cotton.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: " Peddapalli	", 
       description: "Luxurious silk sarees with intricate gold and silver brocade work",
-      image: require("../../img/printed cotton fabrics.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: "Peddaapuram	", 
       description: "Famous for its rich colors and heavy zari work, ideal for weddings",
-      image: require("../../img/cotton shirts fabric's.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name:  "Samallkot", 
       description: "Lightweight and breathable fabric, perfect for summer wear",
-      image: require("../../img/cotton dress material.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     { 
       name: " Rajanagaram	", 
       description: "Soft and comfortable fabric, ideal for casual wear",
-      image: require("../../img/handloom.jpg") // High-quality image
+      image: require("../../img/cotton.jpg") // High-quality image
     },
     
   ];
@@ -172,7 +219,7 @@ const Categories = () => {
     { 
       name: "Temple Designs", 
       description: "Traditional motifs inspired by temple architecture",
-      image: require("../../img/temple desgin sarees.jpg") // High-quality image
+      image: require("../../img/temple  sarees.jpg") // High-quality image
     },
     { 
       name: "Modern Innovations", 

@@ -15,49 +15,49 @@ const ProductStore = () => {
             id: 1,
             name: "Premium Cotton fabric",
             description: "Handcrafted pure cotton saree with traditional designs, perfect for special occasions. Features intricate embroidery and comfortable fabric.",
-            image: require("../../img/cottonsaree.jpg")
+            image: require("../../img/cotton.jpg")
         },
         {
             id: 2,
             name: "Silk Designer fabric",
             price: "$299.99",
             description: "Luxurious silk dress with modern fusion design. Elegant cut with detailed craftsmanship and premium quality fabric.",
-            image: require("../../img/slik.jpeg")
+            image: require("../../img/silk.jpg")
         },
         {
             id: 3,
             name: "Handloom Fabric Set",
             price: "$199.99",
             description: "Authentic handloom fabric set featuring unique patterns. Each piece is carefully woven by skilled artisans.",
-            image: require("../../img/handloom.jpg")
+            image: require("../../img/handloomsarees p.jpg")
         },
         {
             id: 4,
             name: "Linen fabric Collection",
             price: "$149.99",
             description: "Lightweight linen fabric collection with breathable texture. Ideal for summer wear and casual outings.",
-            image: require("../../img/linen (1).jpg")
+            image: require("../../img/modern.jpg")
         },
         {
             id:5,
             name: "jute fabric",
             price: "$99.99",
             description: "Eco-friendly jute fabric with natural texture. Perfect for sustainable fashion and home decor.",
-            image: require("../../img/jute.jpeg")
+            image: require("../../img/jute.jpg")
         },
         {
             id : 6,
             name:"Ployester fabric",
             price: "$89.99", 
             description: "Durable polyester fabric with vibrant colors. Ideal for activewear and everyday clothing.",
-            image: require("../../img/polyester.jpg")
+            image: require("../../img/ployster.jpg")
         },
         {
             id: 7,
             name: "Rayon/Viscose fabric",
             price: "$79.99",
             description: "Soft rayon fabric with smooth texture. Suitable for dresses, tops, and other casual wear.",
-            image:  require("../../img/viscose.jpg")
+            image:  require("../../img/rayon.jpg")
         },
     ];
 
