@@ -57,6 +57,7 @@ const NavBar = () => {
   );
 };
 
+// Fix the items array to separate each fabric type properly
 const Categories = ({ categoryData }) => {
   const navigate = useNavigate();
   const { categoryName } = useParams();
@@ -70,7 +71,7 @@ const Categories = ({ categoryData }) => {
       title: "Fabrics",
       image: require("../../img/fabrics.jpg"),
       description: "Premium quality fabrics for all your needs",
-      items: ["Cotton", "Silk", "Wool", "Synthetic", "Linen", "Denim"],
+      items: ["Cotton", "Silk", "Wool", "Synthetic", "Linen", "Denim", "Hemp", "Polyester", "Nylon", "Acrylic"],
       details: "Our fabric collection features a wide range of high-quality materials sourced from the finest mills around the world. Each fabric is carefully selected for its durability, texture, and aesthetic appeal."
     },
     {
@@ -137,8 +138,9 @@ const Categories = ({ categoryData }) => {
     return types;
   }, []);
 
-  // Add state for scrollable images
+  // Add state for selected fabric item
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedFabricItem, setSelectedFabricItem] = useState(null);
   
   return (
     <div className="categories-container">
@@ -159,7 +161,7 @@ const Categories = ({ categoryData }) => {
         </div>
       )}
 
-      {/* Updated fabric filter section with circular icons */}
+      {/* Updated layout with fabric items on left and images on right */}
       <div className="fabric-filter-container">
         <div className="filter-sidebar">
           <h3>Filter by Category</h3>
@@ -169,6 +171,7 @@ const Categories = ({ categoryData }) => {
               onClick={() => {
                 handleFilterChange('All');
                 setSelectedCategory(null);
+                setSelectedFabricItem(null);
               }}
             >
               <div className="icon-circle">
@@ -185,6 +188,7 @@ const Categories = ({ categoryData }) => {
                 onClick={() => {
                   setSelectedCategory(category.title);
                   handleFilterChange('All');
+                  setSelectedFabricItem(null);
                 }}
               >
                 <div className="icon-circle">
@@ -199,60 +203,82 @@ const Categories = ({ categoryData }) => {
               </div>
             ))}
             
-            <div className="filter-divider"></div>
-            <h4>Fabric Types</h4>
-            
-            {/* Fabric type filters */}
-            {allFabricTypes.map((fabricType, index) => (
-              <div 
-                key={`type-${index}`}
-                className={`filter-icon ${activeFilter === fabricType ? 'active' : ''}`}
-                onClick={() => {
-                  handleFilterChange(fabricType);
-                  setSelectedCategory(null);
-                }}
-              >
-                <div className="icon-circle">
-                  <span className="icon">
-                    {fabricType === 'Cotton' ? '🧶' : 
-                     fabricType === 'Silk' ? '🎀' : 
-                     fabricType === 'Wool' ? '🧣' : 
-                     fabricType === 'Synthetic' ? '🧪' : 
-                     fabricType === 'Linen' ? '👕' : 
-                     fabricType === 'Denim' ? '👖' : 
-                     fabricType === 'Chantilly Lace' ? '🎀' :
-                     fabricType === 'Guipure Lace' ? '🎀' :
-                     fabricType === 'Venice Lace' ? '🎀' :
-                     fabricType === 'Cotton Lace' ? '🎀' : '🧵'}
-                  </span>
-                </div>
-                <span className="icon-label">{fabricType}</span>
-              </div>
-            ))}
+            {selectedCategory && (
+              <>
+                <div className="filter-divider"></div>
+                <h4>{selectedCategory} Types</h4>
+                
+                {/* Fabric items as clickable filters */}
+                {dataToUse
+                  .find(cat => cat.title === selectedCategory)
+                  .items.map((item, index) => (
+                    <div 
+                      key={`item-${index}`}
+                      className={`filter-icon ${selectedFabricItem === item ? 'active' : ''}`}
+                      onClick={() => {
+                        setSelectedFabricItem(item);
+                        handleFilterChange(item);
+                      }}
+                    >
+                      <div className="icon-circle">
+                        <span className="icon">
+                          {item === 'Cotton' ? '🧶' : 
+                           item === 'Silk' ? '🎀' : 
+                           item === 'Wool' ? '🧣' : 
+                           item === 'Synthetic' ? '🧪' : 
+                           item === 'Linen' ? '👕' : 
+                           item === 'Denim' ? '👖' : '🧵'}
+                        </span>
+                      </div>
+                      <span className="icon-label">{item}</span>
+                    </div>
+                  ))}
+              </>
+            )}
           </div>
         </div>
         
-        // Add this near the top of your file after the imports
-        import fabricsImg from "../../img/fabrics.jpg";
-        import lacesImg from "../../img/laces.jpg";
-        import sareesImg from "../../img/sarees.jpg";
-        import carpetsImg from "../../img/carpets.jpg";
-        
-        // Then in your component, modify the carousel section:
-        {/* Scrollable image gallery on the right */}
+        {/* Right side content - fabric images */}
         <div className="categories-content">
-          {/* Image carousel for selected category */}
-          {selectedCategory && (
+          {/* Image display for selected fabric item */}
+          {selectedFabricItem && (
+            <div className="fabric-item-showcase">
+              <h2>{selectedFabricItem}</h2>
+              <div className="fabric-item-image">
+                <img 
+                  src={dataToUse.find(cat => cat.title === selectedCategory).image}
+                  alt={selectedFabricItem}
+                />
+              </div>
+              <div className="fabric-item-details">
+                <p>
+                  {selectedFabricItem} is a popular {selectedCategory.toLowerCase()} type known for its 
+                  {selectedFabricItem === 'Cotton' ? ' softness, breathability, and comfort.' : 
+                   selectedFabricItem === 'Silk' ? ' luxurious feel, natural sheen, and smooth texture.' : 
+                   selectedFabricItem === 'Wool' ? ' warmth, durability, and natural insulation properties.' : 
+                   selectedFabricItem === 'Synthetic' ? ' versatility, durability, and easy maintenance.' : 
+                   selectedFabricItem === 'Linen' ? ' lightweight nature, breathability, and natural texture.' : 
+                   ' unique characteristics and quality.'}
+                </p>
+              </div>
+            </div>
+          )}
+          
+          {/* Show category carousel when category is selected but no specific fabric item */}
+          {selectedCategory && !selectedFabricItem && (
             <div className="category-carousel">
-              <h2>{selectedCategory}</h2>
+              <h2>{selectedCategory} Collection</h2>
               <div className="carousel-container">
                 {dataToUse
                   .find(cat => cat.title === selectedCategory)
                   .items.map((item, idx) => (
-                    <div className="carousel-item" key={idx}>
+                    <div 
+                      className="carousel-item" 
+                      key={idx}
+                      onClick={() => setSelectedFabricItem(item)}
+                    >
                       <div className="carousel-image">
                         <img 
-                          // Use the category's main image instead of trying to load individual images
                           src={dataToUse.find(cat => cat.title === selectedCategory).image}
                           alt={item}
                         />
@@ -264,11 +290,10 @@ const Categories = ({ categoryData }) => {
             </div>
           )}
           
-          {/* Regular category grid */}
-          <div className="categories-grid">
-            {displayData
-              .filter(category => !selectedCategory || category.title === selectedCategory)
-              .map((category, index) => {
+          {/* Regular category grid when no specific category or fabric is selected */}
+          {!selectedCategory && (
+            <div className="categories-grid">
+              {displayData.map((category, index) => {
                 // Filter items based on active filter
                 const filteredItems = activeFilter === 'All' 
                   ? category.items 
@@ -312,7 +337,8 @@ const Categories = ({ categoryData }) => {
                   </div>
                 );
               })}
-          </div>
+            </div>
+          )}
         </div>
       </div>
 
