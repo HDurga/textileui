@@ -9,7 +9,33 @@ const images = [
   require("../../img/back1.png"), // Corrected path
 ];
 
-// Remove the top-level useEffect
+// Add the missing categoriesData definition
+const categoriesData = [
+  {
+    title: "Fabrics",
+    image: require("../../img/fabrics.jpg"),
+    description: "Premium quality fabrics for all your needs",
+    items: ["Cotton", "Silk", "Wool", "Synthetic", "Linen", "Denim,"]
+  },
+  {
+    title: "Laces",
+    image: require("../../img/laces.jpg"),
+    description: "Elegant laces for decorative and fashion purposes",
+    items: ["Chantilly Lace", "Guipure Lace", "Venice Lace", "Cotton Lace", "Embroidered Lace"]
+  },
+  {
+    title: "Sarees",
+    image: require("../../img/sarees.jpg"),
+    description: "Traditional and modern sarees for every occasion",
+    items: ["Silk Sarees", "Cotton Sarees", "Designer Sarees", "Banarasi Sarees", "Handloom Sarees"]
+  },
+  {
+    title: "Carpets",
+    image: require("../../img/carpets.jpg"),
+    description: "Luxurious carpets and rugs for your home",
+    items: ["Persian Carpets", "Modern Rugs", "Traditional Carpets", "Area Rugs", "Designer Carpets"]
+  }
+];
 
 const NavBar = () => {
   const navigate = useNavigate();
