@@ -366,6 +366,64 @@
   font-size: 16px;
 }
 
+.fabric-item-properties {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.property {
+  background-color: #f9f9f9;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border-left: 3px solid #e473d5;
+}
+
+.property-label {
+  font-weight: 600;
+  color: #333;
+  margin-right: 8px;
+}
+
+.property-value {
+  color: #555;
+}
+
+/* Make the filter sidebar more prominent */
+.filter-sidebar {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-icon {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.filter-icon:hover {
+  background-color: #f0f0f0;
+  transform: translateX(3px);
+}
+
+.filter-icon.active {
+  background-color: #e473d5;
+  color: white;
+}
+
+.filter-icon.active .icon-circle {
+  background-color: white;
+}
+
+.filter-icon.active .icon-label {
+  font-weight: 600;
+}
+
 /* Make carousel items clickable */
 .carousel-item {
   cursor: pointer;

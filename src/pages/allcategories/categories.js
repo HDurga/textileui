@@ -1,3 +1,4 @@
+// First, let's fix the import statements at the top
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './categoriess.css';
@@ -238,7 +239,7 @@ const Categories = ({ categoryData }) => {
           </div>
         </div>
         
-        {/* Right side content - fabric images */}
+        // Right side content - fabric images
         <div className="categories-content">
           {/* Image display for selected fabric item */}
           {selectedFabricItem && (
@@ -246,8 +247,13 @@ const Categories = ({ categoryData }) => {
               <h2>{selectedFabricItem}</h2>
               <div className="fabric-item-image">
                 <img 
-                  src={dataToUse.find(cat => cat.title === selectedCategory).image}
+                  // Use a more specific image for each fabric type if available
+                  src={require(`../../img/${selectedFabricItem.toLowerCase().replace(/\s+/g, '')}.jpg`)}
                   alt={selectedFabricItem}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = dataToUse.find(cat => cat.title === selectedCategory).image;
+                  }}
                 />
               </div>
               <div className="fabric-item-details">
@@ -260,6 +266,32 @@ const Categories = ({ categoryData }) => {
                    selectedFabricItem === 'Linen' ? ' lightweight nature, breathability, and natural texture.' : 
                    ' unique characteristics and quality.'}
                 </p>
+                <div className="fabric-item-properties">
+                  <div className="property">
+                    <span className="property-label">Origin:</span>
+                    <span className="property-value">
+                      {selectedFabricItem === 'Cotton' ? 'Natural plant fiber' : 
+                       selectedFabricItem === 'Silk' ? 'Natural protein fiber' : 
+                       selectedFabricItem === 'Wool' ? 'Natural animal fiber' : 
+                       selectedFabricItem === 'Synthetic' ? 'Man-made fiber' : 
+                       selectedFabricItem === 'Linen' ? 'Natural plant fiber' : 
+                       selectedFabricItem === 'Denim' ? 'Cotton twill fabric' : 
+                       'Various sources'}
+                    </span>
+                  </div>
+                  <div className="property">
+                    <span className="property-label">Best for:</span>
+                    <span className="property-value">
+                      {selectedFabricItem === 'Cotton' ? 'Everyday wear, summer clothing' : 
+                       selectedFabricItem === 'Silk' ? 'Luxury garments, special occasions' : 
+                       selectedFabricItem === 'Wool' ? 'Winter wear, outerwear' : 
+                       selectedFabricItem === 'Synthetic' ? 'Sportswear, technical applications' : 
+                       selectedFabricItem === 'Linen' ? 'Summer clothing, home textiles' : 
+                       selectedFabricItem === 'Denim' ? 'Jeans, casual wear' : 
+                       'Various applications'}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           )}
@@ -268,6 +300,7 @@ const Categories = ({ categoryData }) => {
           {selectedCategory && !selectedFabricItem && (
             <div className="category-carousel">
               <h2>{selectedCategory} Collection</h2>
+              <p>Click on any {selectedCategory.toLowerCase()} type on the left to see more details</p>
               <div className="carousel-container">
                 {dataToUse
                   .find(cat => cat.title === selectedCategory)
