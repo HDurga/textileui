@@ -50,10 +50,7 @@ const NavBar = () => {
           <div className="dropdown-divider"></div>
         </div>
       </div>
-      {/* Add SearchBar to the navbar - this will stay fixed while scrolling */}
-      <div className="header-search">
-        <SearchBar onSearch={(term) => console.log('Searching for:', term)} />
-      </div>
+      {/* Search bar removed from navbar */}
     </div>
   );
 };
@@ -148,7 +145,7 @@ const Categories = ({ categoryData }) => {
       <NavBar />
       
       <div className="categories-hero">
-        <h1>{categoryName ? `${categoryName.toUpperCase()} Collection` : 'TYPES OF Textiles'}</h1>
+        {/* Removed the heading for "TYPES OF Textiles" */}
         <p>Explore our wide range of textile products</p>
       </div>
 
@@ -162,84 +159,9 @@ const Categories = ({ categoryData }) => {
         </div>
       )}
 
-      {/* Updated layout with fabric items on left and images on right */}
+      {/* Updated layout with fabric items on right and content on left */}
       <div className="fabric-filter-container">
-        <div className="filter-sidebar">
-          <h3>Filter by Category</h3>
-          <div className="filter-icons">
-            <div 
-              className={`filter-icon ${activeFilter === 'All' ? 'active' : ''}`}
-              onClick={() => {
-                handleFilterChange('All');
-                setSelectedCategory(null);
-                setSelectedFabricItem(null);
-              }}
-            >
-              <div className="icon-circle">
-                <span className="icon">🧵</span>
-              </div>
-              <span className="icon-label">All</span>
-            </div>
-            
-            {/* Main category filters */}
-            {dataToUse.map((category, index) => (
-              <div 
-                key={index}
-                className={`filter-icon ${selectedCategory === category.title ? 'active' : ''}`}
-                onClick={() => {
-                  setSelectedCategory(category.title);
-                  handleFilterChange('All');
-                  setSelectedFabricItem(null);
-                }}
-              >
-                <div className="icon-circle">
-                  <span className="icon">
-                    {category.title === 'Fabrics' ? '🧶' : 
-                     category.title === 'Laces' ? '🎀' : 
-                     category.title === 'Sarees' ? '👗' : 
-                     category.title === 'Carpets' ? '🏠' : '🧵'}
-                  </span>
-                </div>
-                <span className="icon-label">{category.title}</span>
-              </div>
-            ))}
-            
-            {selectedCategory && (
-              <>
-                <div className="filter-divider"></div>
-                <h4>{selectedCategory} Types</h4>
-                
-                {/* Fabric items as clickable filters */}
-                {dataToUse
-                  .find(cat => cat.title === selectedCategory)
-                  .items.map((item, index) => (
-                    <div 
-                      key={`item-${index}`}
-                      className={`filter-icon ${selectedFabricItem === item ? 'active' : ''}`}
-                      onClick={() => {
-                        setSelectedFabricItem(item);
-                        handleFilterChange(item);
-                      }}
-                    >
-                      <div className="icon-circle">
-                        <span className="icon">
-                          {item === 'Cotton' ? '🧶' : 
-                           item === 'Silk' ? '🎀' : 
-                           item === 'Wool' ? '🧣' : 
-                           item === 'Synthetic' ? '🧪' : 
-                           item === 'Linen' ? '👕' : 
-                           item === 'Denim' ? '👖' : '🧵'}
-                        </span>
-                      </div>
-                      <span className="icon-label">{item}</span>
-                    </div>
-                  ))}
-              </>
-            )}
-          </div>
-        </div>
-        
-        // Right side content - fabric images
+        {/* Content moved to left side */}
         <div className="categories-content">
           {/* Image display for selected fabric item */}
           {selectedFabricItem && (
@@ -247,52 +169,23 @@ const Categories = ({ categoryData }) => {
               <h2>{selectedFabricItem}</h2>
               <div className="fabric-item-image">
                 <img 
-                  // Use a more specific image for each fabric type if available
-                  src={require(`../../img/${selectedFabricItem.toLowerCase().replace(/\s+/g, '')}.jpg`)}
+                  src={(() => {
+                    // Use the category image as the default for all fabric types
+                    // since the specific fabric images don't exist
+                    try {
+                      // First try to use the category image
+                      return dataToUse.find(cat => cat.title === selectedCategory).image;
+                    } catch (e) {
+                      // Fallback to a generic image if even that fails
+                      return require('../../img/fabrics.jpg');
+                    }
+                  })()}
                   alt={selectedFabricItem}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = dataToUse.find(cat => cat.title === selectedCategory).image;
-                  }}
                 />
               </div>
-              <div className="fabric-item-details">
-                <p>
-                  {selectedFabricItem} is a popular {selectedCategory.toLowerCase()} type known for its 
-                  {selectedFabricItem === 'Cotton' ? ' softness, breathability, and comfort.' : 
-                   selectedFabricItem === 'Silk' ? ' luxurious feel, natural sheen, and smooth texture.' : 
-                   selectedFabricItem === 'Wool' ? ' warmth, durability, and natural insulation properties.' : 
-                   selectedFabricItem === 'Synthetic' ? ' versatility, durability, and easy maintenance.' : 
-                   selectedFabricItem === 'Linen' ? ' lightweight nature, breathability, and natural texture.' : 
-                   ' unique characteristics and quality.'}
-                </p>
-                <div className="fabric-item-properties">
-                  <div className="property">
-                    <span className="property-label">Origin:</span>
-                    <span className="property-value">
-                      {selectedFabricItem === 'Cotton' ? 'Natural plant fiber' : 
-                       selectedFabricItem === 'Silk' ? 'Natural protein fiber' : 
-                       selectedFabricItem === 'Wool' ? 'Natural animal fiber' : 
-                       selectedFabricItem === 'Synthetic' ? 'Man-made fiber' : 
-                       selectedFabricItem === 'Linen' ? 'Natural plant fiber' : 
-                       selectedFabricItem === 'Denim' ? 'Cotton twill fabric' : 
-                       'Various sources'}
-                    </span>
-                  </div>
-                  <div className="property">
-                    <span className="property-label">Best for:</span>
-                    <span className="property-value">
-                      {selectedFabricItem === 'Cotton' ? 'Everyday wear, summer clothing' : 
-                       selectedFabricItem === 'Silk' ? 'Luxury garments, special occasions' : 
-                       selectedFabricItem === 'Wool' ? 'Winter wear, outerwear' : 
-                       selectedFabricItem === 'Synthetic' ? 'Sportswear, technical applications' : 
-                       selectedFabricItem === 'Linen' ? 'Summer clothing, home textiles' : 
-                       selectedFabricItem === 'Denim' ? 'Jeans, casual wear' : 
-                       'Various applications'}
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <p className="fabric-item-description">
+                High-quality {selectedFabricItem.toLowerCase()} material perfect for various applications.
+              </p>
             </div>
           )}
           
@@ -360,8 +253,15 @@ const Categories = ({ categoryData }) => {
                       </div>
                       
                       <p className="category-details">{category.details}</p>
+                      // Find the button that navigates to category pages and remove or modify it
                       <button 
-                        onClick={() => navigate(`/categories/${category.title.toLowerCase().replace(/\s+/g, '-')}`)}
+                        // Replace this onClick handler
+                        // onClick={() => navigate(`/categories/${category.title.toLowerCase().replace(/\s+/g, '-')}`)}
+                        // With this one that doesn't navigate to a new page
+                        onClick={() => {
+                          setSelectedCategory(category.title);
+                          setSelectedFabricItem(null);
+                        }}
                         className="view-button"
                       >
                         View Collection
@@ -373,8 +273,86 @@ const Categories = ({ categoryData }) => {
             </div>
           )}
         </div>
+        
+        {/* Filter sidebar moved to right side */}
+        <div className="filter-sidebar">
+          <h3>Filter by Category</h3>
+          <div className="filter-icons">
+            <div 
+              className={`filter-icon ${activeFilter === 'All' ? 'active' : ''}`}
+              onClick={() => {
+                handleFilterChange('All');
+                setSelectedCategory(null);
+                setSelectedFabricItem(null);
+              }}
+            >
+              <div className="icon-circle">
+                <span className="icon">🧵</span>
+              </div>
+              <span className="icon-label">All</span>
+            </div>
+            
+            {/* Main category filters */}
+            {dataToUse.map((category, index) => (
+              <div 
+                key={index}
+                className={`filter-icon ${selectedCategory === category.title ? 'active' : ''}`}
+                onClick={() => {
+                  setSelectedCategory(category.title);
+                  handleFilterChange('All');
+                  setSelectedFabricItem(null);
+                }}
+              >
+                <div className="icon-circle">
+                  <span className="icon">
+                    {category.title === 'Fabrics' ? 'F' : 
+                     category.title === 'Laces' ? 'L' : 
+                     category.title === 'Sarees' ? 'S' : 
+                     category.title === 'Carpets' ? 'C' : 
+                     category.title.charAt(0)}
+                  </span>
+                </div>
+                <span className="icon-label">{category.title}</span>
+              </div>
+            ))}
+            
+            {selectedCategory && (
+              <>
+                <div className="filter-divider"></div>
+                <h4>{selectedCategory} Types</h4>
+                
+                {/* Fabric items as clickable filters */}
+                {dataToUse
+                  .find(cat => cat.title === selectedCategory)
+                  .items.map((item, index) => (
+                    <div 
+                      key={`item-${index}`}
+                      className={`filter-icon ${selectedFabricItem === item ? 'active' : ''}`}
+                      onClick={() => {
+                        setSelectedFabricItem(item);
+                        handleFilterChange(item);
+                      }}
+                    >
+                      <div className="icon-circle">
+                        <span className="icon">
+                          {item === 'Cotton' ? 'C' : 
+                           item === 'Silk' ? 'S' : 
+                           item === 'Wool' ? 'W' : 
+                           item === 'Synthetic' ? 'S' : 
+                           item === 'Linen' ? 'L' : 
+                           item === 'Denim' ? 'D' : 
+                           item.charAt(0)}
+                        </span>
+                      </div>
+                      <span className="icon-label">{item}</span>
+                    </div>
+                  ))}
+              </>
+            )}
+          </div>
+        </div>
       </div>
-
+      
       <footer className="footer">
         <p>&copy; 2025 Textile Categories</p>
         <div className="footer-links">
