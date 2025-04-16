@@ -15,7 +15,7 @@ const categoriesData = [
     title: "Fabrics",
     image: require("../../img/fabrics.jpg"),
     description: "Premium quality fabrics for all your needs",
-    items: ["Cotton", "Silk", "Wool", "Synthetic", "Linen", "Denim,"]
+    items: ["Cotton", "Silk", "Wool", "Synthetic", "Linen", "Denim, Georgette,chiffon,polyster,Nylon,Rayon"]
   },
   {
     title: "Laces",
@@ -148,7 +148,6 @@ const SearchBar = () => {
   
   return (
     <div className={`search-container ${isVisible ? 'visible' : 'hidden'}`}>
-      <p>Explore our collection of finest fabrics and materials</p>
       <div className="search-box">
         <input type="text" placeholder="Search for fabrics, materials, or designs..." />
         <button><i className="fas fa-search"></i> Search</button>

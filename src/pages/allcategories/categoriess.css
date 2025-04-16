@@ -127,69 +127,50 @@
 }
 
 /* Fabric filter container */
+/* Update the fabric filter container to reverse the order */
 .fabric-filter-container {
   display: flex;
-  margin: 30px 0;
+  flex-direction: row-reverse; /* This reverses the order of the children */
   gap: 30px;
+  margin: 30px auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
-/* Updated filter sidebar with circular icons */
+/* Filter sidebar improvements */
 .filter-sidebar {
-  width: 250px;
-  flex-shrink: 0;
-  background-color: #f8f8f8;
+  flex: 0 0 250px;
+  background-color: white;
   border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: fit-content;
   position: sticky;
-  top: 120px;
-  max-height: calc(100vh - 140px);
+  top: 90px;
+  max-height: calc(100vh - 120px);
   overflow-y: auto;
 }
 
-.filter-sidebar h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 18px;
-  text-align: center;
-  border-bottom: 2px solid #e473d5;
-  padding-bottom: 10px;
-}
-
-.filter-sidebar h4 {
-  margin: 10px 0;
-  color: #555;
-  font-size: 16px;
-  text-align: center;
-}
-
-.filter-divider {
-  height: 1px;
-  background-color: #ddd;
-  margin: 15px 0;
-}
-
 .filter-icons {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  margin-top: 15px;
 }
 
 .filter-icon {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 10px;
-  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .filter-icon:hover {
-  background-color: #f0f0f0;
-  transform: translateX(5px);
+  background-color: #f5f5f5;
+  transform: translateY(-3px);
 }
 
 .filter-icon.active {
@@ -201,82 +182,91 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
+  margin-bottom: 8px;
+  font-size: 24px;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.filter-icon:hover .icon-circle {
-  border-color: #e473d5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .filter-icon.active .icon-circle {
   background-color: white;
-  border-color: white;
+  color: #e473d5;
 }
 
-.filter-icon .icon {
-  font-size: 24px;
-}
-
-.filter-icon .icon-label {
-  font-size: 16px;
+.icon-label {
+  font-size: 0.9rem;
+  text-align: center;
   font-weight: 500;
 }
 
-/* Categories content area */
+/* Add a divider between filter sections */
+.filter-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 15px 0;
+  width: 100%;
+}
+
+/* Adjust the categories content for better scrolling */
 .categories-content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+  padding-right: 15px;
+  scrollbar-width: thin;
 }
 
-/* Carousel for selected category */
-.category-carousel {
-  background-color: white;
+.categories-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.categories-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.category-carousel h2 {
-  margin-top: 0;
-  color: #333;
-  font-size: 24px;
-  border-bottom: 2px solid #e473d5;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+.categories-content::-webkit-scrollbar-thumb {
+  background: #e473d5;
+  border-radius: 10px;
 }
 
+/* Improve the carousel container for better image display */
 .carousel-container {
-  display: flex;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
-  padding: 10px 0;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .carousel-item {
-  min-width: 200px;
-  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1/1.2;
+  display: flex;
+  flex-direction: column;
 }
 
 .carousel-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Creates a perfect square */
+  position: relative;
   overflow: hidden;
-  margin-bottom: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -288,161 +278,211 @@
 }
 
 .carousel-item p {
+  padding: 10px;
+  margin: 0;
+  text-align: center;
   font-weight: 500;
   color: #333;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .fabric-filter-container {
-    flex-direction: column;
-  }
-  
-  .filter-sidebar {
-    width: 100%;
-    position: static;
-    max-height: none;
-  }
-  
-  .filter-icons {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .filter-icon {
-    width: calc(33.33% - 10px);
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .icon-circle {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+/* Categories grid improvements */
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
 }
 
-/* Fabric item showcase styles */
+.category-card {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-image {
+  flex: 0 0 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.05);
+}
+
+.category-type {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(228, 115, 213, 0.9);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.category-content {
+  flex: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-content h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.category-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.item-tag {
+  background-color: #f5f5f5;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.item-tag:hover {
+  background-color: #e473d5;
+  color: white;
+}
+
+.category-details {
+  margin-top: auto;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.view-button {
+  align-self: flex-start;
+  background-color: #e473d5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.view-button:hover {
+  background-color: #d65ec0;
+  transform: translateY(-2px);
+}
+
+/* Fabric item showcase improvements */
 .fabric-item-showcase {
   background-color: white;
   border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
   padding: 25px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-.fabric-item-showcase h2 {
-  color: #333;
-  font-size: 28px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #e473d5;
-  padding-bottom: 10px;
 }
 
 .fabric-item-image {
   width: 100%;
-  height: 400px;
+  height: 300px;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .fabric-item-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.fabric-item-image:hover img {
-  transform: scale(1.03);
-}
-
-.fabric-item-details {
-  color: #555;
-  line-height: 1.6;
-  font-size: 16px;
 }
 
 .fabric-item-properties {
-  margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .property {
   background-color: #f9f9f9;
-  padding: 12px 15px;
-  border-radius: 6px;
+  padding: 15px;
+  border-radius: 8px;
   border-left: 3px solid #e473d5;
 }
 
 .property-label {
   font-weight: 600;
   color: #333;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
-.property-value {
-  color: #555;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fabric-filter-container {
+    flex-direction: column;
+  }
+  
+  .filter-sidebar {
+    position: static;
+    max-height: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .category-card {
+    flex-direction: column;
+  }
+  
+  .category-image {
+    flex: 0 0 200px;
+  }
+  
+  .fabric-item-properties {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* Make the filter sidebar more prominent */
+/* Update the background color of the main container */
+.categories-container {
+  background-color: #c7f39d; /* Light gray background */
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+/* You might also want to update related elements for better contrast */
+.category-card {
+  background-color: rgb(224, 252, 178);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fabric-filter-container {
+  background-color: #d1f0aa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
 .filter-sidebar {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.filter-icon {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 8px 10px;
+  background-color: rgb(193, 245, 169);
   border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-.filter-icon:hover {
-  background-color: #f0f0f0;
-  transform: translateX(3px);
-}
-
-.filter-icon.active {
-  background-color: #e473d5;
-  color: white;
-}
-
-.filter-icon.active .icon-circle {
-  background-color: white;
-}
-
-.filter-icon.active .icon-label {
-  font-weight: 600;
-}
-
-/* Make carousel items clickable */
-.carousel-item {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.carousel-item:hover {
-  transform: translateY(-5px);
-}
-
-/* Active filter styling */
-.filter-icon.active {
-  background-color: #e473d5;
-  color: white;
-  transform: translateX(5px);
-}
-
-.filter-icon.active .icon-circle {
-  background-color: white;
-  border-color: white;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
   

@@ -4,6 +4,7 @@ import Home from "./pages/home/home";
 import Products from "./pages/products/products";
 import Categories from "./pages/allcategories/categories";
 import CategoryDetail from "./pages/categoryDetail/categoryDetail";
+import FabricsCategory from "./pages/categoryDetail/fabricsCategory";
 import "./App.css";
 
 // Define the categories data
@@ -42,9 +43,11 @@ const App = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/categories" element={<Categories categoryData={categoriesData} />} />
-      <Route path="/categories/:categoryName" element={<CategoryDetail categoryData={categoriesData} />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/categories" element={<Categories categoryData={categoriesData} />} />
+      {/* Commented out to remove access to /categories/fabrics */}
+      {/* <Route path="/categories/:categoryName" element={<CategoryDetail categoryData={categoriesData} />} /> */}
+      <Route path="/fabrics" element={<FabricsCategory />} />
     </Routes>
   </Router>
 );

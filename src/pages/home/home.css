@@ -11,7 +11,10 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ff6a0069;
+  background: #e473d552;
+  ;
+  ;
+  ;
   padding: 15px 20px;
   z-index: 100;
   display: flex;
@@ -24,7 +27,7 @@ body {
   flex-shrink: 0;
   margin-right: auto; /* Change from margin-left to margin-right */
   margin-left: 0; /* Reset any left margin */
-  background: linear-gradient(45deg, #c3c2c9, #922884);
+  background: linear-gradient(45deg, #c3c2c9, #e7d853);
   padding: 10px;
   border-radius: 8px;
   order: 1; /* Ensure logo appears first */
