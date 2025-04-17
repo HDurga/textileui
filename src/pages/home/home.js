@@ -212,7 +212,35 @@ const FeaturedProducts = () => {
     ]
   };
   
-  // Keep your existing textileTypes array
+  // Define the textileTypes array
+  const textileTypes = [
+    { name: "Addateegala", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Ainavailli", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Alamuru", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Allavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Amalapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Ambajipeta", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Anaparthy", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Atreyapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Biccavolu", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Devipatnam", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gandepalle", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gangavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gokavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gollaprolu", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "I Polavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Jaggampeta", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kadiam", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kajuluru", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kakinada Rural", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kakinada Urban", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kapileswarapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Karapa", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Katrenikona", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kirlampudi", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Korukonda", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kottur", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") }
+  ];
   
   return (
     <section className="featured-section">
