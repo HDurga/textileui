@@ -176,13 +176,17 @@ const SearchBar = () => {
 };
 
 const FeaturedProducts = () => {
-  // Settings for the slider
+  // Settings for the slider with improved scrolling
   const settings = {
-    dots: false,
-    infinite: false,
+    dots: true,
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -207,38 +211,12 @@ const FeaturedProducts = () => {
       }
     ]
   };
-  const textileTypes = [
-    { name: "Addateegala", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Ainavailli", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Alamuru", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Allavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Amalapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Ambajipeta", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Anaparthy", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Atreyapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Biccavolu", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Devipatnam", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Gandepalle", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Gangavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Gokavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Gollaprolu", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "I Polavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Jaggampeta", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Kadiam", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Kajuluru", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Kakinada Rural", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Kakinada Urban", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Kapileswarapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Karapa", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Katrenikona", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Kirlampudi", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Korukonda", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-    { name: "Kottur", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
-  ];
-
+  
+  // Keep your existing textileTypes array
+  
   return (
     <section className="featured-section">
-      <h2>Types of fabrics </h2>
+      <h2>Types of fabrics</h2>
       <Slider {...settings} className="circle-icon-slider">
         {textileTypes.map((textile, index) => (
           <div className="circle-icon-card" key={index}>

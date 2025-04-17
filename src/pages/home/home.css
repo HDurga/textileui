@@ -239,6 +239,180 @@ body {
   font-size:14px;
   color:#666;
 }
+/* Circle icon slider styles */
+.circle-icon-slider {
+  margin: 20px 0;
+  padding: 10px 0;
+  overflow: visible;
+}
+
+.circle-icon-card {
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.circle-icon-container {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.circle-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.circle-icon-card:hover {
+  transform: translateY(-5px);
+}
+
+.circle-icon-card:hover .circle-icon-image {
+  transform: scale(1.1);
+}
+
+.circle-icon-info {
+  margin-top: 15px;
+}
+
+.circle-icon-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.circle-icon-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+.circle-icon-slider {
+  margin: 20px 0;
+  padding: 10px 0;
+  overflow: visible;
+}
+
+.circle-icon-card {
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.circle-icon-container {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.circle-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.circle-icon-card:hover {
+  transform: translateY(-5px);
+}
+
+.circle-icon-card:hover .circle-icon-image {
+  transform: scale(1.1);
+}
+
+.circle-icon-info {
+  margin-top: 15px;
+}
+
+.circle-icon-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.circle-icon-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+/* Circle icon slider styles*/
+.circle-icon-slider {
+  margin: 20px 0;
+  padding: 10px 0;
+  overflow: visible; 
+}
+.circle-icon-card {
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease; 
+}
+.circle-icon-container {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px; 
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.circle-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.3s ease;
+}
+.circle-icon-card:hover {
+  transform: translateY(-5px); 
+}
+.circle-icon-card:hover.circle-icon-image {
+  transform: scale(1.1); 
+}
+.circle-icon-info {
+  margin-top: 15px; 
+}
+.circle-icon-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333; 
+}
+.circle-icon-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4; 
+}
+/* Custom arrows for the slider */
+.circle-icon-slider .slick-prev,
+.circle-icon-slider .slick-next {
+  background: rgba(228, 115, 213, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+.circle-icon-slider .slick-prev:hover,
+.circle-icon-slider .slick-next:hover {
+  background: rgba(228, 115, 213, 1);
+}
+
+.circle-icon-slider .slick-prev:before,
+.circle-icon-slider .slick-next:before {
+  font-size: 20px;
+}
+
+.circle-icon-slider .slick-prev {
+  left: -20px;
+}
+
+.circle-icon-slider .slick-next {
+  right: -20px;
+}
 /*Mandals slider styles*/
 .Mandals-slider {
   margin: 0-10px;
