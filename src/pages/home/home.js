@@ -61,13 +61,32 @@ const NavBar = () => {
   
   return (
     <header className="site-header">
-      <nav className="nav-bar">
+      <nav className="nav-barhome">
         <div className="nav-container">
-          <div className="logo" onClick={() => navigate('/')}>
-            <img src={require("../../img/logo.png")} alt="Company Logo" />
+          {/* Logo on the left */}
+          <div className="logo" onClick={() => navigate('/')} style={{ marginRight: 'auto', order: '1' }}>
+            <img 
+              src={require("../../img/logo.png")} 
+              alt="Company Logo" 
+              style={{
+                height: '50px',
+                width: 'auto',
+                objectFit: 'contain'
+              }}
+            />
           </div>
           
-          <div className="nav-links">
+          {/* Search bar appears on the left side when scrolled */}
+          {isScrolled && (
+            <div className="header-search-container" style={{ order: '2' }}>
+              <div className="search-box">
+                <input type="text" placeholder="Search for fabrics, materials, or designs..." />
+                <button><i className="fas fa-search"></i> Search</button>
+              </div>
+            </div>
+          )}
+          
+          <div className="nav-links" style={{ order: isScrolled ? '3' : '2' }}>
             <button onClick={() => navigate('/')} className="nav-link">Home</button>
             <button onClick={() => navigate('/products')} className="nav-link">Products</button>
             <div className="dropdown">
@@ -83,34 +102,37 @@ const NavBar = () => {
                     onClick={() => navigate('/categories')} 
                     className="dropdown-item dropdown-header"
                   >
-                    <span className="dropdown-icon">🏷️</span> All Categories
+                    <span className="dropdown-icon"></span> All Categories
                     <span className="dropdown-description">View all textile categories</span>
                   </button>
                   <div className="dropdown-divider"></div>
-                  <button onClick={() => navigate('/categories/fabrics')} className="dropdown-item">Fabrics</button>
-                  <button onClick={() => navigate('/categories/laces')} className="dropdown-item">Laces</button>
-                  <button onClick={() => navigate('/categories/sarees')} className="dropdown-item">Sarees</button>
-                  <button onClick={() => navigate('/categories/carpets')} className="dropdown-item">Carpets</button>
+                  <button onClick={() => navigate('/categories')} className="dropdown-item">Fabrics</button>
+                  <button onClick={() => navigate('/categories')} className="dropdown-item">Laces</button>
+                  <button onClick={() => navigate('/categories')} className="dropdown-item">Sarees</button>
+                  <button onClick={() => navigate('/categories')} className="dropdown-item">Carpets</button>
                 </div>
               )}
             </div>
           </div>
           
-          {/* This will show when scrolling */}
-          {isScrolled && (
-            <div className="header-search-container">
-              <div className="search-box">
-                <input type="text" placeholder="Search for fabrics, materials, or designs..." />
-                <button><i className="fas fa-search"></i> Search</button>
-              </div>
-            </div>
-          )}
+          {/* Sign in/up buttons on the right */}
+          <div className="user-actions" style={{ marginLeft: 'auto', order: '4' }}>
+            <button className="sign-in">Sign In</button>
+            <button className="sign-up">Sign Up</button>
+          </div>
           
-          <div className="nav-right">
-            <div className="user-actions">
-              <button className="sign-in">Sign In</button>
-              <button className="sign-up">Sign Up</button>
-            </div>
+          {/* Add transparent logo to the right side */}
+          <div className="right-logo" style={{ order: '5' }}>
+            <img 
+              src={require("../../img/logo.png")} 
+              alt="Logo" 
+              style={{ 
+                height: '45px',
+                width: 'auto',
+                marginLeft: '15px',
+                background: 'transparent'
+              }}
+            />
           </div>
         </div>
       </nav>
@@ -143,11 +165,8 @@ const Slideshow = () => {
 };
 
 const SearchBar = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  
-  
   return (
-    <div className={`search-container ${isVisible ? 'visible' : 'hidden'}`}>
+    <div className="search-container">
       <div className="search-box">
         <input type="text" placeholder="Search for fabrics, materials, or designs..." />
         <button><i className="fas fa-search"></i> Search</button>
@@ -157,74 +176,82 @@ const SearchBar = () => {
 };
 
 const FeaturedProducts = () => {
+  // Settings for the slider
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   const textileTypes = [
-    { 
-      name: " Rajahmundry",
-      description: "Famous handwoven cotton from Mangalagiri, known for its unique zari borders and durability",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: "Uppada ",
-      description: "Delicate silk textile with intricate patterns, traditionally woven in Uppada",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: "pithapuram	", 
-      description: "Rich silk sarees with traditional temple borders and motifs from Dharmavaram",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: "Tuni	", 
-      description: "Fine cotton with gold border work, specialty of Venkatagiri weavers",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: " KaKinada", 
-      description: "Famous for its unique tie-dye technique, creating vibrant patterns",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: "Mandapeta ", 
-      description: "Traditional hand-painted or block-printed fabric with mythological themes",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: " Peddapalli	", 
-      description: "Luxurious silk sarees with intricate gold and silver brocade work",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: "Peddaapuram	", 
-      description: "Famous for its rich colors and heavy zari work, ideal for weddings",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name:  "Samallkot", 
-      description: "Lightweight and breathable fabric, perfect for summer wear",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    { 
-      name: " Rajanagaram	", 
-      description: "Soft and comfortable fabric, ideal for casual wear",
-      image: require("../../img/cotton.jpg") // High-quality image
-    },
-    
+    { name: "Addateegala", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Ainavailli", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Alamuru", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Allavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Amalapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Ambajipeta", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Anaparthy", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Atreyapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Biccavolu", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Devipatnam", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gandepalle", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gangavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gokavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Gollaprolu", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "I Polavaram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Jaggampeta", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kadiam", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kajuluru", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kakinada Rural", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kakinada Urban", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kapileswarapuram", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Karapa", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Katrenikona", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kirlampudi", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Korukonda", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
+    { name: "Kottur", description: "Cotton fabric manufacturing center", image: require("../../img/cotton.jpg") },
   ];
 
   return (
     <section className="featured-section">
-      <h2>All Types of Fabrics</h2>
-      <div className="big-icon-grid">
+      <h2>Types of fabrics </h2>
+      <Slider {...settings} className="circle-icon-slider">
         {textileTypes.map((textile, index) => (
-          <div className="big-icon-card" key={index}>
-            <img src={textile.image} alt={textile.name} className="big-icon-image" />
-            <div className="big-icon-info">
+          <div className="circle-icon-card" key={index}>
+            <div className="circle-icon-container">
+              <img src={textile.image} alt={textile.name} className="circle-icon-image" />
+            </div>
+            <div className="circle-icon-info">
               <h3>{textile.name}</h3>
               <p>{textile.description}</p>
             </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </section>
   );
 };

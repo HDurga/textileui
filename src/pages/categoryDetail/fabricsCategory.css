@@ -24,12 +24,11 @@
 }
 
 .logo {
-  cursor: pointer;
+  display: none;
 }
 
 .logo img {
-  height: 40px;
-  width: auto;
+  display: none;
 }
 
 .fabrics-header h1 {

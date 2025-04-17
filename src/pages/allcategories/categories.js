@@ -44,7 +44,7 @@ const NavBar = () => {
             onClick={() => navigate('/categories')} 
             className="dropdown-item dropdown-header"
           >
-            <span className="dropdown-icon">🏷️</span> All Categories
+            <span className="dropdown-icon"></span> All Categories
             <span className="dropdown-description">View all textile categories</span>
           </button>
           <div className="dropdown-divider"></div>
@@ -146,7 +146,7 @@ const Categories = ({ categoryData }) => {
       
       <div className="categories-hero">
         {/* Removed the heading for "TYPES OF Textiles" */}
-        <p>Explore our wide range of textile products</p>
+      
       </div>
 
       {/* Show search results message if searching */}
@@ -218,7 +218,7 @@ const Categories = ({ categoryData }) => {
           
           {/* Regular category grid when no specific category or fabric is selected */}
           {!selectedCategory && (
-            <div className="categories-grid">
+            <div className="categories-slider-container">
               {displayData.map((category, index) => {
                 // Filter items based on active filter
                 const filteredItems = activeFilter === 'All' 
@@ -231,40 +231,40 @@ const Categories = ({ categoryData }) => {
                 }
                 
                 return (
-                  <div className="category-card" key={index}>
-                    <div className="category-image">
-                      <div className="category-type">{category.title}</div>
-                      <img src={category.image} alt={category.title} />
-                    </div>
-                    <div className="category-content">
+                  <div className="category-slider" key={index}>
+                    <div className="category-header">
                       <h2>{category.title}</h2>
                       <p>{category.description}</p>
-                      
-                      <div className="category-items">
-                        {(activeFilter === 'All' ? category.items : filteredItems).map((item, itemIndex) => (
-                          <div 
-                            className="item-tag" 
-                            key={itemIndex}
-                            onClick={() => handleFilterChange(item)}
-                          >
-                            {item}
+                    </div>
+                    
+                    <div className="items-slider">
+                      {(activeFilter === 'All' ? category.items : filteredItems).map((item, itemIndex) => (
+                        <div 
+                          className="slider-item" 
+                          key={itemIndex}
+                          onClick={() => {
+                            setSelectedCategory(category.title);
+                            setSelectedFabricItem(item);
+                          }}
+                        >
+                          <div className="slider-item-image">
+                            <img src={category.image} alt={item} />
                           </div>
-                        ))}
-                      </div>
-                      
+                          <div className="slider-item-name">{item}</div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="category-footer">
                       <p className="category-details">{category.details}</p>
-                      // Find the button that navigates to category pages and remove or modify it
                       <button 
-                        // Replace this onClick handler
-                        // onClick={() => navigate(`/categories/${category.title.toLowerCase().replace(/\s+/g, '-')}`)}
-                        // With this one that doesn't navigate to a new page
                         onClick={() => {
                           setSelectedCategory(category.title);
                           setSelectedFabricItem(null);
                         }}
                         className="view-button"
                       >
-                        View Collection
+                        View All {category.title}
                       </button>
                     </div>
                   </div>
