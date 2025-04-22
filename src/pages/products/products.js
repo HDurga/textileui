@@ -1,15 +1,27 @@
 import React from 'react';
 import './products.css';
+import { useNavigate } from 'react-router-dom';
 
-const NavBar = () => (
-  <div className="nav-bar">
-    <a href="/">Home</a>
-    <a href="products">Products</a>
-    <a href="#categories">All Categories</a>
-  </div>
-);
+const Products = () => {
+  const navigate = useNavigate();
 
-const ProductStore = () => {
+  const NavBar = () => {
+    return (
+      <div className="nav-bar">
+        <button onClick={() => navigate('/')} className="nav-link">Home</button>
+        <button onClick={() => navigate('/products')} className="nav-link">Products</button>
+        <div className="dropdown">
+          <button 
+            onClick={() => navigate('/categories')} 
+            className="dropbtn"
+          >
+            All Categories
+          </button>
+        </div>
+      </div>
+    );
+  };
+
     const products = [
         {
             id: 1,
@@ -95,6 +107,6 @@ const ProductStore = () => {
             </footer>
         </div>
     );
-}
+};
 
-export default ProductStore;
+export default Products;
