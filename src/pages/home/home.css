@@ -45,7 +45,7 @@ color: white;
   position: fixed;
   top: 0; 
   width: 100%;
-  background:  #f3e6d3c7;
+  background: #ff4d4d47;
   backdrop-filter: blur(5px);
   padding: 15px 20px;
   z-index: 100;
@@ -80,17 +80,70 @@ color: white;
   filter: brightness(1.2) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2)) hue-rotate(2deg) saturate(1.5);
   transition: transform 0.3s ease;
 }
-
-/* For the modern black navbar */
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
+.nav-links {
   display: flex;
-  justify-content: flex-start; /* Align items to the start */
   align-items: center;
-  padding: 0 2rem;
+  gap: 30px;
+  margin-left: auto; /* Push nav links to the right */
+  order: 2; /* Change order to appear after logo */
 }
 
+.nav-links button {
+  color: #03020e;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  order: 3; /* Change order to appear after nav links */
+/*}For the modern black navbar */
+}
+
+
+.sign-in, .sign-up {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-align: right center;
+  transition: all 0.3s ease;
+}
+
+.sign-in {
+  background: transparent;
+  border: 1px solid #333;
+  color: #333;
+}
+
+.sign-up {
+  background: #e3e6e8;
+  border: none;
+  color: white;
+}
+
+.sign-in:hover {
+  background: #f5f5f5;
+}
+
+.sign-up:hover {
+  background: #0056b3;
+}
 .nav-right {
   margin-left: auto; /* Push user actions to the right */
   display: flex;
@@ -294,7 +347,14 @@ color: white;
   text-align: center;
   transition: transform 0.3s ease;
 }
+.circle-icon-card, .category-tile {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
+.circle-icon-card:hover, .category-tile:hover {
+  transform: translateY(-5px);
+}
 .circle-icon-container {
   margin: 0 auto;
   width: 150px;
@@ -1945,11 +2005,22 @@ body {
 }
 
 .sign-up {
-  background: #d6c314;
+  background: #eeede6;
   border: none;
   color: white;
+}.sign-up {
+  background: #e3e2eb;
+  border: 3px solid #13111b;
+  color: rgb(26, 9, 9);
 }
 
+.sign-in:hover, .sign-up:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(72, 46, 218, 0.3);
+  background: #e3e2eb; /* Keep the same background color on hover */
+  color: rgb(26, 9, 9); /* Keep the same text color on hover */
+
+}
 /* Remove any duplicate styles above this section */
 
 /* Sub Header */
@@ -2248,8 +2319,8 @@ body {
 }
 /* Update sign-in and sign-up buttons to be circular */
 .sign-in, .sign-up {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   padding: 0;
   display: flex;
@@ -2261,18 +2332,17 @@ body {
 }
 
 .sign-in {
-  background: #f0c8a0;
-  border: 2px solid #090909;
+  background: #f5f3f2;
+  border: 3px solid #090909;
   color: #0c1106;
   margin-right: 15px;
 }
 
 .sign-up {
   background: #e3e2eb;
-  border: 2px solid #482eda;
+  border: 3px solid #13111b;
   color: rgb(26, 9, 9);
 }
-
 .sign-in:hover, .sign-up:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(72, 46, 218, 0.3);

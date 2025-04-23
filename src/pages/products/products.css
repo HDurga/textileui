@@ -16,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    color: white;
+    color: rgb(236, 228, 228);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -25,7 +25,7 @@ body {
 }
 
 .nav-bar a {
-    color: rgb(193, 219, 75);
+    color: rgb(12, 12, 12);
     text-decoration: none;
     font-size: 1.2rem;
     padding: 10px 20px;

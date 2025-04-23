@@ -78,8 +78,6 @@ const Products = () => {
             <NavBar />
             
             <div className="hero-section">
-                <h1>Our Premium Collection</h1>
-                <p>Discover the finest textiles crafted with excellence</p>
             </div>
 
             <div className="products-wrapper">
