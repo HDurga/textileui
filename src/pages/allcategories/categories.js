@@ -95,20 +95,20 @@ const categoriesData = [
       {
         type: "Traditional Sarees",
         varieties: [
-          "Uppada Silk Sarees", 
-          "Gadwal Sarees",
-           "Pochampally Sarees",
-          "Dharmavaram Sarees", 
-          "Venkatagiri Sarees"
+          "Uppada Silk ", 
+          "Gadwal ",
+           "Pochampally ",
+          "Dharmavaram ", 
+          "Venkatagiri "
         ]
       },
       {
         type: "Modern Sarees",
         varieties: [
-          "Designer Sarees",
-           "Digital Print Sarees",
-          "Contemporary Silk Sarees", 
-          "Fusion Sarees"
+          "Designer ",
+           "Digital Print ",
+          "Contemporary Silk ", 
+          "Fusion "
         ]
       }
     ]

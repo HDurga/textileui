@@ -5,9 +5,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from '../../img/logo.png';
+import backgroundVideo from '../../img/fabricsvedio.mp4';
 
 const images = [
-  require("../../img/back1.png"), // Corrected path
+  require("../../img/Handloom Heritage.jpg"), // Corrected path
 ];
 
 // Remove or comment out categoriesData if not being used
@@ -166,17 +167,22 @@ const Slideshow = () => {
   }, []);
 
   return (
-    <div 
-      className="slideshow bg-image"
+  
+    <video 
+      autoPlay
+      loop
+      muted
+      className="background-video"
       style={{
-        backgroundImage: `url(${images[index]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '100vh'
-      }}
-    >
-    </div>
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+      }}>
+      <source src="../../img/fabricsvedio.mp4" type="video/mp4" />
+    </video>
   );
 };
 
@@ -201,6 +207,10 @@ const SearchBar = () => {
   
   return (
     <div className="search-container">
+      <video autoPlay loop muted className="background-video">
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="search-box">
         <input 
           type="text" 
@@ -383,7 +393,6 @@ const Home = () => {
   return (
     <div className="home-container">
       <NavBar />
-      <Slideshow />
       <SearchBar />
       <FeaturedProducts />
       <Categories />

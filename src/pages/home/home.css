@@ -598,15 +598,6 @@ color: white;
   opacity: 1;
 }
 
-.search-container {
-  margin-top: 80px;
-  background: url("../../img/back1.png") center/cover fixed;
-  padding: 4rem 2rem;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  color: white;
-}
-
 .search-container h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -767,7 +758,7 @@ color: white;
 
 .about-section {
   padding: 6rem 2rem;
-  background: url("../../img/back1.png") center/cover fixed;
+  background: url("../../img/fabricsvedio.mp4") center/cover fixed;
   color: white;
   text-align: center;
 }
@@ -1270,7 +1261,7 @@ transition: transform 0.3s ease;
 .search-container {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   margin-top: 80px;
-  background: url("../../img/back1.png") center/cover fixed;
+  background: url("../../img/fabricsvedio.mp4") center/cover fixed;
   padding: 4rem 2rem;
   text-align: center;
   backdrop-filter: blur(5px);
@@ -1587,15 +1578,6 @@ body {
 
 .slideshow img.active {
   opacity: 1;
-}
-
-.search-container {
-  margin-top: 80px;
-  background: url("../../img/back1.png") center/cover fixed;
-  padding: 4rem 2rem;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  color: white;
 }
 
 .search-container h1 {
@@ -2263,15 +2245,6 @@ body {
 }
 
 /* Original search container visibility control */
-.search-container {
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  margin-top: 80px;
-  background: url("../../img/back1.png") center/cover fixed;
-  padding: 4rem 2rem;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  color: white;
-}
 
 /* Hide original search when scrolled class is added */
 .scrolled .search-container {
