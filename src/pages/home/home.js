@@ -157,31 +157,15 @@ const NavBar = () => {
   );
 };
 const Slideshow = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-  
     <video 
       autoPlay
       loop
       muted
       className="background-video"
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-      }}>
-      <source src="../../img/fabricsvedio.mp4" type="video/mp4" />
+    >
+      <source src={backgroundVideo} type="video/mp4" />
+      Your browser does not support the video tag.
     </video>
   );
 };
@@ -207,10 +191,6 @@ const SearchBar = () => {
   
   return (
     <div className="search-container">
-      <video autoPlay loop muted className="background-video">
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       <div className="search-box">
         <input 
           type="text" 

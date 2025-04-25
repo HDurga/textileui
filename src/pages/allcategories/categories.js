@@ -64,7 +64,7 @@ const categoriesData = [
   {
     title: "Laces",
     image: lacesImage,
-    description: "Elegant laces for decorative and fashion purposes",
+    description: "Elegant V  for decorative and fashion purposes",
     items: [
       {
         type: "Traditional Laces",
