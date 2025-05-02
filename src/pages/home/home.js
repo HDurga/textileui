@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate }
+ from "react-router-dom";
 import "./home.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -42,7 +43,7 @@ const Slideshow = () => {
   );
 };
 
-// Add this before the NavBar component
+
 const categoriesData = [
   {
     title: "Fabrics",
@@ -460,32 +461,7 @@ const ProductSection = () => {
 export { NavBar };
 const SearchBar = () => null; // Already handled in NavBar
 
-const Categories = () => {
-  const navigate = useNavigate();
-  const categories = [
-    { name: "Handloom Heritage", description: "Ancient weaving...", image: require("../../img/cotton.jpg") },
-    { name: "Ikat Traditions", description: "Distinctive tie-dye...", image: require("../../img/cotton.jpg") },
-    { name: "Temple Designs", description: "Motifs inspired by temples", image: require("../../img/cotton.jpg") },
-    { name: "Modern Innovations", description: "Contemporary techniques", image: require("../../img/cotton.jpg") }
-  ];
 
-  return (
-    <section className="categories-section">
-      <h2>Types of Sarees</h2>
-      <div className="categories-grid">
-        {categories.map((c, i) => (
-          <div key={i} className="category-tile" onClick={() => navigate('/categories')}>
-            <img src={c.image} alt={c.name} />
-            <div className="category-info">
-              <h3>{c.name}</h3>
-              <p>{c.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
 
 const FeaturedProducts = () => {
   const navigate = useNavigate();
@@ -607,7 +583,6 @@ const Home = () => {
       <NavBar />
       <SearchSection />
       <ProductSection />
-      <Categories />
       <FeaturedProducts />
     </div>
   );
