@@ -384,6 +384,7 @@ const ProductSection = () => {
 
   return (
     <section className="products-section">
+
       <div className="filter-container">
         <div className="filter-group">
           <h3>PRICE RANGE</h3>
@@ -426,21 +427,13 @@ const ProductSection = () => {
         </div>
       </div>
 
-      <div className="products-container">
-        <div className="products-header">
-          <h2>fabrics of the products </h2>
-          <div className="sort-section">
-            <span>SORT BY:</span>
-            <select>
-              <option>Recommended</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>New Arrivals</option>
-            </select>
-          </div>
-        </div>
+      
+        <div className="products-fabrics">
+          <h2> Types of  fabrics</h2>
+    </div>
 
         <div className="products-grid">
+          
           {products.map(product => (
             <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
               <div className="product-image">
@@ -453,15 +446,12 @@ const ProductSection = () => {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 };
 
 export { NavBar };
 const SearchBar = () => null; // Already handled in NavBar
-
-
 
 const FeaturedProducts = () => {
   const navigate = useNavigate();
