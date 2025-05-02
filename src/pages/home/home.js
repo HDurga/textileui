@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./home.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import logo from '../../img/logo.png';
-import backgroundVideo from '../../img/fabricsvedio.mp4';
+import logo from '../../img/logo.jpeg';
+import backgroundImage from '../../img/back4.jpeg';
+
 
 const Slideshow = () => {
   const navigate = useNavigate();
@@ -37,46 +38,7 @@ const Slideshow = () => {
   };
 
   return (
-    <div className="slideshow">
-      <video autoPlay loop muted playsInline className="background-video">
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="video-overlay" />
-      {!isScrolled && (
-        <div className="search-container">
-          <div className="search-box">
-            <input
-              type="text"
-              placeholder="Search for fabrics, sarees, and more..."
-              value={searchTerm}
-              onChange={(e) => {
-                setSearchTerm(e.target.value);
-                setShowSuggestions(true);
-              }}
-              onFocus={() => setShowSuggestions(true)}
-              onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-            />
-            {showSuggestions && (
-              <div className="search-suggestions">
-                {['products', 'categories'].map(section => (
-                  <div className="suggestion-section" key={section}>
-                    <h3>{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
-                    {suggestions[section]
-                      .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                      .map((item, i) => (
-                        <div key={i} className="suggestion-item" onClick={() => { setSearchTerm(item); handleSearch(); }}>
-                          {item}
-                        </div>
-                      ))}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
+    <div className="hero"> /</div>
   );
 };
 
@@ -130,7 +92,7 @@ const categoriesData = [
   },
   {
     title: "Sarees",
-    image: require("../../img/handloomsarees p.jpg"),
+    image: require("../../img/cotton.jpg"),
     items: [
       {
         type: "Traditional Sarees",
@@ -180,7 +142,7 @@ const fabricTypes = [
   { name: "Silk Designer", description: "Luxurious and elegant", image: require("../../img/cotton.jpg") },
   { name: "Handloom Fabrics", description: "Traditional craftsmanship", image: require("../../img/cotton.jpg") },
   { name: "Linen Fabrics", description: "Cool and durable", image: require("../../img/cotton.jpg") },
-  { name: "Jute Fabrics", description: "Eco-friendly and sturdy", image: require("../../img/cotton.jpg") },
+  { name: "Jute Fabrics", description: "Eco-friendly and sturdy", image: require("../../img/jute.jpeg") },
   { name: "Polyester Fabrics", description: "Durable and wrinkle-resistant", image: require("../../img/cotton.jpg") },
   { name: "Rayon/Viscose Fabrics", description: "Soft and flowing", image: require("../../img/cotton.jpg") }
 ];
@@ -217,17 +179,17 @@ const NavBar = () => {
     { 
       name: "Handloom Heritage", 
       description: "Ancient weaving...", 
-      image: require("../../img/handloomsarees p.jpg") 
+      image: require("../../img/cotton.jpg") 
     },
     { 
       name: "Ikat Traditions", 
       description: "Distinctive tie-dye...", 
-      image: require("../../img/ikat sarees.jpg") 
+      image: require("../../img/cotton.jpg")
     },
     { 
       name: "Temple Designs", 
       description: "Motifs inspired by temples", 
-      image: require("../../img/temple  sarees.jpg") 
+      image: require("../../img/cotton.jpg") 
     }
     // Add any additional categories here
   ];
@@ -387,16 +349,124 @@ const NavBar = () => {
   );
 };
 
-export { Slideshow, NavBar };
+
+const ProductSection = () => {
+  const navigate = useNavigate();
+  const [selectedFilters, setSelectedFilters] = useState({
+    priceRange: '',
+    fabric: '',
+    colour: '',
+    craft: '',
+    occasion: ''
+  });
+
+  const products = [
+    {
+      id: 1,
+      name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
+      image: require("../../img/cotton.jpg"),
+      price: 2999
+    },
+    {
+      id: 2,
+      name: "Sky Blue Pure Cotton Saree",
+      image: require("../../img/cotton.jpg"),
+      price: 3499
+    },
+    {
+      id: 3,
+      name: "Designer Printed Cotton Saree",
+      image: require("../../img/cotton.jpg"),
+      price: 2799
+    }
+  ];
+
+  return (
+    <section className="products-section">
+      <div className="filter-container">
+        <div className="filter-group">
+          <h3>PRICE RANGE</h3>
+          <div className="filter-options">
+            <label><input type="checkbox" /> Under ₹1000</label>
+            <label><input type="checkbox" /> ₹1000 - ₹2000</label>
+            <label><input type="checkbox" /> ₹2000 - ₹3000</label>
+            <label><input type="checkbox" /> Above ₹3000</label>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <h3>FABRIC</h3>
+          <div className="filter-options">
+            <label><input type="checkbox" /> Cotton</label>
+            <label><input type="checkbox" /> Silk</label>
+            <label><input type="checkbox" /> Linen</label>
+            <label><input type="checkbox" /> Synthetic</label>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <h3>COLOUR</h3>
+          <div className="filter-options">
+            <label><input type="checkbox" /> Green</label>
+            <label><input type="checkbox" /> Blue</label>
+            <label><input type="checkbox" /> Red</label>
+            <label><input type="checkbox" /> Black</label>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <h3>CRAFT</h3>
+          <div className="filter-options">
+            <label><input type="checkbox" /> Screen Print</label>
+            <label><input type="checkbox" /> Hand Paint</label>
+            <label><input type="checkbox" /> Block Print</label>
+            <label><input type="checkbox" /> Embroidery</label>
+          </div>
+        </div>
+      </div>
+
+      <div className="products-container">
+        <div className="products-header">
+          <h2>fabrics of the products </h2>
+          <div className="sort-section">
+            <span>SORT BY:</span>
+            <select>
+              <option>Recommended</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>New Arrivals</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="products-grid">
+          {products.map(product => (
+            <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
+              <div className="product-image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <div className="product-details">
+                <h3>{product.name}</h3>
+                <p className="price">₹{product.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export { NavBar };
 const SearchBar = () => null; // Already handled in NavBar
 
 const Categories = () => {
   const navigate = useNavigate();
   const categories = [
-    { name: "Handloom Heritage", description: "Ancient weaving...", image: require("../../img/handloomsarees p.jpg") },
-    { name: "Ikat Traditions", description: "Distinctive tie-dye...", image: require("../../img/ikat sarees.jpg") },
-    { name: "Temple Designs", description: "Motifs inspired by temples", image: require("../../img/temple  sarees.jpg") },
-    { name: "Modern Innovations", description: "Contemporary techniques", image: require("../../img/modern.jpg") }
+    { name: "Handloom Heritage", description: "Ancient weaving...", image: require("../../img/cotton.jpg") },
+    { name: "Ikat Traditions", description: "Distinctive tie-dye...", image: require("../../img/cotton.jpg") },
+    { name: "Temple Designs", description: "Motifs inspired by temples", image: require("../../img/cotton.jpg") },
+    { name: "Modern Innovations", description: "Contemporary techniques", image: require("../../img/cotton.jpg") }
   ];
 
   return (
@@ -461,11 +531,82 @@ const FeaturedProducts = () => {
     </section>
   );
 };
+const SearchSection = () => {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const suggestions = {
+    products: ['Cotton', 'Silk', 'Wool', 'Synthetic', 'Linen', 'Denim', 'Georgette'],
+    categories: ['Fabrics', 'Laces', 'Sarees', 'Carpets']
+  };
+
+  const handleSearch = () => {
+    const lowerSearchTerm = searchTerm.toLowerCase();
+    if (lowerSearchTerm.includes('fabric') || suggestions.products.some(p => lowerSearchTerm.toLowerCase().includes(p.toLowerCase()))) {
+      navigate('/products');
+    } else if (lowerSearchTerm.includes('saree') || lowerSearchTerm.includes('carpet') || lowerSearchTerm.includes('lace')) {
+      navigate('/categories');
+    } else {
+      navigate('/products');
+    }
+  };
+
+  return (
+    <section className="hero-search-section">
+      <div className="search-overlay" style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        opacity: '0.9'
+      }}></div>
+      <div className="search-container">
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search for fabrics, sarees, and more..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onFocus={() => setShowSuggestions(true)}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            <span className="search-icon">🔍</span>
+          </button>
+        </div>
+        {showSuggestions && (
+          <div className="search-suggestions">
+            {Object.keys(suggestions).map(section => (
+              <div className="suggestion-section" key={section}>
+                <h3>{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
+                {suggestions[section].map((item, i) => (
+                  <div 
+                    key={i} 
+                    className="suggestion-item" 
+                    onClick={() => {
+                      setSearchTerm(item);
+                      setShowSuggestions(false);
+                      navigate('/products');
+                    }}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
 const Home = () => {
   return (
     <div className="home">
       <NavBar />
-      <Slideshow />
+      <SearchSection />
+      <ProductSection />
       <Categories />
       <FeaturedProducts />
     </div>
