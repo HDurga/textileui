@@ -39,6 +39,13 @@ const Products = () => {
       description: "Modern synthetic blend with enhanced durability",
       details: "Polyester-cotton blend, Easy maintenance, Wrinkle-resistant",
       image: require("../../../img/cotton.jpg")
+    },
+    {
+      id: 6,
+      name: "handlooms fabrics",
+      description: "High-quality polyester fabric with a soft, breathable feel",
+      details: "100% polyester, Soft and comfortable, Ideal for everyday wear",
+      image: require("../../../img/cotton.jpg")
     }
   ];
 

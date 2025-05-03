@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate }
- from "react-router-dom";
+from "react-router-dom";
 import "./home.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -199,113 +199,51 @@ const NavBar = () => {
     <header className="site-header">
       <nav className="nav-barhome">
         <div className="nav-container">
-          <div className="left-section">
-            <div className="logo" onClick={() => navigate('/')}>
-              <img src={logo} alt="Logo" />
-            </div>
-  
-            <div className="nav-links">
-              <button onClick={() => navigate('/')} className="nav-link">Home</button>
-              
-              <div className="dropdown-products">
-                <button 
-                  className="nav-link"
-                  onMouseEnter={() => setShowProductsDropdown(true)}
-                  onMouseLeave={() => setShowProductsDropdown(false)}
-                >
-                  Products
-                </button>
-                {showProductsDropdown && (
-                  <div 
-                    className="products-dropdown-content"
-                    onMouseEnter={() => setShowProductsDropdown(true)}
-                    onMouseLeave={() => setShowProductsDropdown(false)}
-                  >
-                    <h3 className="dropdown-title">Fabric Types</h3>
-                    <div className="products-scroll-container">
-                      {fabricTypes.map((fabric, idx) => (
-                        <div key={idx} className="product-preview" onClick={() => navigate('/products')}>
-                          <div className="product-image">
-                            <img src={fabric.image} alt={fabric.name} />
-                          </div>
-                          <div className="product-info">
-                            <h4>{fabric.name}</h4>
-                            <p>{fabric.description}</p>
+          {/* Logo */}
+          <div className="logo" onClick={() => navigate('/')}>
+            <img src={logo} alt="Logo" className="transparent-logo" />
+          </div>
+
+          {/* Categories Dropdown */}
+          <div className="nav-item dropdown">
+            <span>All Categories</span>
+            <div className="mega-dropdown">
+              <div className="mega-content">
+                <div className="category-list">
+                  {categoriesData.map((category, idx) => (
+                    <div 
+                      key={idx}
+                      className={`category-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
+                      onClick={() => setSelectedCategory(category)}
+                    >
+                      {category.title}
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="subcategory-content">
+                  {selectedCategory && (
+                    <div className="subcategory-grid">
+                      {selectedCategory.items.map((item, idx) => (
+                        <div key={idx} className="subcategory-card">
+                          <h3>{item.type}</h3>
+                          <div className="variety-list">
+                            {item.varieties.map((variety, i) => (
+                              <div key={i} className="variety-item" onClick={() => navigate('/products')}>
+                                <span>{variety.name}</span>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       ))}
                     </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="dropdown">
-                <button 
-                  className="dropbtn"
-                  onMouseEnter={() => setShowDropdown(true)}
-                  onMouseLeave={() => setShowDropdown(false)}
-                >
-                  Categories
-                </button>
-                {showDropdown && (
-                  <div 
-                    className="dropdown-content"
-                    onMouseEnter={() => setShowDropdown(true)}
-                    onMouseLeave={() => setShowDropdown(false)}
-                  >
-                    <div className="categories-scroll-container">
-                      <div className="categories-main-list">
-                        {categoriesData.map((category, idx) => (
-                          <div 
-                            key={idx} 
-                            className={`category-main-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
-                            onClick={() => setSelectedCategory(category)}
-                          >
-                            <div className="category-main-image">
-                              <img src={category.image} alt={category.title} />
-                            </div>
-                            <div className="category-main-info">
-                              <h4>{category.title}</h4>
-                              <p>{category.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      {selectedCategory && (
-                        <div className="category-details">
-                          <div className="types-column">
-                            <h3>{selectedCategory.title} Types</h3>
-                            <div className="types-list">
-                              {selectedCategory.items.map((item, idx) => (
-                                <div 
-                                  key={idx}
-                                  className={`type-item ${selectedType?.type === item.type ? 'active' : ''}`}
-                                  onClick={() => setSelectedType(item)}
-                                >
-                                  <div className="type-content">
-                                    <span className="type-name">{item.type}</span>
-                                    <div className="varieties-list">
-                                      {item.varieties.map((variety, i) => (
-                                        <div key={i} className="variety-item">
-                                          <h5>{variety.name}</h5>
-                                          <p>{variety.description}</p>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
           </div>
 
+          {/* Search Bar */}
           <div className="nav-search">
             <input
               type="text"
@@ -315,34 +253,16 @@ const NavBar = () => {
               onFocus={() => setShowSuggestions(true)}
             />
             <span className="search-icon" onClick={handleSearch}>🔍</span>
-            {showSuggestions && (
-              <div className="search-suggestions">
-                {Object.keys(suggestions).map(section => (
-                  <div className="suggestion-section" key={section}>
-                    <h3>{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
-                    {suggestions[section].map((item, i) => (
-                      <div key={i} className="suggestion-item" onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/products');
-                      }}>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
-          <div className="right-section">
-            <div className="nav-search">
-              <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
-                Sign In
-              </button>
-              <button className="auth-btn signup-btn" onClick={() => navigate('/signup')}>
-                Sign Up
-              </button>
-            </div>
+
+          {/* Auth Buttons */}
+          <div className="auth-buttons">
+            <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
+              Sign In
+            </button>
+            <button className="auth-btn signup-btn" onClick={() => navigate('/signup')}>
+              Sign Up
+            </button>
           </div>
         </div>
       </nav>
