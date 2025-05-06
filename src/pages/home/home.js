@@ -3,6 +3,7 @@ import { useNavigate }
 from "react-router-dom";
 import "./home.css";
 import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import logo from '../../img/logo.jpeg';
 import backgroundImage from '../../img/back4.jpeg';
@@ -204,40 +205,87 @@ const NavBar = () => {
             <img src={logo} alt="Logo" className="transparent-logo" />
           </div>
 
-          {/* Categories Dropdown */}
-          <div className="nav-item dropdown">
-            <span>All Categories</span>
-            <div className="mega-dropdown">
-              <div className="mega-content">
-                <div className="category-list">
-                  {categoriesData.map((category, idx) => (
-                    <div 
-                      key={idx}
-                      className={`category-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
-                      onClick={() => setSelectedCategory(category)}
-                    >
-                      {category.title}
+          {/* Navigation Links and Categories */}
+          <div className="nav-menu">
+            <div className="nav-item dropdown">
+              <span>ES GODAVARI</span>
+              <div className="dropdown-content">
+
+                <div className="circular-categories">
+                  <div className="category-circle" onClick={() => navigate('/sarees')}>
+                    <div className="circle-image">
+                      <img src={require("../../img/cotton.jpg")} alt="Sarees" />
                     </div>
-                  ))}
+                    <span>Sarees</span>
+                  </div>
+                  <div className="category-circle" onClick={() => navigate('/kurtas')}>
+                    <div className="circle-image">
+                      <img src={require("../../img/cotton.jpg")} alt="Kurtas" />
+                    </div>
+                    <span>Kurtas</span>
+                  </div>
+                  <div className="category-circle" onClick={() => navigate('/blouses')}>
+                    <div className="circle-image">
+                      <img src={require("../../img/cotton.jpg")} alt="Blouses" />
+                    </div>
+                    <span>Blouses</span>
+                  </div>
+                  <div className="category-circle" onClick={() => navigate('/unstitched-suit-sets')}>
+                    <div className="circle-image">
+                      <img src={require("../../img/cotton.jpg")} alt="Unstitched Suit Sets" />
+                    </div>
+                    <span>Unstitched Suit Sets</span>
+                  </div>
+                  <div className="category-circle" onClick={() => navigate('/short-tops')}>
+                    <div className="circle-image">
+                      <img src={require("../../img/cotton.jpg")} alt="Short Tops" />
+                    </div>
+                    <span>Short Tops</span>
+                  </div>
+                  <div className="category-circle" onClick={() => navigate('/lehengas')}>
+                    <div className="circle-image">
+                      <img src={require("../../img/cotton.jpg")} alt="Lehengas" />
+                    </div>
+                    <span>Lehengas</span>
+                  </div>
                 </div>
-                
-                <div className="subcategory-content">
-                  {selectedCategory && (
-                    <div className="subcategory-grid">
-                      {selectedCategory.items.map((item, idx) => (
-                        <div key={idx} className="subcategory-card">
-                          <h3>{item.type}</h3>
-                          <div className="variety-list">
-                            {item.varieties.map((variety, i) => (
-                              <div key={i} className="variety-item" onClick={() => navigate('/products')}>
-                                <span>{variety.name}</span>
-                              </div>
-                            ))}
+              </div>
+            </div>
+            
+            <div className="nav-item dropdown">
+              <span>All Categories</span>
+              <div className="mega-dropdown">
+                <div className="mega-content">
+                  <div className="category-list">
+                    {categoriesData.map((category, idx) => (
+                      <div 
+                        key={idx}
+                        className={`category-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
+                        onClick={() => setSelectedCategory(category)}
+                      >
+                        {category.title}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="subcategory-content">
+                    {selectedCategory && (
+                      <div className="subcategory-grid">
+                        {selectedCategory.items.map((item, idx) => (
+                          <div key={idx} className="subcategory-card">
+                            <h3>{item.type}</h3>
+                            <div className="variety-list">
+                              {item.varieties.map((variety, i) => (
+                                <div key={i} className="variety-item" onClick={() => navigate('/products')}>
+                                  <span>{variety.name}</span>
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -247,12 +295,11 @@ const NavBar = () => {
           <div className="nav-search">
             <input
               type="text"
-              placeholder="Search products..."
+              placeholder=""
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              onFocus={() => setShowSuggestions(true)}
             />
-            <span className="search-icon" onClick={handleSearch}>🔍</span>
+            <span className="search-icon" onClick={handleSearch}></span>
           </div>
 
           {/* Auth Buttons */}
@@ -286,19 +333,19 @@ const ProductSection = () => {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
       image: require("../../img/cotton.jpg"),
-      price: 2999
+      
     },
     {
       id: 2,
       name: "Sky Blue Pure Cotton Saree",
       image: require("../../img/cotton.jpg"),
-      price: 3499
+      
     },
     {
       id: 3,
       name: "Designer Printed Cotton Saree",
       image: require("../../img/cotton.jpg"),
-      price: 2799
+    
     }
   ];
 
@@ -455,29 +502,32 @@ const SearchSection = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
+            onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
           />
           <button className="search-button" onClick={handleSearch}>
-            <span className="search-icon">🔍</span>
+            <i className="fas fa-search"></i>
           </button>
         </div>
         {showSuggestions && (
           <div className="search-suggestions">
-            {Object.keys(suggestions).map(section => (
+            {Object.entries(suggestions).map(([section, items]) => (
               <div className="suggestion-section" key={section}>
                 <h3>{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
-                {suggestions[section].map((item, i) => (
-                  <div 
-                    key={i} 
-                    className="suggestion-item" 
-                    onClick={() => {
-                      setSearchTerm(item);
-                      setShowSuggestions(false);
-                      navigate('/products');
-                    }}
-                  >
-                    {item}
-                  </div>
-                ))}
+                <div className="suggestion-items">
+                  {items.map((item, i) => (
+                    <div 
+                      key={i} 
+                      className="suggestion-item" 
+                      onClick={() => {
+                        setSearchTerm(item);
+                        setShowSuggestions(false);
+                        navigate('/products');
+                      }}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
