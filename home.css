@@ -625,7 +625,7 @@ body.scrolled .nav-logo {
   flex: 1;
   padding: 15px 25px;
   border: none;
-  border-radius: 30px;
+  border-radius: 150px;
   font-size: 1.1rem;
   background: rgba(255, 255, 255, 0.9);
 }

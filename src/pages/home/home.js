@@ -5,7 +5,7 @@ import "./home.css";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
-import logo from '../../img/logo.jpeg';
+import logo from '../../img/logo imag.png';
 import backgroundImage from '../../img/back4.jpeg';
 
 
@@ -208,7 +208,7 @@ const NavBar = () => {
           {/* Navigation Links and Categories */}
           <div className="nav-menu">
             <div className="nav-item dropdown">
-              <span>ES GODAVARI</span>
+              <span>Region</span>
               <div className="dropdown-content">
 
                 <div className="circular-categories">
@@ -253,7 +253,7 @@ const NavBar = () => {
             </div>
             
             <div className="nav-item dropdown">
-              <span>All Categories</span>
+              <span>Materials</span>
               <div className="mega-dropdown">
                 <div className="mega-content">
                   <div className="category-list">
@@ -295,11 +295,48 @@ const NavBar = () => {
           <div className="nav-search">
             <input
               type="text"
-              placeholder=""
+              placeholder="Search for fabrics, sarees, carpets..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
             />
-            <span className="search-icon" onClick={handleSearch}></span>
+            <button className="search-button" onClick={handleSearch}>
+              <i className="fas fa-search"></i>
+            </button>
+            {showSuggestions && searchTerm && (
+              <div className="search-suggestions">
+                <div className="suggestion-group">
+                  <h4>Products</h4>
+                  {suggestions.products
+                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
+                    .map((item, index) => (
+                      <div key={index} className="suggestion-item" onClick={() => {
+                        setSearchTerm(item);
+                        setShowSuggestions(false);
+                        navigate('/products');
+                      }}>
+                        {item}
+                      </div>
+                    ))
+                  }
+                </div>
+                <div className="suggestion-group">
+                  <h4>Categories</h4>
+                  {suggestions.categories
+                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
+                    .map((item, index) => (
+                      <div key={index} className="suggestion-item" onClick={() => {
+                        setSearchTerm(item);
+                        setShowSuggestions(false);
+                        navigate('/categories');
+                      }}>
+                        {item}
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Auth Buttons */}
@@ -352,47 +389,9 @@ const ProductSection = () => {
   return (
     <section className="products-section">
 
-      <div className="filter-container">
-        <div className="filter-group">
-          <h3>PRICE RANGE</h3>
-          <div className="filter-options">
-            <label><input type="checkbox" /> Under ₹1000</label>
-            <label><input type="checkbox" /> ₹1000 - ₹2000</label>
-            <label><input type="checkbox" /> ₹2000 - ₹3000</label>
-            <label><input type="checkbox" /> Above ₹3000</label>
-          </div>
-        </div>
+      
+            
 
-        <div className="filter-group">
-          <h3>FABRIC</h3>
-          <div className="filter-options">
-            <label><input type="checkbox" /> Cotton</label>
-            <label><input type="checkbox" /> Silk</label>
-            <label><input type="checkbox" /> Linen</label>
-            <label><input type="checkbox" /> Synthetic</label>
-          </div>
-        </div>
-
-        <div className="filter-group">
-          <h3>COLOUR</h3>
-          <div className="filter-options">
-            <label><input type="checkbox" /> Green</label>
-            <label><input type="checkbox" /> Blue</label>
-            <label><input type="checkbox" /> Red</label>
-            <label><input type="checkbox" /> Black</label>
-          </div>
-        </div>
-
-        <div className="filter-group">
-          <h3>CRAFT</h3>
-          <div className="filter-options">
-            <label><input type="checkbox" /> Screen Print</label>
-            <label><input type="checkbox" /> Hand Paint</label>
-            <label><input type="checkbox" /> Block Print</label>
-            <label><input type="checkbox" /> Embroidery</label>
-          </div>
-        </div>
-      </div>
 
       
         <div className="products-fabrics">
@@ -495,19 +494,7 @@ const SearchSection = () => {
         opacity: '0.9'
       }}></div>
       <div className="search-container">
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search for fabrics, sarees, and more..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-          />
-          <button className="search-button" onClick={handleSearch}>
-            <i className="fas fa-search"></i>
-          </button>
-        </div>
+      
         {showSuggestions && (
           <div className="search-suggestions">
             {Object.entries(suggestions).map(([section, items]) => (
