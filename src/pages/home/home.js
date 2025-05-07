@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import logo from '../../img/logo imag.png';
 import backgroundImage from '../../img/back4.jpeg';
+import ShopByCategory from "../shopbycategory/shopbycategory";
 
 
 const Slideshow = () => {
@@ -531,6 +532,7 @@ const Home = () => {
       <SearchSection />
       <ProductSection />
       <FeaturedProducts />
+      <ShopByCategory></ShopByCategory>
     </div>
   );
 };
