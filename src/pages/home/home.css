@@ -654,6 +654,54 @@ html {
   background: #555;
 }
 
+.favorites-container {
+  margin-right: 20px;
+  position: relative;
+}
+
+.favorites-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  position: relative;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.favorites-btn i {
+  font-size: 1.4rem;
+}
+
+.favorites-btn:hover {
+  color: #e473d5;
+}
+
+.favorites-count {
+  position: absolute;
+  top: -21px;
+  right: -71px;
+  background: #e473d5;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .favorites-container {
+    margin-right: 10px;
+  }
+
+  .favorites-btn i {
+    font-size: 1.2rem;
+  }
+}
+
 .logo {
   flex: 0 0 auto; /* Prevents logo from growing or shrinking */
   display: flex;
@@ -1151,6 +1199,169 @@ html {
   background: #555;
 }
 
+.favorites-container {
+  margin-right: 20px;
+  position: relative;
+}
+
+.favorites-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorites-btn i {
+  color: #e473d5;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.favorites-count {
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.favorites-btn:hover i {
+  transform: scale(1.1);
+  color: #ff69b4;
+}
+
+.user-profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.user-label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.user-profile-container:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-header i {
+  font-size: 2rem;
+  color: #333;
+  margin-right: 12px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 5px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item i {
+  font-size: 1.1rem;
+  color: #333;
+  width: 20px;
+}
+
+.dropdown-item span {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.user-name {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-profile-btn i {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .favorites-container,
+  .user-profile-container {
+    margin: 0 10px;
+  }
+
+  .favorites-btn i,
+  .user-profile-btn i {
+    font-size: 1.2rem;
+  }
+}
+
 .logo {
   flex: 0 0 auto; /* Prevents logo from growing or shrinking */
   display: flex;
@@ -1646,6 +1857,169 @@ html {
   background: #555;
 }
 
+.favorites-container {
+  margin-right: 20px;
+  position: relative;
+}
+
+.favorites-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorites-btn i {
+  color: #e473d5;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.favorites-count {
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.favorites-btn:hover i {
+  transform: scale(1.1);
+  color: #ff69b4;
+}
+
+.user-profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.user-label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.user-profile-container:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-header i {
+  font-size: 2rem;
+  color: #333;
+  margin-right: 12px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 5px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item i {
+  font-size: 1.1rem;
+  color: #333;
+  width: 20px;
+}
+
+.dropdown-item span {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.user-name {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-profile-btn i {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .favorites-container,
+  .user-profile-container {
+    margin: 0 10px;
+  }
+
+  .favorites-btn i,
+  .user-profile-btn i {
+    font-size: 1.2rem;
+  }
+}
+
 .logo {
   flex: 0 0 auto; /* Prevents logo from growing or shrinking */
   display: flex;
@@ -2143,6 +2517,169 @@ html {
   background: #555;
 }
 
+.favorites-container {
+  margin-right: 20px;
+  position: relative;
+}
+
+.favorites-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorites-btn i {
+  color: #e473d5;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.favorites-count {
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.favorites-btn:hover i {
+  transform: scale(1.1);
+  color: #ff69b4;
+}
+
+.user-profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.user-label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.user-profile-container:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-header i {
+  font-size: 2rem;
+  color: #333;
+  margin-right: 12px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 5px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item i {
+  font-size: 1.1rem;
+  color: #333;
+  width: 20px;
+}
+
+.dropdown-item span {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.user-name {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-profile-btn i {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .favorites-container,
+  .user-profile-container {
+    margin: 0 10px;
+  }
+
+  .favorites-btn i,
+  .user-profile-btn i {
+    font-size: 1.2rem;
+  }
+}
+
 .logo {
   flex: 0 0 auto; /* Prevents logo from growing or shrinking */
   display: flex;
@@ -2640,6 +3177,169 @@ html {
   background: #555;
 }
 
+.favorites-container {
+  margin-right: 20px;
+  position: relative;
+}
+
+.favorites-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorites-btn i {
+  color: #e473d5;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.favorites-count {
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.favorites-btn:hover i {
+  transform: scale(1.1);
+  color: #ff69b4;
+}
+
+.user-profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.user-label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.user-profile-container:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-header i {
+  font-size: 2rem;
+  color: #333;
+  margin-right: 12px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 5px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item i {
+  font-size: 1.1rem;
+  color: #333;
+  width: 20px;
+}
+
+.dropdown-item span {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.user-name {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-profile-btn i {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .favorites-container,
+  .user-profile-container {
+    margin: 0 10px;
+  }
+
+  .favorites-btn i,
+  .user-profile-btn i {
+    font-size: 1.2rem;
+  }
+}
+
 .logo {
   flex: 0 0 auto; /* Prevents logo from growing or shrinking */
   display: flex;
@@ -3135,6 +3835,169 @@ html {
 .category-list::-webkit-scrollbar-thumb:hover,
 .subcategory-content::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.favorites-container {
+  margin-right: 20px;
+  position: relative;
+}
+
+.favorites-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorites-btn i {
+  color: #e473d5;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.favorites-count {
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.favorites-btn:hover i {
+  transform: scale(1.1);
+  color: #ff69b4;
+}
+
+.user-profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greeting {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.user-label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.user-profile-container:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-header i {
+  font-size: 2rem;
+  color: #333;
+  margin-right: 12px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 5px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item i {
+  font-size: 1.1rem;
+  color: #333;
+  width: 20px;
+}
+
+.dropdown-item span {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.user-name {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-profile-btn i {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .favorites-container,
+  .user-profile-container {
+    margin: 0 10px;
+  }
+
+  .favorites-btn i,
+  .user-profile-btn i {
+    font-size: 1.2rem;
+  }
 }
 
 

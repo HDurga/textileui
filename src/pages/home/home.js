@@ -41,7 +41,7 @@ const Slideshow = () => {
   };
 
   return (
-    <div className="hero"> /</div>
+    <div className="hero"></div>
   );
 };
 
@@ -340,6 +340,64 @@ const NavBar = () => {
             )}
           </div>
 
+          {/* Favorites Button */}
+          <div className="favorites-container">
+            <button className="favorites-btn" onClick={() => navigate('/favorites')}>
+              <i className="fas fa-heart"></i>
+              <span className="favorites-count">❤ Favorites</span>
+            </button>
+          </div>
+
+          {/* User Profile */}
+          <div className="user-profile-container">
+            <button className="user-profile-btn">
+              <i className="fas fa-user-circle"></i>
+              <div className="user-info">
+                <span className="user-label">User</span>
+              </div>
+            </button>
+            <div className="user-dropdown">
+              <div className="dropdown-header">
+                <i className="fas fa-user-circle"></i>
+                <div className="header-info">
+                  <span className="greeting">Good Morning</span>
+                  <span className="user-name">User</span>
+                </div>
+              </div>
+              <div className="dropdown-divider"></div>
+              <div className="dropdown-item" onClick={() => navigate('/profile')}>
+                <i className="fas fa-user"></i>
+                <span>My Profile</span>
+              </div>
+              <div className="dropdown-item" onClick={() => navigate('/orders')}>
+                <i className="fas fa-shopping-bag"></i>
+                <span>My Orders</span>
+              </div>
+              <div className="dropdown-item" onClick={() => navigate('/wishlist')}>
+                <i className="fas fa-heart"></i>
+                <span>My Wishlist</span>
+              </div>
+              <div className="dropdown-item">
+                <i className="fas fa-tag"></i>
+                <span>Offers</span>
+              </div>
+              <div className="dropdown-divider"></div>
+              <div className="dropdown-item" onClick={() => navigate('/settings')}>
+                <i className="fas fa-cog"></i>
+                <span>Settings</span>
+              </div>
+              <div className="dropdown-item" onClick={() => navigate('/help')}>
+                <i className="fas fa-question-circle"></i>
+                <span>Help & Support</span>
+              </div>
+              <div className="dropdown-divider"></div>
+              <div className="dropdown-item">
+                <i className="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+              </div>
+            </div>
+          </div>
+
           {/* Auth Buttons */}
           <div className="auth-buttons">
             <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
@@ -389,12 +447,7 @@ const ProductSection = () => {
 
   return (
     <section className="products-section">
-
-      
-            
-
-
-      
+    
         <div className="products-fabrics">
           <h2> Types of  fabrics</h2>
     </div>
@@ -443,7 +496,7 @@ const FeaturedProducts = () => {
 
   return (
     <section className="featured-section">
-      <h2>Types of Fabrics</h2>
+      <h2>types of fabrics</h2>
       <Slider {...settings}>
         {fabrics.map((fabric, idx) => (
           <div 

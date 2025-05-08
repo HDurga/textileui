@@ -53,7 +53,7 @@ const ShopByCategory = () => {
   return (
     <div className="page-container">
       <div className="materials-category-container">
-        <h2>Types of Materials</h2>
+        <h2>shop by categories</h2>
         <div className="materials-grid">
           {materials.map((material, index) => (
             <div 
