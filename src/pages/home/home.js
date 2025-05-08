@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import logo from '../../img/logo imag.png';
 import backgroundImage from '../../img/back4.jpeg';
 import ShopByCategory from "../shopbycategory/shopbycategory";
+import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
 
 
 const Slideshow = () => {
@@ -449,7 +450,7 @@ const ProductSection = () => {
     <section className="products-section">
     
         <div className="products-fabrics">
-          <h2> Types of  fabrics</h2>
+          <h2> craft stories </h2>
     </div>
 
         <div className="products-grid">
@@ -585,7 +586,8 @@ const Home = () => {
       <SearchSection />
       <ProductSection />
       <FeaturedProducts />
-      <ShopByCategory></ShopByCategory>
+       <ShopByCategory />
+       <SeasonsFabrics />
     </div>
   );
 };
