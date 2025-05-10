@@ -10,6 +10,9 @@ import backgroundImage from '../../img/back4.jpeg';
 import ShopByCategory from "../shopbycategory/shopbycategory";
 import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
 
+import { useTranslation } from 'react-i18next';
+import '../../i18n';
+
 
 const Slideshow = () => {
   const navigate = useNavigate();
@@ -55,19 +58,19 @@ const categoriesData = [
       {
         type: "Natural Fabrics",
         varieties: [
-          { name: "Cotton" },
-          { name: "Silk" },
-          { name: "Wool" },
-          { name: "Linen" },
-          { name: "Jute" }
+          { name: "Cotton", translationKey: "materials.cotton" },
+          { name: "Silk", translationKey: "materials.silk" },
+          { name: "Wool", translationKey: "materials.wool" },
+          { name: "Linen", translationKey: "materials.linen" },
+          { name: "Jute", translationKey: "materials.jute" }
         ]
       },
       {
         type: "Synthetic Fabrics",
         varieties: [
-          { name: "Polyester" },
-          { name: "Nylon" },
-          { name: "Rayon" }
+          { name: "Polyester", translationKey: "materials.polyester" },
+          { name: "Nylon", translationKey: "materials.nylon" },
+          { name: "Rayon", translationKey: "materials.rayon" }
         ]
       }
     ]
@@ -152,6 +155,7 @@ const fabricTypes = [
 ];
 
 const NavBar = () => {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
@@ -160,7 +164,8 @@ const NavBar = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(categoriesData[0]);
   const [selectedType, setSelectedType] = useState(null);
-
+  
+  
   const suggestions = {
     products: ['Cotton', 'Silk', 'Wool', 'Synthetic', 'Linen', 'Denim', 'Georgette'],
     categories: ['Fabrics', 'Laces', 'Sarees', 'Carpets'],
@@ -176,6 +181,10 @@ const NavBar = () => {
     } else {
       navigate('/products');
     }
+  };
+  
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
   };
 
   // Add categories data
@@ -209,53 +218,51 @@ const NavBar = () => {
 
           {/* Navigation Links and Categories */}
           <div className="nav-menu">
+            {/* Language Selector */}
             <div className="nav-item dropdown">
-              <span>Region</span>
+              <span>
+                <i className="fas fa-globe"></i>
+                {i18n.language.toUpperCase()}
+              </span>
               <div className="dropdown-content">
+                <div className="language-list">
+                <button onClick={() => handleLanguageChange('en')}>English</button>
+                <button onClick={() => handleLanguageChange('hi')}>Hindi</button>
+                <button onClick={() => handleLanguageChange('te')}>Telugu</button>
+                </div>
+              </div>
+            </div>
 
-                <div className="circular-categories">
-                  <div className="category-circle" onClick={() => navigate('/sarees')}>
-                    <div className="circle-image">
-                      <img src={require("../../img/cotton.jpg")} alt="Sarees" />
-                    </div>
-                    <span>Sarees</span>
-                  </div>
-                  <div className="category-circle" onClick={() => navigate('/kurtas')}>
-                    <div className="circle-image">
-                      <img src={require("../../img/cotton.jpg")} alt="Kurtas" />
-                    </div>
-                    <span>Kurtas</span>
-                  </div>
-                  <div className="category-circle" onClick={() => navigate('/blouses')}>
-                    <div className="circle-image">
-                      <img src={require("../../img/cotton.jpg")} alt="Blouses" />
-                    </div>
-                    <span>Blouses</span>
-                  </div>
-                  <div className="category-circle" onClick={() => navigate('/unstitched-suit-sets')}>
-                    <div className="circle-image">
-                      <img src={require("../../img/cotton.jpg")} alt="Unstitched Suit Sets" />
-                    </div>
-                    <span>Unstitched Suit Sets</span>
-                  </div>
-                  <div className="category-circle" onClick={() => navigate('/short-tops')}>
-                    <div className="circle-image">
-                      <img src={require("../../img/cotton.jpg")} alt="Short Tops" />
-                    </div>
-                    <span>Short Tops</span>
-                  </div>
-                  <div className="category-circle" onClick={() => navigate('/lehengas')}>
-                    <div className="circle-image">
-                      <img src={require("../../img/cotton.jpg")} alt="Lehengas" />
-                    </div>
-                    <span>Lehengas</span>
+            {/* Region dropdown */}
+            <div className="nav-item dropdown">
+              <span>{t('navigation.region')}</span>
+              <div className="dropdown-content">
+                <div className="region-grid">
+                  <div className="region-list">
+                    <div className="region-item"><span>{t('regions.rajahmundry')}</span></div>
+                    <div className="region-item"><span>{t('regions.srikalahasti')}</span></div>
+                    <div className="region-item"><span>{t('regions.mangalgiri')}</span></div>
+                    <div className="region-item"><span>{t('regions.venkatgiri')}</span></div>
+                    <div className="region-item"><span>{t('regions.uppada')}</span></div>
+                    <div className="region-item"><span>{t('regions.ananthapur')}</span></div>
+                    <div className="region-item"><span>{t('regions.eluru')}</span></div>
+                    <div className="region-item"><span>{t('regions.pochampalli')}</span></div>
+                    <div className="region-item"><span>{t('regions.banjara')}</span></div>
+                    <div className="region-item"><span>{t('regions.puttapaka')}</span></div>
+                    <div className="region-item"><span>{t('regions.gatuppal')}</span></div>
+                    <div className="region-item"><span>{t('regions.chautupal')}</span></div>
+                    <div className="region-item"><span>{t('regions.koyalguden')}</span></div>
+                    <div className="region-item"><span>{t('regions.chirala')}</span></div>
+                    <div className="region-item"><span>{t('regions.kadapa')}</span></div>
+                    <div className="region-item"><span>{t('regions.banjara')}</span></div>
                   </div>
                 </div>
               </div>
             </div>
-            
+
+            {/* Materials dropdown continues here */}
             <div className="nav-item dropdown">
-              <span>Materials</span>
+              <span>{t('navigation.materials')}</span>
               <div className="mega-dropdown">
                 <div className="mega-content">
                   <div className="category-list">
@@ -265,7 +272,7 @@ const NavBar = () => {
                         className={`category-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
                         onClick={() => setSelectedCategory(category)}
                       >
-                        {category.title}
+                        {t(`materials.${category.title.toLowerCase()}`)}
                       </div>
                     ))}
                   </div>
@@ -275,11 +282,11 @@ const NavBar = () => {
                       <div className="subcategory-grid">
                         {selectedCategory.items.map((item, idx) => (
                           <div key={idx} className="subcategory-card">
-                            <h3>{item.type}</h3>
+                            <h3>{t(`materials.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
                             <div className="variety-list">
                               {item.varieties.map((variety, i) => (
                                 <div key={i} className="variety-item" onClick={() => navigate('/products')}>
-                                  <span>{variety.name}</span>
+                                  <span>{t(variety.translationKey)}</span>
                                 </div>
                               ))}
                             </div>
@@ -297,7 +304,7 @@ const NavBar = () => {
           <div className="nav-search">
             <input
               type="text"
-              placeholder="Search for fabrics, sarees, carpets..."
+              placeholder={t('search.placeholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
@@ -345,7 +352,7 @@ const NavBar = () => {
           <div className="favorites-container">
             <button className="favorites-btn" onClick={() => navigate('/favorites')}>
               <i className="fas fa-heart"></i>
-              <span className="favorites-count">❤ Favorites</span>
+              <span className="favorites-count">{t('navigation.favorites')}</span>
             </button>
           </div>
 
@@ -354,15 +361,15 @@ const NavBar = () => {
             <button className="user-profile-btn">
               <i className="fas fa-user-circle"></i>
               <div className="user-info">
-                <span className="user-label">User</span>
+                <span className="user-label">{t('navigation.user')}</span>
               </div>
             </button>
             <div className="user-dropdown">
               <div className="dropdown-header">
                 <i className="fas fa-user-circle"></i>
                 <div className="header-info">
-                  <span className="greeting">Good Morning</span>
-                  <span className="user-name">User</span>
+                  <span className="greeting">{t('user_menu.greeting')}</span>
+                  <span className="user-name">{t('navigation.user')}</span>
                 </div>
               </div>
               <div className="dropdown-divider"></div>
@@ -387,14 +394,11 @@ const NavBar = () => {
                 <i className="fas fa-cog"></i>
                 <span>Settings</span>
               </div>
-              <div className="dropdown-item" onClick={() => navigate('/help')}>
-                <i className="fas fa-question-circle"></i>
-                <span>Help & Support</span>
-              </div>
+              
               <div className="dropdown-divider"></div>
               <div className="dropdown-item">
                 <i className="fas fa-sign-out-alt"></i>
-                <span>Logout</span>
+                <span>Logo in </span>
               </div>
             </div>
           </div>
@@ -402,10 +406,10 @@ const NavBar = () => {
           {/* Auth Buttons */}
           <div className="auth-buttons">
             <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
-              Sign In
+              {t('navigation.signin')}
             </button>
             <button className="auth-btn signup-btn" onClick={() => navigate('/signup')}>
-              Sign Up
+              {t('navigation.signup')}
             </button>
           </div>
         </div>
@@ -416,6 +420,7 @@ const NavBar = () => {
 
 
 const ProductSection = () => {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [selectedFilters, setSelectedFilters] = useState({
     priceRange: '',
@@ -448,25 +453,24 @@ const ProductSection = () => {
 
   return (
     <section className="products-section">
-    
-        <div className="products-fabrics">
-          <h2> craft stories </h2>
-    </div>
+      <div className="section-header">
+        <h2 className="section-title">Craft Stories</h2>
+        <div className="section-divider"></div>
+      </div>
 
-        <div className="products-grid">
-          
-          {products.map(product => (
-            <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
-              <div className="product-image">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="product-details">
-                <h3>{product.name}</h3>
-                <p className="price">₹{product.price}</p>
-              </div>
+      <div className="products-grid">
+        {products.map(product => (
+          <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
+            <div className="product-image">
+              <img src={product.image} alt={product.name} />
             </div>
-          ))}
-        </div>
+            <div className="product-details">
+              <h3>{product.name}</h3>
+              <p className="price">₹{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
@@ -475,6 +479,7 @@ export { NavBar };
 const SearchBar = () => null; // Already handled in NavBar
 
 const FeaturedProducts = () => {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const settings = {
     dots: false, infinite: true, speed: 500,
@@ -497,7 +502,7 @@ const FeaturedProducts = () => {
 
   return (
     <section className="featured-section">
-      <h2>types of fabrics</h2>
+      <h2>shop buy Trend</h2>
       <Slider {...settings}>
         {fabrics.map((fabric, idx) => (
           <div 
@@ -593,3 +598,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+// Add this function to handle language changes
