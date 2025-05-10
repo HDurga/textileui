@@ -190,18 +190,18 @@ const NavBar = () => {
   // Add categories data
   const categories = [
     { 
-      name: "Handloom Heritage", 
-      description: "Ancient weaving...", 
+      name: t("categories.handloom_heritage"), 
+      description: t("categories.handloom_description"), 
       image: require("../../img/cotton.jpg") 
     },
     { 
-      name: "Ikat Traditions", 
-      description: "Distinctive tie-dye...", 
+      name: t("categories.ikat_traditions"), 
+      description: t("categories.ikat_description"), 
       image: require("../../img/cotton.jpg")
     },
     { 
-      name: "Temple Designs", 
-      description: "Motifs inspired by temples", 
+      name: t("categories.temple_designs"), 
+      description: t("categories.temple_description"), 
       image: require("../../img/cotton.jpg") 
     }
     // Add any additional categories here
