@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: #8b5b89;
+  background: #eec67d;
   padding: 15px 20px;
   z-index: 100;
   display: flex;
@@ -19,7 +19,7 @@
 .nav-link {
   background: none;
   border: none;
-  color: #482eda;
+  color: #141415;
   font-size: 1.2rem;
   padding: 12px 24px;
   cursor: pointer;
@@ -45,7 +45,7 @@
 .dropbtn {
   background: none;
   border: none;
-  color: #482eda;
+  color: #070707;
   font-size: 1.2rem;
   padding: 12px 24px;
   cursor: pointer;
