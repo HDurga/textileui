@@ -1,75 +1,77 @@
 {
-  "app_name": "సాంప్రదాయ వస్త్రాలు",  
-    "navigation": {
-      "region": "ప్రాంతం",
-      "materials": "వస్తువులు",
-      "search": "శోధించండి",
-      "favorites": "ఇష్టమైనవి",
-      "user": "వినియోగదారు",
-      "signin": "సైన్ ఇన్",
+  "app_name": "సాంప్రదాయ వస్త్రాలు",
+  "navigation": {
+    "region": "ప్రాంతం",
+    "materials": "వస్తువులు",
+    "search": "శోధించండి",
+    "favorites": "ఇష్టమైనవి",
+    "user": "వినియోగదారు",
+    "signin": "సైన్ ఇన్",
     "signup": "సైన్ అప్",
-      "home": "హోమ్",
-      "products": "ఉత్పత్తులు",
-      "about_us": "మా గురించి",
-      "contact_us": "మమ్మల్ని సంప్రదించండి",
-      "privacy_policy": "గోప్యతా విధానం",
-      "terms_conditions": "నిబంధనలు మరియు షరతులు"
-    },
-    "user_menu": {
-      "greeting": "శుభోదయం",
-      "profile": "నా ప్రొఫైల్",
-      "orders": "నా ఆర్డర్లు",
-      "wishlist": "నా విష్ లిస్ట్",
-      "offers": "ఆఫర్లు",
-      "settings": "సెట్టింగ్స్",
-      "logout": "లాగ్ అవుట్"
-    },
-    "search": {
-      "placeholder": "ఫాబ్రిక్స్, చీరలు, కార్పెట్లు కోసం శోధించండి..."
-    },
-    "regions": {
-      "rajahmundry": "రాజమండ్రి",
-      "srikalahasti": "శ్రీకాళహస్తి",
-      "mangalgiri": "మంగళగిరి",
-      "venkatgiri": "వెంకటగిరి",
-      "uppada": "ఉప్పాడ",
-      "ananthapur": "అనంతపూర్",
-      "eluru": "ఏలూరు",
-      "pochampalli": "పోచంపల్లి",
-      "banjara": "బంజారా",
-      "puttapaka": "పుట్టపాక",
-      "gatuppal": "గట్టుప్పల్",
-      "chautupal": "చౌటుపాల్",
-      "koyalguden": "కోయల్గూడెన్",
-      "chirala": "చిరాల",
-      "kadapa": "కడప"
-    },
-    "materials": {
-        "fabrics": "వస్త్రాలు",
-        "natural_fabrics": "సహజ వస్త్రాలు",
-        "synthetic_fabrics": "సింథటిక్ వస్త్రాలు",
-        "cotton": "పత్తి",
-        "silk": "పట్టు",
-        "wool": "ఉన్ని",
-        "linen": "లినెన్",
-        "jute": "జనపనార",
-        "polyester": "పాలిస్టర్",
-        "nylon": "నైలాన్",
-        "rayon": "రేయాన్",
-        "traditional_laces": "సాంప్రదాయ లేస్‌లు",
-        "modern_laces": "ఆధునిక లేస్‌లు",
-        "traditional_sarees": "సాంప్రదాయ చీరలు",
-        "modern_sarees": "ఆధునిక చీరలు",
-        "traditional_carpets": "సాంప్రదాయ కార్పెట్లు",
-        "modern_carpets": "ఆధునిక కార్పెట్లు",
-        "Laces": "ఆధునిక కార్పెట్లు"
-    },
+    "home": "హోమ్",
+    "products": "ఉత్పత్తులు",
+    "about_us": "మా గురించి",
+    "contact_us": "మమ్మల్ని సంప్రదించండి",
+    "privacy_policy": "గోప్యతా విధానం",
+    "terms_conditions": "నిబంధనలు మరియు షరతులు",
+    "material_types": "పదార్థ రకాలు"
+  },
+  "user_menu": {
+    "greeting": "శుభోదయం",
+    "profile": "నా ప్రొఫైల్",
+    "orders": "నా ఆర్డర్లు",
+    "wishlist": "నా విష్ లిస్ట్",
+    "offers": "ఆఫర్లు",
+    "settings": "సెట్టింగ్స్",
+    "logout": "లాగ్ అవుట్"
+  },
+  "search": {
+    "placeholder": "ఫాబ్రిక్స్, చీరలు, కార్పెట్లు కోసం శోధించండి..."
+  },
+  
+  "regions": {
+    "rajahmundry": "రాజమండ్రి",
+    "srikalahasti": "శ్రీకాళహస్తి",
+    "mangalgiri": "మంగళగిరి",
+    "venkatgiri": "వెంకటగిరి",
+    "uppada": "ఉప్పాడ",
+    "ananthapur": "అనంతపూర్",
+    "eluru": "ఏలూరు",
+    "pochampalli": "పోచంపల్లి",
+    "banjara": "బంజారా",
+    "puttapaka": "పుట్టపాక",
+    "gatuppal": "గట్టుప్పల్",
+    "chautupal": "చౌటుపాల్",
+    "koyalguden": "కోయల్గూడెన్",
+    "chirala": "చిరాల",
+    "kadapa": "కడప"
+  },
+  "materials": {
+      "fabrics": "వస్త్రాలు",
+      "natural_fabrics": "సహజ వస్త్రాలు",
+      "synthetic_fabrics": "సింథటిక్ వస్త్రాలు",
+      "cotton": "పత్తి",
+      "silk": "పట్టు",
+      "wool": "ఉన్ని",
+      "linen": "లినెన్",
+      "jute": "జనపనార",
+      "polyester": "పాలిస్టర్",
+      "nylon": "నైలాన్",
+      "rayon": "రేయాన్",
+      "traditional_laces": "సాంప్రదాయ లేస్‌లు",
+      "modern_laces": "ఆధునిక లేస్‌లు",
+      "traditional_sarees": "సాంప్రదాయ చీరలు",
+      "modern_sarees": "ఆధునిక చీరలు",
+      "traditional_carpets": "సాంప్రదాయ కార్పెట్లు",
+      "modern_carpets": "ఆధునిక కార్పెట్లు",
+      "Laces": "ఆధునిక కార్పెట్లు"
+  },
 
-      "products": {
-        "1": "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-        "2": "Sky Blue Pure Cotton Saree",
-        "3": "Designer Printed Cotton Saree"
-      },
+    "products": {
+      "1": "Light Green Rajasthani Screen Printed Pure Cotton Saree",
+      "2": "Sky Blue Pure Cotton Saree",
+      "3": "Designer Printed Cotton Saree"
+    },
   "product_details": {
     "description": "వివరణ",
     "specifications": "స్పెసిఫికేషన్స్",
@@ -195,5 +197,17 @@
     "success": "విజయం",
     "warning": "హెచ్చరిక",
     "info": "సమాచారం"
-  }
+  },
+    "home": {
+      "craft_stories": "శిల్ప కథలు",
+      "shop_by_trend": "ట్రెండ్ ప్రకారం షాపింగ్ చేయండి",
+      "shop_by_categories": "వర్గాల వారీగా షాపింగ్ చేయండి"
+    },
+    "materials": {
+      "cotton_description": "సహజమైన మరియు శ్వాస తీసుకునే",
+      "silk_description": "విలాసవంతమైన మరియు అందమైన",
+      "wool_description": "వెచ్చగా మరియు సౌకర్యవంతంగా",
+      "linen_description": "చల్లగా మరియు మన్నికైన"
+    }
 }
+

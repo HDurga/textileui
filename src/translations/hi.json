@@ -1,0 +1,212 @@
+{
+  "app_name": "पारंपरिक वस्त्र",
+  "navigation": {
+    "region": "क्षेत्र",
+    "materials": "सामग्री",
+    "search": "खोजें",
+    "favorites": "पसंदीदा",
+    "user": "उपयोगकर्ता",
+    "signin": "साइन इन",
+    "signup": "साइन अप",
+    "home": "होम",
+    "products": "उत्पाद",
+    "about_us": "हमारे बारे में",
+    "contact_us": "संपर्क करें",
+    "privacy_policy": "गोपनीयता नीति",
+    "terms_conditions": "नियम और शर्तें"
+  },
+  "user_menu": {
+    "greeting": "नमस्ते",
+    "profile": "मेरी प्रोफाइल",
+    "orders": "मेरे आदेश",
+    "wishlist": "मेरी इच्छा सूची",
+    "offers": "ऑफर",
+    "settings": "सेटिंग्स",
+    "logout": "लॉग आउट"
+  },
+  "search": {
+    "placeholder": "कपड़े, साड़ियां, कालीन खोजें..."
+  },
+  
+  "regions": {
+    "rajahmundry": "राजमुंदरी",
+    "srikalahasti": "श्रीकालहस्ती",
+    "mangalgiri": "मंगलगिरी",
+    "venkatgiri": "वेंकटगिरी",
+    "uppada": "उप्पाडा",
+    "ananthapur": "अनंतपुर",
+    "eluru": "एलुरु",
+    "pochampalli": "पोचमपल्ली",
+    "banjara": "बंजारा",
+    "puttapaka": "पुट्टापका",
+    "gatuppal": "गटुप्पल",
+    "chautupal": "चौटुपाल",
+    "koyalguden": "कोयलगुडेन",
+    "chirala": "चिराला",
+    "kadapa": "कडप्पा"
+  },
+  "materials types": {
+    "fabrics": "कपड़े",
+    "natural_fabrics": "प्राकृतिक कपड़े",
+    "synthetic_fabrics": "सिंथेटिक कपड़े",
+    "cotton": "सूती",
+    "silk": "रेशम",
+    "wool": "ऊन",
+    "linen": "लिनन",
+    "jute": "जूट",
+    "polyester": "पॉलिएस्टर",
+    "nylon": "नायलॉन",
+    "rayon": "रेयॉन",
+    "traditional_laces": "पारंपरिक लेस",
+    "modern_laces": "आधुनिक लेस",
+    "traditional_sarees": "पारंपरिक साड़ियां",
+    "modern_sarees": "आधुनिक साड़ियां",
+    "traditional_carpets": "पारंपरिक कालीन",
+    "modern_carpets": "आधुनिक कालीन",
+    "Laces": "लेस"
+  },
+  "products": {
+    "1": "हल्का हरा राजस्थानी स्क्रीन प्रिंटेड शुद्ध सूती साड़ी",
+    "2": "आसमानी नीली शुद्ध सूती साड़ी",
+    "3": "डिजाइनर प्रिंटेड सूती साड़ी"
+  },
+  "product_details": {
+    "description": "विवरण",
+    "specifications": "विशिष्टताएं",
+    "reviews": "समीक्षाएं",
+    "add_to_cart": "कार्ट में जोड़ें",
+    "buy_now": "अभी खरीदें",
+    "add_to_wishlist": "इच्छा सूची में जोड़ें",
+    "remove_from_wishlist": "इच्छा सूची से हटाएं",
+    "in_stock": "स्टॉक में है",
+    "out_of_stock": "स्टॉक में नहीं है",
+    "quantity": "मात्रा",
+    "size": "आकार",
+    "color": "रंग"
+  },
+  "cart": {
+    "title": "आपकी कार्ट",
+    "empty": "आपकी कार्ट खाली है",
+    "items": "वस्तुएं",
+    "total": "कुल",
+    "checkout": "चेकआउट",
+    "continue_shopping": "खरीदारी जारी रखें",
+    "remove": "हटाएं",
+    "update": "अपडेट करें"
+  },
+  "checkout": {
+    "title": "चेकआउट",
+    "billing_details": "बिलिंग विवरण",
+    "shipping_details": "शिपिंग विवरण",
+    "payment_method": "भुगतान विधि",
+    "place_order": "ऑर्डर करें",
+    "order_summary": "ऑर्डर सारांश",
+    "order_total": "कुल ऑर्डर",
+    "shipping_cost": "शिपिंग शुल्क",
+    "discount": "छूट"
+  },
+  "signup": {
+    "title": "साइन अप",
+    "name": "नाम",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "confirm_password": "पासवर्ड की पुष्टि करें",
+    "sign_up": "साइन अप करें",
+    "already_have_account": "पहले से खाता है? लॉगिन करें"
+  },
+  "signin": {
+    "title": "साइन इन",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "sign_in": "साइन इन करें",
+    "forgot_password": "पासवर्ड भूल गए?"
+  },
+  "profile": {
+    "title": "प्रोफाइल",
+    "edit_profile": "प्रोफाइल संपादित करें",
+    "name": "नाम",
+    "email": "ईमेल",
+    "phone": "फोन",
+    "address": "पता",
+    "save_changes": "परिवर्तन सहेजें",
+    "change_password": "पासवर्ड बदलें",
+    "current_password": "वर्तमान पासवर्ड",
+    "new_password": "नया पासवर्ड",
+    "confirm_new_password": "नए पासवर्ड की पुष्टि करें",
+    "update_password": "पासवर्ड अपडेट करें"
+  },
+  "orders": {
+    "title": "मेरे आदेश",
+    "order_id": "ऑर्डर आईडी",
+    "date": "तिथि",
+    "status": "स्थिति",
+    "total": "कुल",
+    "view_details": "विवरण देखें"
+  },
+  "wishlist": {
+    "title": "मेरी इच्छा सूची",
+    "empty": "आपकी इच्छा सूची खाली है",
+    "remove": "हटाएं",
+    "move_to_cart": "कार्ट में ले जाएं"
+  },
+  "offers": {
+    "title": "विशेष ऑफर",
+    "discount": "छूट",
+    "valid_until": "मान्य तिथि तक",
+    "shop_now": "अभी खरीदें"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "language": "भाषा",
+    "notifications": "सूचनाएं",
+    "privacy_policy": "गोपनीयता नीति",
+    "terms_conditions": "नियम और शर्तें",
+    "about_us": "हमारे बारे में",
+    "contact_us": "संपर्क करें"
+  },
+  "contact_us": {
+    "title": "संपर्क करें",
+    "name": "नाम",
+    "email": "ईमेल",
+    "message": "संदेश",
+    "send_message": "संदेश भेजें",
+    "address": "पता",
+    "phone": "फोन"
+  },
+  "about_us": {
+    "title": "हमारे बारे में",
+    "description": "हम पारंपरिक वस्त्रों पर विशेष ध्यान देते हैं, हमारे उत्पाद गुणवत्ता और सौंदर्य से युक्त हैं।"
+  },
+  "privacy_policy": {
+    "title": "गोपनीयता नीति",
+    "description": "आपकी गोपनीयता हमारे लिए महत्वपूर्ण है। जानें कि हम आपकी व्यक्तिगत जानकारी कैसे एकत्र और उपयोग करते हैं।"
+  },
+  "terms_conditions": {
+    "title": "नियम और शर्तें",
+    "description": "इस वेबसाइट का उपयोग करके, आप हमारे नियमों और शर्तों को स्वीकार करते हैं।"
+  },
+  "common": {
+    "ok": "ठीक है",
+    "cancel": "रद्द करें",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "warning": "चेतावनी",
+    "info": "जानकारी"
+  },
+    "home": {
+      "craft_stories": "शिल्प कथाएं",
+      "shop_by_trend": "ट्रेंड के अनुसार खरीदें",
+      "shop_by_categories": "श्रेणियों के अनुसार खरीदें"
+    },
+    "materials": {
+      "cotton_description": "प्राकृतिक और श्वास-योग्य",
+      "silk_description": "शानदार और सुरुचिपूर्ण",
+      "wool_description": "गर्म और आरामदायक",
+      "linen_description": "ठंडा और टिकाऊ"
+    }
+}
+
+

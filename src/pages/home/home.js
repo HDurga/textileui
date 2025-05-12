@@ -226,9 +226,9 @@ const NavBar = () => {
               </span>
               <div className="dropdown-content">
                 <div className="language-list">
-                <button onClick={() => handleLanguageChange('en')}>English</button>
-                <button onClick={() => handleLanguageChange('hi')}>Hindi</button>
-                <button onClick={() => handleLanguageChange('te')}>Telugu</button>
+                  <button onClick={() => handleLanguageChange('en')}>English</button>
+                  <button onClick={() => handleLanguageChange('hi')}>Hindi</button>
+                  <button onClick={() => handleLanguageChange('te')}>Telugu</button>
                 </div>
               </div>
             </div>
@@ -260,9 +260,9 @@ const NavBar = () => {
               </div>
             </div>
 
-            {/* Materials dropdown continues here */}
+            {/* Materials dropdown */}
             <div className="nav-item dropdown">
-              <span>{t('navigation.materials')}</span>
+              <span>Material Types</span>
               <div className="mega-dropdown">
                 <div className="mega-content">
                   <div className="category-list">
@@ -272,7 +272,7 @@ const NavBar = () => {
                         className={`category-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
                         onClick={() => setSelectedCategory(category)}
                       >
-                        {t(`materials.${category.title.toLowerCase()}`)}
+                        {category.title}
                       </div>
                     ))}
                   </div>
@@ -282,11 +282,11 @@ const NavBar = () => {
                       <div className="subcategory-grid">
                         {selectedCategory.items.map((item, idx) => (
                           <div key={idx} className="subcategory-card">
-                            <h3>{t(`materials.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
+                            <h3>{item.type}</h3>
                             <div className="variety-list">
                               {item.varieties.map((variety, i) => (
                                 <div key={i} className="variety-item" onClick={() => navigate('/products')}>
-                                  <span>{t(variety.translationKey)}</span>
+                                  <span>{variety.name}</span>
                                 </div>
                               ))}
                             </div>
@@ -302,20 +302,25 @@ const NavBar = () => {
 
           {/* Search Bar */}
           <div className="nav-search">
-            <input
-              type="text"
-              placeholder={t('search.placeholder')}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-            />
-            <button className="search-button" onClick={handleSearch}>
-              <i className="fas fa-search"></i>
-            </button>
+            <div className="search-input-wrapper">
+              <div className="search-icon">
+                <i className="fas fa-search"></i>
+              </div>
+              <input
+                type="text"
+                placeholder={t('search.placeholder')}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+              />
+            </div>
+            
             {showSuggestions && searchTerm && (
               <div className="search-suggestions">
                 <div className="suggestion-group">
-                  <h4>Products</h4>
+                  <h4>{t('search.products')}</h4>
                   {suggestions.products
                     .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
                     .map((item, index) => (
@@ -324,13 +329,14 @@ const NavBar = () => {
                         setShowSuggestions(false);
                         navigate('/products');
                       }}>
-                        {item}
+                        <i className="fas fa-tag"></i>
+                        <span>{t(`products.${item.toLowerCase().replace(' ', '_')}`)}</span>
                       </div>
                     ))
                   }
                 </div>
                 <div className="suggestion-group">
-                  <h4>Categories</h4>
+                  <h4>{t('search.categories')}</h4>
                   {suggestions.categories
                     .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
                     .map((item, index) => (
@@ -339,7 +345,8 @@ const NavBar = () => {
                         setShowSuggestions(false);
                         navigate('/categories');
                       }}>
-                        {item}
+                        <i className="fas fa-folder"></i>
+                        <span>{t(`categories.${item.toLowerCase().replace(' ', '_')}`)}</span>
                       </div>
                     ))
                   }
@@ -352,7 +359,7 @@ const NavBar = () => {
           <div className="favorites-container">
             <button className="favorites-btn" onClick={() => navigate('/favorites')}>
               <i className="fas fa-heart"></i>
-              <span className="favorites-count">{t('navigation.favorites')}</span>
+              <span className="favorites-count">{t('Favorites')}</span>
             </button>
           </div>
 
@@ -361,15 +368,14 @@ const NavBar = () => {
             <button className="user-profile-btn">
               <i className="fas fa-user-circle"></i>
               <div className="user-info">
-                <span className="user-label">{t('navigation.user')}</span>
+                <span className="user-label">User</span>
               </div>
             </button>
             <div className="user-dropdown">
               <div className="dropdown-header">
                 <i className="fas fa-user-circle"></i>
                 <div className="header-info">
-                  <span className="greeting">{t('user_menu.greeting')}</span>
-                  <span className="user-name">{t('navigation.user')}</span>
+                  <span className="greeting">Welcome</span>
                 </div>
               </div>
               <div className="dropdown-divider"></div>
@@ -394,11 +400,10 @@ const NavBar = () => {
                 <i className="fas fa-cog"></i>
                 <span>Settings</span>
               </div>
-              
               <div className="dropdown-divider"></div>
               <div className="dropdown-item">
                 <i className="fas fa-sign-out-alt"></i>
-                <span>Logo in </span>
+                <span>Log Out</span>
               </div>
             </div>
           </div>
@@ -406,10 +411,10 @@ const NavBar = () => {
           {/* Auth Buttons */}
           <div className="auth-buttons">
             <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
-              {t('navigation.signin')}
+              Sign In
             </button>
             <button className="auth-btn signup-btn" onClick={() => navigate('/signup')}>
-              {t('navigation.signup')}
+              Sign Up
             </button>
           </div>
         </div>
@@ -454,7 +459,7 @@ const ProductSection = () => {
   return (
     <section className="products-section">
       <div className="section-header">
-        <h2 className="section-title">Craft Stories</h2>
+        <h2 className="section-title">{t('home.craft_stories')}</h2>
         <div className="section-divider"></div>
       </div>
 
@@ -462,10 +467,10 @@ const ProductSection = () => {
         {products.map(product => (
           <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
             <div className="product-image">
-              <img src={product.image} alt={product.name} />
+              <img src={product.image} alt={t(product.name)} />
             </div>
             <div className="product-details">
-              <h3>{product.name}</h3>
+              <h3>{t(`products.${product.id}`)}</h3>
               <p className="price">₹{product.price}</p>
             </div>
           </div>
