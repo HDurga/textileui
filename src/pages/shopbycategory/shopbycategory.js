@@ -1,51 +1,47 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './shopbycategory.css';
 
 const ShopByCategory = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const materials = [
     {
-      title: "Cotton",
-      description: "Natural, breathable fabric perfect for everyday wear",
+      title: t("materials.cotton"),
+      description: t("materials.cotton_description"),
       image: require("../../img/cotton.jpg"),
-      varieties: ["Egyptian Cotton", "Organic Cotton", "Pima Cotton"],
       link: "/materials/cotton"
     },
     {
-      title: "Silk",
-      description: "Luxurious natural fiber with elegant drape",
+      title: t("materials.silk"),
+      description: t("materials.silk_description"),
       image: require("../../img/cotton.jpg"),
-      varieties: ["Mulberry Silk", "Tussar Silk", "Art Silk"],
       link: "/materials/silk"
     },
     {
-      title: "Linen",
-      description: "Durable natural fiber with excellent cooling properties",
+      title: t("materials.linen"),
+      description: t("materials.linen_description"),
       image: require("../../img/cotton.jpg"),
-      varieties: ["Pure Linen", "Linen Blend", "Handwoven Linen"],
       link: "/materials/linen"
     },
     {
-      title: "Wool",
-      description: "Warm and versatile natural fiber",
+      title: t("materials.wool"),
+      description: t("materials.wool_description"),
       image: require("../../img/cotton.jpg"),
-      varieties: ["Merino Wool", "Cashmere", "Pashmina"],
       link: "/materials/wool"
     },
     {
-      title: "Synthetic Fabrics",
-      description: "Durable and easy-care modern materials",
+      title: t("materials.synthetic_fabrics"),
+      description: t("materials.synthetic_description"),
       image: require("../../img/cotton.jpg"),
-      varieties: ["Polyester", "Nylon", "Rayon"],
       link: "/materials/synthetic"
     },
     {
-      title: "Blended Fabrics",
-      description: "Perfect combination of natural and synthetic fibers",
+      title: t("materials.blended_fabrics"),
+      description: t("materials.blended_description"),
       image: require("../../img/cotton.jpg"),
-      varieties: ["Cotton-Polyester", "Silk-Cotton", "Wool-Synthetic"],
       link: "/materials/blended"
     }
   ];
@@ -53,7 +49,7 @@ const ShopByCategory = () => {
   return (
     <div className="page-container">
       <div className="materials-category-container">
-        <h2>shop by categories</h2>
+        <h2>{t("categories.shop_by_categories")}</h2>
         <div className="materials-grid">
           {materials.map((material, index) => (
             <div 
@@ -67,11 +63,6 @@ const ShopByCategory = () => {
               <div className="material-content">
                 <h3>{material.title}</h3>
                 <p className="material-description">{material.description}</p>
-                <div className="material-varieties">
-                  {material.varieties.map((variety, idx) => (
-                    <span key={idx} className="variety-tag">{variety}</span>
-                  ))}
-                </div>
               </div>
             </div>
           ))}

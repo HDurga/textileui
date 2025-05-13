@@ -28,28 +28,58 @@
   "search": {
     "placeholder": "ఫాబ్రిక్స్, చీరలు, కార్పెట్లు కోసం శోధించండి..."
   },
-  
+
   "regions": {
-    "rajahmundry": "రాజమండ్రి",
-    "srikalahasti": "శ్రీకాళహస్తి",
-    "mangalgiri": "మంగళగిరి",
-    "venkatgiri": "వెంకటగిరి",
-    "uppada": "ఉప్పాడ",
-    "ananthapur": "అనంతపూర్",
-    "eluru": "ఏలూరు",
-    "pochampalli": "పోచంపల్లి",
-    "banjara": "బంజారా",
-    "puttapaka": "పుట్టపాక",
-    "gatuppal": "గట్టుప్పల్",
-    "chautupal": "చౌటుపాల్",
-    "koyalguden": "కోయల్గూడెన్",
-    "chirala": "చిరాల",
-    "kadapa": "కడప"
+    "Rajahmundry": "రాజమండ్రి",
+    "Srikalahasti": "శ్రీకాళహస్తి",
+    "Mangalgiri": "మంగళగిరి",
+    "Venkatgiri": "వెంకటగిరి",
+    "Uppada": "ఉప్పాడ",
+    "Ananthapur": "అనంతపూర్",
+    "Eluru": "ఏలూరు",
+    "Pochampalli": "పోచంపల్లి",
+    "Banjara": "బంజారా",
+    "Puttapaka": "పుట్టపాక",
+    "Gatuppal": "గట్టుప్పల్",
+    "Chautupal": "చౌటుపాల్",
+    "Koyalguden": "కోయల్గూడెన్",
+    "Chirala": "చిరాల",
+    "Kadapa": "కడప"
   },
-  "materials types ": {
-      "fabrics": "వస్త్రాలు",
+  "materials": {
+    "fabrics": "వస్త్రాలు",
+    "natural_fabrics": "సహజ వస్త్రాలు",
+    "synthetic_fabrics": "సింథటిక్ వస్త్రాలు",
+    "cotton": "పత్తి",
+    "cotton_description": "సహజమైన, గాలి వచ్చే",
+    "silk": "పట్టు",
+    "silk_description": "విలాసవంతమైన నేత",
+    "wool": "ఉన్ని",
+    "wool_description": "వెచ్చగా మరియు సౌకర్యవంతంగా",
+    "linen": "లినెన్",
+    "linen_description": "చల్లగా మరియు మన్నికైన",
+    "jute": "జనపనార",
+    "polyester": "పాలిస్టర్",
+    "nylon": "నైలాన్",
+    "rayon": "రేయాన్",
+    "traditional_laces": "సాంప్రదాయ లేస్‌లు",
+    "modern_laces": "ఆధునిక లేస్‌లు",
+    "traditional_sarees": "సాంప్రదాయ చీరలు",
+    "modern_sarees": "ఆధునిక చీరలు",
+    "traditional_carpets": "సాంప్రదాయ కార్పెట్లు",
+    "modern_carpets": "ఆధునిక కార్పెట్లు",
+    "Laces": "లేస్‌లు",
+    "types": {
       "natural_fabrics": "సహజ వస్త్రాలు",
       "synthetic_fabrics": "సింథటిక్ వస్త్రాలు",
+      "traditional_laces": "సాంప్రదాయ లేస్‌లు",
+      "modern_laces": "ఆధునిక లేస్‌లు",
+      "traditional_sarees": "సాంప్రదాయ చీరలు",
+      "modern_sarees": "ఆధునిక చీరలు",
+      "traditional_carpets": "సాంప్రదాయ కార్పెట్లు",
+      "modern_carpets": "ఆధునిక కార్పెట్లు"
+    },
+    "varieties": {
       "cotton": "పత్తి",
       "silk": "పట్టు",
       "wool": "ఉన్ని",
@@ -58,20 +88,34 @@
       "polyester": "పాలిస్టర్",
       "nylon": "నైలాన్",
       "rayon": "రేయాన్",
-      "traditional_laces": "సాంప్రదాయ లేస్‌లు",
-      "modern_laces": "ఆధునిక లేస్‌లు",
-      "traditional_sarees": "సాంప్రదాయ చీరలు",
-      "modern_sarees": "ఆధునిక చీరలు",
-      "traditional_carpets": "సాంప్రదాయ కార్పెట్లు",
-      "modern_carpets": "ఆధునిక కార్పెట్లు",
-      "Laces": "ఆధునిక కార్పెట్లు"
+      "varieties": {
+        "cotton_lace": "పత్తి లేస్",
+        "silk_lace": "పట్టు లేస్",
+        "crochet_lace": "క్రోషే లేస్",
+        "synthetic_lace": "సింథటిక్ లేస్",
+        "embroidered_lace": "ఎంబ్రాయిడరీ లేస్",
+        "metallic_lace": "మెటాలిక్ లేస్",
+        "handloom_saree": "చేనేత చీర",
+        "ikat_saree": "ఇకత్ చీర",
+        "temple_saree": "దేవాలయ చీర",
+        "banarasi_saree": "బనారసి చీర",
+        "designer_saree": "డిజైనర్ చీర",
+        "fusion_saree": "ఫ్యూజన్ చీర",
+        "printed_saree": "ప్రింటెడ్ చీర",
+        "persian_carpet": "పర్షియన్ కార్పెట్",
+        "turkish_carpet": "టర్కిష్ కార్పెట్",
+        "indian_carpet": "భారతీయ కార్పెట్",
+        "contemporary_carpet": "సమకాలీన కార్పెట్",
+        "industrial_carpet": "పారిశ్రామిక కార్పెట్",
+        "eco_friendly_carpet": "పర్యావరణ అనుకూల కార్పెట్"
+      }
+    }
   },
-
-    "products": {
-      "1": "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      "2": "Sky Blue Pure Cotton Saree",
-      "3": "Designer Printed Cotton Saree"
-    },
+  "products": {
+    "1": "Light Green Rajasthani Screen Printed Pure Cotton Saree",
+    "2": "Sky Blue Pure Cotton Saree",
+    "3": "Designer Printed Cotton Saree"
+  },
   "product_details": {
     "description": "వివరణ",
     "specifications": "స్పెసిఫికేషన్స్",
@@ -86,107 +130,7 @@
     "size": "పరిమాణం",
     "color": "రంగు"
   },
-  "cart": {
-    "title": "మీ కార్ట్",
-    "empty": "మీ కార్ట్ ఖాళీగా ఉంది",
-    "items": "అంశాలు",
-    "total": "మొత్తం",
-    "checkout": "చెకౌట్",
-    "continue_shopping": "షాపింగ్ కొనసాగించండి",
-    "remove": "తొలగించు",
-    "update": "అప్‌డేట్ చేయండి"
-  },
-  "checkout": {
-    "title": "చెకౌట్",
-    "billing_details": "బిల్లింగ్ వివరాలు",
-    "shipping_details": "షిప్పింగ్ వివరాలు",
-    "payment_method": "చెల్లింపు పద్ధతి",
-    "place_order": "ఆర్డర్ ఇవ్వండి",
-    "order_summary": "ఆర్డర్ సమ్మరీ",
-    "order_total": "ఆర్డర్ మొత్తం",
-    "shipping_cost": "షిప్పింగ్ ఖర్చు",
-    "discount": "డిస్కౌంట్"
-  },
-  "signup": {
-    "title": "సైన్ అప్",
-    "name": "పేరు",
-    "email": "ఇమెయిల్",
-    "password": "పాస్వర్డ్",
-    "confirm_password": "పాస్వర్డ్ నిర్ధారణ",
-    "sign_up": "సైన్ అప్ చేయండి",
-    "already_have_account": "ఇప్పటికే ఖాతా ఉందా? లాగిన్ చేయండి"
-  },
-  "signin": {
-    "title": "సైన్ ఇన్",
-    "email": "ఇమెయిల్",
-    "password": "పాస్వర్డ్",
-    "sign_in": "సైన్ ఇన్ చేయండి",
-    "forgot_password": "పాస్వర్డ్ మర్చిపోయారా?"
-  },
-  "profile": {
-    "title": "ప్రొఫైల్",
-    "edit_profile": "ప్రొఫైల్ సవరించు",
-    "name": "పేరు",
-    "email": "ఇమెయిల్",
-    "phone": "ఫోన్",
-    "address": "చిరునామా",
-    "save_changes": "మార్పులను సేవ్ చేయండి",
-    "change_password": "పాస్వర్డ్ మార్చండి",
-    "current_password": "ప్రస్తుత పాస్వర్డ్",
-    "new_password": "కొత్త పాస్వర్డ్",
-    "confirm_new_password": "కొత్త పాస్వర్డ్ నిర్ధరణ",
-    "update_password": "పాస్వర్డ్ అప్‌డేట్ చేయండి"
-  },
-  "orders": {
-    "title": "నా ఆర్డర్లు",
-    "order_id": "ఆర్డర్ ID",
-    "date": "తేదీ",
-    "status": "స్థితి",
-    "total": "మొత్తం",
-    "view_details": "వివరాలను చూడండి"
-  },
-  "wishlist": {
-    "title": "నా ఇష్టమైనవి",
-    "empty": "మీ ఇష్టమైనవి ఖాళీగా ఉన్నాయి",
-    "remove": "తొలగించు",
-    "move_to_cart": "కార్టుకు తరలించండి"
-  },
-  "offers": {
-    "title": "ప్రత్యేక ఆఫర్లు",
-    "discount": "డిస్కౌంట్",
-    "valid_until": "చెల్లుబాటు అయ్యే తేదీ",
-    "shop_now": "ఇప్పుడు షాపింగ్ చేయండి"
-  },
-  "settings": {
-    "title": "సెట్టింగ్స్",
-    "language": "భాష",
-    "notifications": "నోటిఫికేషన్స్",
-    "privacy_policy": "గోప్యతా విధానం",
-    "terms_conditions": "నిబంధనలు మరియు షరతులు",
-    "about_us": "మా గురించి",
-    "contact_us": "మమ్మల్ని సంప్రదించండి"
-  },
-  "contact_us": {
-    "title": "మమ్మల్ని సంప్రదించండి",
-    "name": "పేరు",
-    "email": "ఇమెయిల్",
-    "message": "సందేశం",
-    "send_message": "సందేశం పంపండి",
-    "address": "చిరునామా",
-    "phone": "ఫోన్"
-  },
-  "about_us": {
-    "title": "మా గురించి",
-    "description": "సాంప్రదాయ వస్త్రాలపై ప్రత్యేకమైన దృష్టిని కలిగి ఉన్న మేము, మా ఉత్పత్తులు నాణ్యత మరియు సౌందర్యాన్ని కలిగి ఉంటాయి."
-  },
-  "privacy_policy": {
-    "title": "గోప్యతా విధానం",
-    "description": "మీ గోప్యత మాకు ముఖ్యమైనది. మీ వ్యక్తిగత సమాచారాన్ని ఎలా సేకరిస్తాము మరియు ఉపయోగిస్తామో తెలుసుకోండి."
-  },
-  "terms_conditions": {
-    "title": "నిబంధనలు మరియు షరతులు",
-    "description": "ఈ వెబ్‌సైట్‌ను ఉపయోగించడం ద్వారా, మీరు మా నిబంధనలు మరియు షరతులను అంగీకరిస్తున్నారు."
-  },
+
   "common": {
     "ok": "సరే",
     "cancel": "రద్దు చేయండి",
@@ -198,16 +142,25 @@
     "warning": "హెచ్చరిక",
     "info": "సమాచారం"
   },
-    "home": {
-      "craft_stories": "శిల్ప కథలు",
-      "shop_by_trend": "ట్రెండ్ ప్రకారం షాపింగ్ చేయండి",
-      "shop_by_categories": "వర్గాల వారీగా షాపింగ్ చేయండి"
-    },
-    "materials": {
-      "cotton_description": "సహజమైన మరియు శ్వాస తీసుకునే",
-      "silk_description": "విలాసవంతమైన మరియు అందమైన",
-      "wool_description": "వెచ్చగా మరియు సౌకర్యవంతంగా",
-      "linen_description": "చల్లగా మరియు మన్నికైన"
-    }
+  
+  "home": {
+    "craft_stories": "క్రాఫ్ట్ స్టోరీస్",
+    "shop_by_trend": "ట్రెండ్ ద్వారా షాపింగ్ చేయండి",
+    "shop_by_categories": "వర్గాల వారీగా షాపింగ్ చేయండి"
+  },
+
+
+
+  "materials": {
+    "cotton": "పత్తి",
+    "cotton_description": "సహజమైన, గాలి వచ్చే",
+    "silk": "పట్టు",
+    "silk_description": "విలాసవంతమైన నేత",
+    "wool": "ఉన్ని",
+    "wool_description": "వెచ్చగా మరియు సౌకర్యవంతంగా",
+    "linen": "లినెన్",
+    "linen_description": "చల్లగా మరియు మన్నికైన"
+  }
 }
+
 

@@ -1,0 +1,145 @@
+{
+  "app_name": "Traditional Textiles",
+  "navigation": {
+    "region": "Region",
+    "materials": "Materials",
+    "search": "Search",
+    "favorites": "Favorites",
+    "user": "User",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "home": "Home",
+    "products": "Products",
+    "about_us": "About Us",
+    "contact_us": "Contact Us",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms and Conditions",
+    "material_types": "Material Types"
+  },
+  "user_menu": {
+    "greeting": "Good Morning",
+    "profile": "My Profile",
+    "orders": "My Orders",
+    "wishlist": "My Wishlist",
+    "offers": "Offers",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "search": {
+    "placeholder": "Search for fabrics, sarees, carpets..."
+  },
+  "regions": {
+    "Rajahmundry": "Rajahmundry",
+    "Srikalahasti": "Srikalahasti",
+    "Mangalgiri": "Mangalgiri",
+    "Venkatgiri": "Venkatgiri",
+    "Uppada": "Uppada",
+    "Ananthapur": "Ananthapur",
+    "Eluru": "Eluru",
+    "Pochampalli": "Pochampalli",
+    "Banjara": "Banjara",
+    "Puttapaka": "Puttapaka",
+    "Gatuppal": "Gatuppal",
+    "Chautupal": "Chautupal",
+    "Koyalguden": "Koyalguden",
+    "Chirala": "Chirala",
+    "Kadapa": "Kadapa"
+  },
+  "materials": {
+    "fabrics": "Fabrics",
+    "natural_fabrics": "Natural Fabrics",
+    "synthetic_fabrics": "Synthetic Fabrics",
+    "cotton": "Cotton",
+    "silk": "Silk",
+    "wool": "Wool",
+    "linen": "Linen",
+    "jute": "Jute",
+    "polyester": "Polyester",
+    "nylon": "Nylon",
+    "rayon": "Rayon",
+    "traditional_laces": "Traditional Laces",
+    "modern_laces": "Modern Laces",
+    "traditional_sarees": "Traditional Sarees",
+    "modern_sarees": "Modern Sarees",
+    "traditional_carpets": "Traditional Carpets",
+    "modern_carpets": "Modern Carpets",
+    "Laces": "Laces",
+    "types": {
+      "natural_fabrics": "Natural Fabrics",
+      "synthetic_fabrics": "Synthetic Fabrics",
+      "traditional_laces": "Traditional Laces",
+      "modern_laces": "Modern Laces",
+      "traditional_sarees": "Traditional Sarees",
+      "modern_sarees": "Modern Sarees",
+      "traditional_carpets": "Traditional Carpets",
+      "modern_carpets": "Modern Carpets"
+    },
+    "varieties": {
+      "cotton": "Cotton",
+      "silk": "Silk",
+      "wool": "Wool",
+      "linen": "Linen",
+      "jute": "Jute",
+      "polyester": "Polyester",
+      "nylon": "Nylon",
+      "rayon": "Rayon",
+      "cotton_lace": "Cotton Lace",
+      "silk_lace": "Silk Lace",
+      "crochet_lace": "Crochet Lace",
+      "synthetic_lace": "Synthetic Lace",
+      "embroidered_lace": "Embroidered Lace",
+      "metallic_lace": "Metallic Lace",
+      "handloom_saree": "Handloom Saree",
+      "ikat_saree": "Ikat Saree",
+      "temple_saree": "Temple Saree",
+      "banarasi_saree": "Banarasi Saree",
+      "designer_saree": "Designer Saree",
+      "fusion_saree": "Fusion Saree",
+      "printed_saree": "Printed Saree",
+      "persian_carpet": "Persian Carpet",
+      "turkish_carpet": "Turkish Carpet",
+      "indian_carpet": "Indian Carpet",
+      "contemporary_carpet": "Contemporary Carpet",
+      "industrial_carpet": "Industrial Carpet",
+      "eco_friendly_carpet": "Eco-friendly Carpet"
+    }
+  },
+  "products": {
+    "1": "Light Green Rajasthani Screen Printed Pure Cotton Saree",
+    "2": "Sky Blue Pure Cotton Saree",
+    "3": "Designer Printed Cotton Saree"
+  },
+  "product_details": {
+    "description": "Description",
+    "specifications": "Specifications",
+    "reviews": "Reviews",
+    "add_to_cart": "Add to Cart",
+    "buy_now": "Buy Now",
+    "add_to_wishlist": "Add to Wishlist",
+    "remove_from_wishlist": "Remove from Wishlist",
+    "in_stock": "In Stock",
+    "out_of_stock": "Out of Stock",
+    "quantity": "Quantity",
+    "size": "Size",
+    "color": "Color"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  "home": {
+    "craft_stories": "Craft Stories",
+    "shop_by_trend": "Shop by Trend"
+  },
+  "categories": {
+    "shop_by_categories": "Shop by Categories"
+  }
+}
+

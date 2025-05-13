@@ -27,7 +27,6 @@
   "search": {
     "placeholder": "कपड़े, साड़ियां, कालीन खोजें..."
   },
-  
   "regions": {
     "rajahmundry": "राजमुंदरी",
     "srikalahasti": "श्रीकालहस्ती",
@@ -45,14 +44,18 @@
     "chirala": "चिराला",
     "kadapa": "कडप्पा"
   },
-  "materials types": {
+  "materials": {
     "fabrics": "कपड़े",
     "natural_fabrics": "प्राकृतिक कपड़े",
     "synthetic_fabrics": "सिंथेटिक कपड़े",
     "cotton": "सूती",
+    "cotton_description": "प्राकृतिक, श्वास-प्रश्वास योग्य",
     "silk": "रेशम",
+    "silk_description": "शानदार बनावट",
     "wool": "ऊन",
+    "wool_description": "गरम और आरामदायक",
     "linen": "लिनन",
+    "linen_description": "ठंडा और टिकाऊ",
     "jute": "जूट",
     "polyester": "पॉलिएस्टर",
     "nylon": "नायलॉन",
@@ -63,7 +66,17 @@
     "modern_sarees": "आधुनिक साड़ियां",
     "traditional_carpets": "पारंपरिक कालीन",
     "modern_carpets": "आधुनिक कालीन",
-    "Laces": "लेस"
+    "Laces": "लेस",
+    "types": {
+      "natural_fabrics": "प्राकृतिक कपड़े",
+      "synthetic_fabrics": "सिंथेटिक कपड़े",
+      "traditional_laces": "पारंपरिक लेस",
+      "modern_laces": "आधुनिक लेस",
+      "traditional_sarees": "पारंपरिक साड़ियां",
+      "modern_sarees": "आधुनिक साड़ियां",
+      "traditional_carpets": "पारंपरिक कालीन",
+      "modern_carpets": "आधुनिक कालीन"
+    }
   },
   "products": {
     "1": "हल्का हरा राजस्थानी स्क्रीन प्रिंटेड शुद्ध सूती साड़ी",
@@ -196,17 +209,10 @@
     "warning": "चेतावनी",
     "info": "जानकारी"
   },
-    "home": {
-      "craft_stories": "शिल्प कथाएं",
-      "shop_by_trend": "ट्रेंड के अनुसार खरीदें",
-      "shop_by_categories": "श्रेणियों के अनुसार खरीदें"
-    },
-    "materials": {
-      "cotton_description": "प्राकृतिक और श्वास-योग्य",
-      "silk_description": "शानदार और सुरुचिपूर्ण",
-      "wool_description": "गर्म और आरामदायक",
-      "linen_description": "ठंडा और टिकाऊ"
-    }
+  "home": {
+    "craft_stories": "शिल्प कथाएं",
+    "shop_by_trend": "ट्रेंड के अनुसार खरीदें",
+    "shop_by_categories": "श्रेणियों के अनुसार खरीदें"
+  }
 }
-
 
