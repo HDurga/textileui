@@ -140,6 +140,64 @@
   },
   "categories": {
     "shop_by_categories": "Shop by Categories"
+  },
+  "seasons": {
+    "favorites": {
+      "title": "Seasonal Favorites",
+      "description": "Discover our selection of fabrics perfect for every season",
+      "spring": {
+        "name": "Spring",
+        "fabrics": {
+          "cotton_lawn": {
+            "name": "Cotton Lawn",
+            "description": "Light and breathable cotton perfect for spring weather"
+          },
+          "linen_blend": {
+            "name": "Linen Blend",
+            "description": "Fresh and airy fabric for spring attire"
+          }
+        }
+      },
+      "summer": {
+        "name": "Summer",
+        "fabrics": {
+          "pure_cotton": {
+            "name": "Pure Cotton",
+            "description": "Cool and comfortable cotton for summer days"
+          },
+          "light_silk": {
+            "name": "Light Silk",
+            "description": "Breathable silk perfect for summer evenings"
+          }
+        }
+      },
+      "fall": {
+        "name": "Fall",
+        "fabrics": {
+          "wool_blend": {
+            "name": "Wool Blend",
+            "description": "Warm and stylish fabric for fall weather"
+          },
+          "cotton_twill": {
+            "name": "Cotton Twill",
+            "description": "Durable and comfortable for fall activities"
+          }
+        }
+      },
+      "winter": {
+        "name": "Winter",
+        "fabrics": {
+          "pure_wool": {
+            "name": "Pure Wool",
+            "description": "Thick and warm wool for winter comfort"
+          },
+          "velvet": {
+            "name": "Velvet",
+            "description": "Luxurious and warm fabric for winter occasions"
+          }
+        }
+      }
+    }
   }
 }
 

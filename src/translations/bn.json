@@ -1,0 +1,39 @@
+{
+  "app_name": "ঐতিহ্যবাহী বস্ত্র",
+  "navigation": {
+    "region": "অঞ্চল",
+    "materials": "উপকরণ",
+    "search": "অনুসন্ধান",
+    "favorites": "পছন্দ",
+    "user": "ব্যবহারকারী",
+    "signin": "সাইন ইন",
+    "signup": "নিবন্ধন",
+    "home": "হোম",
+    "products": "পণ্য",
+    "about_us": "আমাদের সম্পর্কে",
+    "contact_us": "যোগাযোগ",
+    "privacy_policy": "গোপনীয়তা নীতি",
+    "terms_conditions": "শর্তাবলী",
+    "material_types": "উপকরণের ধরন"
+  },
+  "materials": {
+    "fabrics": "কাপড়",
+    "natural_fabrics": "প্রাকৃতিক কাপড়",
+    "synthetic_fabrics": "সিনথেটিক কাপড়",
+    "cotton": "সুতি",
+    "silk": "রেশম",
+    "wool": "পশম",
+    "linen": "লিনেন",
+    "jute": "পাট",
+    "polyester": "পলিয়েস্টার",
+    "nylon": "নাইলন",
+    "rayon": "রেয়ন",
+    "traditional_laces": "ঐতিহ্যবাহী লেস",
+    "modern_laces": "আধুনিক লেস",
+    "traditional_sarees": "ঐতিহ্যবাহী শাড়ি",
+    "modern_sarees": "আধুনিক শাড়ি",
+    "traditional_carpets": "ঐতিহ্যবাহী কার্পেট",
+    "modern_carpets": "আধুনিক কার্পেট",
+    "Laces": "লেস"
+  }
+}

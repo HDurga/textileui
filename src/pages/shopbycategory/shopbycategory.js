@@ -5,43 +5,44 @@ import './shopbycategory.css';
 
 const ShopByCategory = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t ,i18n} = useTranslation();
 
   const materials = [
+    
     {
       title: t("materials.cotton"),
       description: t("materials.cotton_description"),
-      image: require("../../img/cotton.jpg"),
+      image: "/images/cotton.jpg",  // Changed from require()
       link: "/materials/cotton"
     },
     {
       title: t("materials.silk"),
       description: t("materials.silk_description"),
-      image: require("../../img/cotton.jpg"),
+      image: "/images/cotton.jpg", // Changed from require()
       link: "/materials/silk"
     },
     {
       title: t("materials.linen"),
       description: t("materials.linen_description"),
-      image: require("../../img/cotton.jpg"),
+      image: "/images/cotton.jpg",  // Changed from require()
       link: "/materials/linen"
     },
     {
       title: t("materials.wool"),
       description: t("materials.wool_description"),
-      image: require("../../img/cotton.jpg"),
+      image: "/images/cotton.jpg", // Changed from require()
       link: "/materials/wool"
     },
     {
       title: t("materials.synthetic_fabrics"),
       description: t("materials.synthetic_description"),
-      image: require("../../img/cotton.jpg"),
+      image: "/images/cotton.jpg",  // Changed from require()
       link: "/materials/synthetic"
     },
     {
       title: t("materials.blended_fabrics"),
       description: t("materials.blended_description"),
-      image: require("../../img/cotton.jpg"),
+      image: "/images/cotton.jpg",  // Changed from require()
       link: "/materials/blended"
     }
   ];

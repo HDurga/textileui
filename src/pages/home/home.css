@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap');
+
+[lang="te"] {
+  font-family: 'Noto Sans Telugu', sans-serif;
+}
+
+[lang="hi"] {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
 /* Reset some basic styles */
 body,
 html {

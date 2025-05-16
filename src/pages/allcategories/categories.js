@@ -4,16 +4,11 @@
 import React, { useState } from 'react';  // Remove useRef
 import { useNavigate, useParams } from 'react-router-dom';
 import './categories.css';
-import fabricsImage from '../../img/fabrics.jpg';
-import lacesImage from '../../img/laces.jpg';
-import sareesImage from '../../img/sarees.jpg';
-import carpetsImage from '../../img/carpets.jpg';
-
-// Then update your categoriesData image references
+ 
 const categoriesData = [
   {
     title: "Fabrics",
-    image: fabricsImage,
+    image: "/images/fabrics.jpg",  // Changed from require()
     description: "Premium quality fabrics featuring traditional varieties",
     items: [
       {
@@ -63,7 +58,7 @@ const categoriesData = [
   },
   {
     title: "Laces",
-    image: lacesImage,
+    image: "/images/laces.jpg",  // Changed from require()
     description: "Elegant V  for decorative and fashion purposes",
     items: [
       {
@@ -89,7 +84,7 @@ const categoriesData = [
   },
   {
     title: "Sarees",
-    image: sareesImage,
+    image: "/images/sarees.jpg",  // Changed from require()
     description: "Traditional and modern sarees for every occasion",
     items: [
       {
@@ -115,7 +110,7 @@ const categoriesData = [
   },
   {
     title: "Carpets",
-    image: carpetsImage,
+    image: "/images/carpets.jpg",  // Changed from require()
     description: "Luxurious carpets and rugs for your home",
     items: [
       {

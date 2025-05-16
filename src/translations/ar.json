@@ -1,0 +1,22 @@
+{
+  "materials": {
+    "fabrics": "الأقمشة",
+    "natural_fabrics": "أقمشة طبيعية",
+    "synthetic_fabrics": "أقمشة صناعية",
+    "cotton": "قطن",
+    "silk": "حرير",
+    "wool": "صوف",
+    "linen": "كتان",
+    "jute": "جوت",
+    "polyester": "بوليستر",
+    "nylon": "نايلون",
+    "rayon": "رايون",
+    "traditional_laces": "دانتيل تقليدي",
+    "modern_laces": "دانتيل عصري",
+    "traditional_sarees": "ساري تقليدي",
+    "modern_sarees": "ساري عصري",
+    "traditional_carpets": "سجاد تقليدي",
+    "modern_carpets": "سجاد عصري",
+    "Laces": "دانتيل"
+  }
+}

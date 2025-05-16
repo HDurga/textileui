@@ -5,7 +5,7 @@ import "./home.css";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
-import logo from '../../img/logo imag.png';
+import logo from '../../img/logo.jpeg';
 import backgroundImage from '../../img/back4.jpeg';
 import ShopByCategory from "../shopbycategory/shopbycategory";
 import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
@@ -53,7 +53,7 @@ const Slideshow = () => {
 const categoriesData = [
   {
     title: "Fabrics",
-    image: require("../../img/cotton.jpg"),
+    image: "/images/fabrics.jpg",  // Changed from require()
     items: [
       {
         type: "Natural Fabrics",
@@ -77,81 +77,101 @@ const categoriesData = [
   },
   {
     title: "Laces",
-    image: require("../../img/cotton.jpg"),
+    image: "/images/laces.jpg",  // Changed from require()
     items: [
       {
         type: "Traditional Laces",
         varieties: [
-          { name: "Cotton Lace", translationKey: "materials.varieties.cotton_lace" },
-          { name: "Silk Lace", translationKey: "materials.varieties.silk_lace" },
-          { name: "Crochet Lace", translationKey: "materials.varieties.crochet_lace" }
+          { name: "Cotton Lace", translationKey: "materials.laces.varieties.cotton_lace" },
+          { name: "Silk Lace", translationKey: "materials.laces.varieties.silk_lace" },
+          { name: "Crochet Lace", translationKey: "materials.laces.varieties.crochet_lace" }
         ]
       },
       {
         type: "Modern Laces",
         varieties: [
-          { name: "Synthetic Lace", translationKey: "materials.varieties.synthetic_lace" },
-          { name: "Embroidered Lace", translationKey: "materials.varieties.embroidered_lace" },
-          { name: "Metallic Lace", translationKey: "materials.varieties.metallic_lace" }
+          { name: "Synthetic Lace", translationKey: "materials.laces.varieties.synthetic_lace" },
+          { name: "Embroidered Lace", translationKey: "materials.laces.varieties.embroidered_lace" },
+          { name: "Metallic Lace", translationKey: "materials.laces.varieties.metallic_lace" }
         ]
       }
     ]
   },
   {
     title: "Sarees",
-    image: require("../../img/cotton.jpg"),
+    image: "/images/sarees.jpg",  // Changed from require()
     items: [
       {
         type: "Traditional Sarees",
         varieties: [
-          { name: "Handloom", translationKey: "materials.varieties.handloom_saree" },
-          { name: "Ikat", translationKey: "materials.varieties.ikat_saree" },
-          { name: "Temple", translationKey: "materials.varieties.temple_saree" },
-          { name: "Banarasi", translationKey: "materials.varieties.banarasi_saree" }
+          { name: "Handloom", translationKey: "materials.sarees.varieties.handloom" },
+          { name: "Ikat", translationKey: "materials.sarees.varieties.ikat" },
+          { name: "Temple", translationKey: "materials.sarees.varieties.temple" },
+          { name: "Banarasi", translationKey: "materials.sarees.varieties.banarasi" }
         ]
       },
       {
         type: "Modern Sarees",
         varieties: [
-          { name: "Designer", translationKey: "materials.varieties.designer_saree" },
-          { name: "Fusion", translationKey: "materials.varieties.fusion_saree" },
-          { name: "Printed", translationKey: "materials.varieties.printed_saree" }
+          { name: "Designer", translationKey: "materials.sarees.varieties.designer" },
+          { name: "Fusion", translationKey: "materials.sarees.varieties.fusion" },
+          { name: "Printed", translationKey: "materials.sarees.varieties.printed" }
         ]
       }
     ]
   },
   {
     title: "Carpets",
-    image: require("../../img/cotton.jpg"),
+    image: "/images/carpets.jpg",  // Changed from require()
     items: [
       {
         type: "Traditional Carpets",
         varieties: [
-          { name: "Persian", translationKey: "materials.varieties.persian_carpet" },
-          { name: "Turkish", translationKey: "materials.varieties.turkish_carpet" },
-          { name: "Indian", translationKey: "materials.varieties.indian_carpet" }
+          { name: "Persian", translationKey: "materials.carpets.varieties.persian" },
+          { name: "Turkish", translationKey: "materials.carpets.varieties.turkish" },
+          { name: "Indian", translationKey: "materials.carpets.varieties.indian" }
         ]
       },
       {
         type: "Modern Carpets",
         varieties: [
-          { name: "Contemporary", translationKey: "materials.varieties.contemporary_carpet" },
-          { name: "Industrial", translationKey: "materials.varieties.industrial_carpet" },
-          { name: "Eco-friendly", translationKey: "materials.varieties.eco_friendly_carpet" }
+          { name: "Contemporary", translationKey: "materials.carpets.varieties.contemporary" },
+          { name: "Industrial", translationKey: "materials.carpets.varieties.industrial" },
+          { name: "Eco-friendly", translationKey: "materials.carpets.varieties.eco_friendly" }
         ]
       }
     ]
   }
 ];
 
+
+const CategoryList = () => {
+  const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState(categoriesData[0]);
+
+  return (
+    <div className="category-list">
+      {categoriesData.map((category, idx) => (
+        <div 
+          key={idx}
+          className={`category-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
+          onClick={() => setSelectedCategory(category)}
+        >
+          {t(`materials.${category.title.toLowerCase()}`)}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const fabricTypes = [
-  { name: "Cotton Fabrics", description: "Natural and breathable", image: require("../../img/cotton.jpg") },
-  { name: "Silk Designer", description: "Luxurious and elegant", image: require("../../img/cotton.jpg") },
-  { name: "Handloom Fabrics", description: "Traditional craftsmanship", image: require("../../img/cotton.jpg") },
-  { name: "Linen Fabrics", description: "Cool and durable", image: require("../../img/cotton.jpg") },
-  { name: "Jute Fabrics", description: "Eco-friendly and sturdy", image: require("../../img/jute.jpeg") },
-  { name: "Polyester Fabrics", description: "Durable and wrinkle-resistant", image: require("../../img/cotton.jpg") },
-  { name: "Rayon/Viscose Fabrics", description: "Soft and flowing", image: require("../../img/cotton.jpg") }
+  { name: "Cotton Fabrics", description: "Natural and breathable", image: "/images/cotton.jpg" },
+  { name: "Silk Designer", description: "Luxurious and elegant", image: "/images/cotton.jpg" },
+  { name: "Handloom Fabrics", description: "Traditional craftsmanship", image: "/images/cotton.jpg" },
+  { name: "Linen Fabrics", description: "Cool and durable", image: "/images/cotton.jpg" },
+  { name: "Jute Fabrics", description: "Eco-friendly and sturdy", image: "/images/jute.jpg" },
+  { name: "Polyester Fabrics", description: "Durable and wrinkle-resistant", image: "/images/cotton.jpg" },
+  { name: "Rayon/Viscose Fabrics", description: "Soft and flowing", image: "/images/cotton.jpg" }
 ];
 
 const NavBar = () => {
@@ -185,6 +205,7 @@ const NavBar = () => {
   
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
+    document.documentElement.lang = lang; // Add this line to set the HTML lang attribute
   };
 
   // Add categories data
@@ -192,19 +213,18 @@ const NavBar = () => {
     { 
       name: t("categories.handloom_heritage"), 
       description: t("categories.handloom_description"), 
-      image: require("../../img/cotton.jpg") 
+      image: "/images/handloom-heritage.jpg" // Changed from require()
     },
     { 
       name: t("categories.ikat_traditions"), 
       description: t("categories.ikat_description"), 
-      image: require("../../img/cotton.jpg")
+      image: "/images/ikat-sarees.jpg" // Changed from require()
     },
     { 
       name: t("categories.temple_designs"), 
       description: t("categories.temple_description"), 
-      image: require("../../img/cotton.jpg") 
+      image: "/images/temple-sarees.jpg" // Changed from require()
     }
-    // Add any additional categories here
   ];
 
   return (
@@ -226,9 +246,11 @@ const NavBar = () => {
               </span>
               <div className="dropdown-content">
                 <div className="language-list">
-                  <button onClick={() => handleLanguageChange('en')}>English</button>
-                  <button onClick={() => handleLanguageChange('hi')}>Hindi</button>
-                  <button onClick={() => handleLanguageChange('te')}>Telugu</button>
+                  <button onClick={() => handleLanguageChange('en')} lang="en">English</button>
+                  <button onClick={() => handleLanguageChange('hi')} lang="hi">हिंदी</button>
+                  <button onClick={() => handleLanguageChange('te')} lang="te">తెలుగు</button>
+                  <button onClick={() => handleLanguageChange('ar')} lang="ar">العربية</button>
+                  <button onClick={() => handleLanguageChange('bn')} lang="bn">বাংলা</button>
                 </div>
               </div>
             </div>
@@ -239,22 +261,21 @@ const NavBar = () => {
               <div className="dropdown-content">
                 <div className="region-grid">
                   <div className="region-list">
-                    <div className="region-item"><span>{t('regions.Rajahmundry')}</span></div>
-                    <div className="region-item"><span>{t('regions.Srikalahasti')}</span></div>
-                    <div className="region-item"><span>{t('regions.Mangalgiri')}</span></div>
-                    <div className="region-item"><span>{t('regions.Venkatgiri')}</span></div>
-                    <div className="region-item"><span>{t('regions.Uppada')}</span></div>
-                    <div className="region-item"><span>{t('regions.Ananthapur')}</span></div>
-                    <div className="region-item"><span>{t('regions.Eluru')}</span></div>
-                    <div className="region-item"><span>{t('regions.Pochampalli')}</span></div>
-                    <div className="region-item"><span>{t('regions.Banjara')}</span></div>
-                    <div className="region-item"><span>{t('regions.Puttapaka')}</span></div>
-                    <div className="region-item"><span>{t('regions.Gatuppal')}</span></div>
-                    <div className="region-item"><span>{t('regions.Chautupal')}</span></div>
-                    <div className="region-item"><span>{t('regions.Koyalguden')}</span></div>
-                    <div className="region-item"><span>{t('regions.Chirala')}</span></div>
-                    <div className="region-item"><span>{t('regions.Kadapa')}</span></div>
-                    <div className="region-item"><span>Banjara</span></div>
+                    <div className="region-item"><span>{t('regions.rajahmundry')}</span></div>
+                    <div className="region-item"><span>{t('regions.srikalahasti')}</span></div>
+                    <div className="region-item"><span>{t('regions.mangalgiri')}</span></div>
+                    <div className="region-item"><span>{t('regions.venkatgiri')}</span></div>
+                    <div className="region-item"><span>{t('regions.uppada')}</span></div>
+                    <div className="region-item"><span>{t('regions.ananthapur')}</span></div>
+                    <div className="region-item"><span>{t('regions.eluru')}</span></div>
+                    <div className="region-item"><span>{t('regions.pochampalli')}</span></div>
+                    <div className="region-item"><span>{t('regions.banjara')}</span></div>
+                    <div className="region-item"><span>{t('regions.puttapaka')}</span></div>
+                    <div className="region-item"><span>{t('regions.gatuppal')}</span></div>
+                    <div className="region-item"><span>{t('regions.chautupal')}</span></div>
+                    <div className="region-item"><span>{t('regions.koyalguden')}</span></div>
+                    <div className="region-item"><span>{t('regions.chirala')}</span></div>
+                    <div className="region-item"><span>{t('regions.kadapa')}</span></div>
                   </div>
                 </div>
               </div>
@@ -439,20 +460,17 @@ const ProductSection = () => {
     {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: require("../../img/cotton.jpg"),
-      
+      image: "/images/cotton.jpg",
     },
     {
       id: 2,
       name: "Sky Blue Pure Cotton Saree",
-      image: require("../../img/cotton.jpg"),
-      
+      image: "/images/cotton.jpg",
     },
     {
       id: 3,
       name: "Designer Printed Cotton Saree",
-      image: require("../../img/cotton.jpg"),
-    
+      image: "/images/cotton.jpg",
     }
   ];
 
@@ -621,4 +639,4 @@ const Home = () => {
 export default Home;
 
 
-// Add this function to handle language changes
+
