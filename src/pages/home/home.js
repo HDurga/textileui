@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate }
-from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
 import Slider from "react-slick";
 
@@ -11,14 +10,50 @@ import ShopByCategory from "../shopbycategory/shopbycategory";
 import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
 
 import { useTranslation } from 'react-i18next';
-import '../../i18n';
+import i18n from '../../i18n';
 
+const categoriesData = [
+  {
+    title: 'Fabrics',
+    items: [
+      {
+        type: 'Natural',
+        varieties: [
+          { name: 'Cotton', translationKey: 'materials.varieties.cotton' },
+          { name: 'Silk', translationKey: 'materials.varieties.silk' },
+          { name: 'Wool', translationKey: 'materials.varieties.wool' }
+        ]
+      },
+      {
+        type: 'Synthetic',
+        varieties: [
+          { name: 'Polyester', translationKey: 'materials.varieties.polyester' },
+          { name: 'Nylon', translationKey: 'materials.varieties.nylon' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Laces',
+    items: [
+      {
+        type: 'Traditional',
+        varieties: [
+          { name: 'Cotton Lace', translationKey: 'materials.varieties.cotton_lace' },
+          { name: 'Silk Lace', translationKey: 'materials.varieties.silk_lace' }
+        ]
+      }
+    ]
+  }
+];
 
 const Slideshow = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(categoriesData[0]); // Add this state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,13 +64,14 @@ const Slideshow = () => {
   }, []);
 
   const suggestions = {
-    products: ['Cotton', 'Silk', 'Wool', 'Synthetic', 'Linen', 'Denim', 'Georgette', 'Chiffon', 'Polyester', 'Nylon', 'Rayon'],
-    categories: ['Fabrics', 'Laces', 'Sarees', 'Carpets']
+    products: ['Cotton', 'Silk', 'Wool', 'Synthetic', 'Linen', 'Denim', 'Georgette'],
+    categories: ['Fabrics', 'Laces', 'Sarees', 'Carpets'],
+    sareeTypes: ['Handloom Heritage', 'Ikat Traditions', 'Temple Designs', 'Modern Innovations']
   };
 
   const handleSearch = () => {
     const lowerSearchTerm = searchTerm.toLowerCase();
-    if (lowerSearchTerm.includes('fabric') || suggestions.products.some(p => lowerSearchTerm.includes(p.toLowerCase()))) {
+    if (lowerSearchTerm.includes('fabric') || suggestions.products.some(p => lowerSearchTerm.toLowerCase().includes(p.toLowerCase()))) {
       navigate('/products');
     } else if (lowerSearchTerm.includes('saree') || lowerSearchTerm.includes('carpet') || lowerSearchTerm.includes('lace')) {
       navigate('/categories');
@@ -44,105 +80,247 @@ const Slideshow = () => {
     }
   };
 
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    document.documentElement.lang = lang; // Add this line to set the HTML lang attribute
+  };
+
+  // Add categories data
+  const categories = [
+    { 
+      name: t("categories.handloom_heritage"), 
+      description: t("categories.handloom_description"), 
+      image: "/images/handloom-heritage.jpg" // Changed from require()
+    },
+    { 
+      name: t("categories.ikat_traditions"), 
+      description: t("categories.ikat_description"), 
+      image: "/images/ikat-sarees.jpg" // Changed from require()
+    },
+    { 
+      name: t("categories.temple_designs"), 
+      description: t("categories.temple_description"), 
+      image: "/images/temple-sarees.jpg" // Changed from require()
+    }
+  ];
+
   return (
-    <div className="hero"></div>
+    <header className="site-header">
+      <nav className="nav-barhome">
+        <div className="nav-container">
+          {/* Logo */}
+          <div className="logo" onClick={() => navigate('/')}>
+            <img src={logo} alt="Logo" className="transparent-logo" />
+          </div>
+
+          {/* Navigation Links and Categories */}
+          <div className="nav-menu">
+            {/* Language Selector */}
+            <div className="nav-item dropdown">
+              <span>
+                <i className="fas fa-globe"></i>
+                {i18n.language.toUpperCase()}
+              </span>
+              <div className="dropdown-content">
+                <div className="language-list">
+                  <button onClick={() => handleLanguageChange('en')} lang="en">English</button>
+                  <button onClick={() => handleLanguageChange('hi')} lang="hi">हिंदी</button>
+                  <button onClick={() => handleLanguageChange('te')} lang="te">తెలుగు</button>
+                  <button onClick={() => handleLanguageChange('ta')} lang="ta">தமிழ்</button>
+                  <button onClick={() => handleLanguageChange('kn')} lang="kn">ಕನ್ನಡ</button>
+                  <button onClick={() => handleLanguageChange('bn')} lang="bn">বাংলা</button>
+                </div>
+              </div>
+            </div>
+
+            {/* Region dropdown */}
+            <div className="nav-item dropdown">
+              <span>{t('navigation.region')}</span>
+              <div className="dropdown-content">
+                <div className="region-grid">
+                  <div className="region-list">
+                    <div className="region-item">{t('regions.rajahmundry')}</div>
+                    <div className="region-item">{t('regions.srikalahasti')}</div>
+                    <div className="region-item">{t('regions.mangalgiri')}</div>
+                    <div className="region-item">{t('regions.venkatgiri')}</div>
+                    <div className="region-item">{t('regions.uppada')}</div>
+                    <div className="region-item">{t('regions.ananthapur')}</div>
+                    <div className="region-item">{t('regions.eluru')}</div>
+                    <div className="region-item">{t('regions.pochampalli')}</div>
+                    <div className="region-item">{t('regions.banjara')}</div>
+                    <div className="region-item">{t('regions.puttapaka')}</div>
+                    <div className="region-item">{t('regions.gatuppal')}</div>
+                    <div className="region-item">{t('regions.chautupal')}</div>
+                    <div className="region-item">{t('regions.koyalguden')}</div>
+                    <div className="region-item">{t('regions.chirala')}</div>
+                    <div className="region-item">{t('regions.kadapa')}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Materials dropdown */}
+            <div className="nav-item dropdown">
+              <span>{t('navigation.materials')}</span>
+              <div className="mega-dropdown">
+                <div className="mega-content">
+                  <div className="category-list">
+                    {categoriesData.map((category, idx) => (
+                      <div 
+                        key={idx}
+                        className={`category-item ${selectedCategory?.title === category.title ? 'active' : ''}`}
+                        onClick={() => setSelectedCategory(category)}
+                      >
+                        {t(`materials.${category.title.toLowerCase()}`)}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="subcategory-content">
+                    {selectedCategory && (
+                      <div className="subcategory-grid">
+                        {selectedCategory.items.map((item, idx) => (
+                          <div key={idx} className="subcategory-card">
+                            <h3>{t(`materials.types.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
+                            <div className="variety-list">
+                              {item.varieties.map((variety, i) => (
+                                <div key={i} className="variety-item" onClick={() => navigate('/products')}>
+                                  <span>{variety.translationKey ? t(variety.translationKey) : t(`materials.varieties.${variety.name.toLowerCase().replace(' ', '_')}`)}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Search Bar */}
+          <div className="nav-search">
+            <div className="search-input-wrapper">
+              <div className="search-icon">
+                <i className="fas fa-search"></i>
+              </div>
+              <input
+                type="text"
+                placeholder={t('search.placeholder')}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+              />
+            </div>
+            
+            {showSuggestions && searchTerm && (
+              <div className="search-suggestions">
+                <div className="suggestion-group">
+                  <h4>{t('search.products')}</h4>
+                  {suggestions.products
+                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
+                    .map((item, index) => (
+                      <div key={index} className="suggestion-item" onClick={() => {
+                        setSearchTerm(item);
+                        setShowSuggestions(false);
+                        navigate('/products');
+                      }}>
+                        <i className="fas fa-tag"></i>
+                        <span>{t(`products.${item.toLowerCase().replace(' ', '_')}`)}</span>
+                      </div>
+                    ))
+                  }
+                </div>
+                <div className="suggestion-group">
+                  <h4>{t('search.categories')}</h4>
+                  {suggestions.categories
+                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
+                    .map((item, index) => (
+                      <div key={index} className="suggestion-item" onClick={() => {
+                        setSearchTerm(item);
+                        setShowSuggestions(false);
+                        navigate('/categories');
+                      }}>
+                        <i className="fas fa-folder"></i>
+                        <span>{t(`categories.${item.toLowerCase().replace(' ', '_')}`)}</span>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Favorites Button */}
+          <div className="favorites-container">
+            <button className="favorites-btn" onClick={() => navigate('/favorites')}>
+              <i className="fas fa-heart"></i>
+              <span className="favorites-count">{t('Favorites')}</span>
+            </button>
+          </div>
+
+          {/* User Profile */}
+          <div className="user-profile-container">
+            <button className="user-profile-btn">
+              <i className="fas fa-user-circle"></i>
+              <div className="user-info">
+                <span className="user-label">User</span>
+              </div>
+            </button>
+            <div className="user-dropdown">
+              <div className="dropdown-header">
+                <i className="fas fa-user-circle"></i>
+                <div className="header-info">
+                  <span className="greeting">Welcome</span>
+                </div>
+              </div>
+              <div className="dropdown-divider"></div>
+              <div className="dropdown-item" onClick={() => navigate('/profile')}>
+                <i className="fas fa-user"></i>
+                <span>My Profile</span>
+              </div>
+              <div className="dropdown-item" onClick={() => navigate('/orders')}>
+                <i className="fas fa-shopping-bag"></i>
+                <span>My Orders</span>
+              </div>
+              <div className="dropdown-item" onClick={() => navigate('/wishlist')}>
+                <i className="fas fa-heart"></i>
+                <span>My Wishlist</span>
+              </div>
+              <div className="dropdown-item">
+                <i className="fas fa-tag"></i>
+                <span>Offers</span>
+              </div>
+              <div className="dropdown-divider"></div>
+              <div className="dropdown-item" onClick={() => navigate('/settings')}>
+                <i className="fas fa-cog"></i>
+                <span>Settings</span>
+              </div>
+              <div className="dropdown-divider"></div>
+              <div className="dropdown-item">
+                <i className="fas fa-sign-out-alt"></i>
+                <span>Log Out</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Auth Buttons */}
+          <div className="auth-buttons">
+            <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
+              Sign In
+            </button>
+            <button className="auth-btn signup-btn" onClick={() => navigate('/signup')}>
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
   );
 };
-
-
-const categoriesData = [
-  {
-    title: "Fabrics",
-    image: "/images/fabrics.jpg",  // Changed from require()
-    items: [
-      {
-        type: "Natural Fabrics",
-        varieties: [
-          { name: "Cotton", translationKey: "materials.cotton" },
-          { name: "Silk", translationKey: "materials.silk" },
-          { name: "Wool", translationKey: "materials.wool" },
-          { name: "Linen", translationKey: "materials.linen" },
-          { name: "Jute", translationKey: "materials.jute" }
-        ]
-      },
-      {
-        type: "Synthetic Fabrics",
-        varieties: [
-          { name: "Polyester", translationKey: "materials.polyester" },
-          { name: "Nylon", translationKey: "materials.nylon" },
-          { name: "Rayon", translationKey: "materials.rayon" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Laces",
-    image: "/images/laces.jpg",  // Changed from require()
-    items: [
-      {
-        type: "Traditional Laces",
-        varieties: [
-          { name: "Cotton Lace", translationKey: "materials.laces.varieties.cotton_lace" },
-          { name: "Silk Lace", translationKey: "materials.laces.varieties.silk_lace" },
-          { name: "Crochet Lace", translationKey: "materials.laces.varieties.crochet_lace" }
-        ]
-      },
-      {
-        type: "Modern Laces",
-        varieties: [
-          { name: "Synthetic Lace", translationKey: "materials.laces.varieties.synthetic_lace" },
-          { name: "Embroidered Lace", translationKey: "materials.laces.varieties.embroidered_lace" },
-          { name: "Metallic Lace", translationKey: "materials.laces.varieties.metallic_lace" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Sarees",
-    image: "/images/sarees.jpg",  // Changed from require()
-    items: [
-      {
-        type: "Traditional Sarees",
-        varieties: [
-          { name: "Handloom", translationKey: "materials.sarees.varieties.handloom" },
-          { name: "Ikat", translationKey: "materials.sarees.varieties.ikat" },
-          { name: "Temple", translationKey: "materials.sarees.varieties.temple" },
-          { name: "Banarasi", translationKey: "materials.sarees.varieties.banarasi" }
-        ]
-      },
-      {
-        type: "Modern Sarees",
-        varieties: [
-          { name: "Designer", translationKey: "materials.sarees.varieties.designer" },
-          { name: "Fusion", translationKey: "materials.sarees.varieties.fusion" },
-          { name: "Printed", translationKey: "materials.sarees.varieties.printed" }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Carpets",
-    image: "/images/carpets.jpg",  // Changed from require()
-    items: [
-      {
-        type: "Traditional Carpets",
-        varieties: [
-          { name: "Persian", translationKey: "materials.carpets.varieties.persian" },
-          { name: "Turkish", translationKey: "materials.carpets.varieties.turkish" },
-          { name: "Indian", translationKey: "materials.carpets.varieties.indian" }
-        ]
-      },
-      {
-        type: "Modern Carpets",
-        varieties: [
-          { name: "Contemporary", translationKey: "materials.carpets.varieties.contemporary" },
-          { name: "Industrial", translationKey: "materials.carpets.varieties.industrial" },
-          { name: "Eco-friendly", translationKey: "materials.carpets.varieties.eco_friendly" }
-        ]
-      }
-    ]
-  }
-];
 
 
 const CategoryList = () => {
@@ -159,7 +337,7 @@ const CategoryList = () => {
         >
           {t(`materials.${category.title.toLowerCase()}`)}
         </div>
-      ))}
+      ))} 
     </div>
   );
 };
@@ -249,7 +427,8 @@ const NavBar = () => {
                   <button onClick={() => handleLanguageChange('en')} lang="en">English</button>
                   <button onClick={() => handleLanguageChange('hi')} lang="hi">हिंदी</button>
                   <button onClick={() => handleLanguageChange('te')} lang="te">తెలుగు</button>
-                  <button onClick={() => handleLanguageChange('ar')} lang="ar">العربية</button>
+                  <button onClick={() => handleLanguageChange('ta')} lang="ta">தமிழ்</button>
+                  <button onClick={() => handleLanguageChange('kn')} lang="kn">ಕನ್ನಡ</button>
                   <button onClick={() => handleLanguageChange('bn')} lang="bn">বাংলা</button>
                 </div>
               </div>
@@ -261,21 +440,21 @@ const NavBar = () => {
               <div className="dropdown-content">
                 <div className="region-grid">
                   <div className="region-list">
-                    <div className="region-item"><span>{t('regions.rajahmundry')}</span></div>
-                    <div className="region-item"><span>{t('regions.srikalahasti')}</span></div>
-                    <div className="region-item"><span>{t('regions.mangalgiri')}</span></div>
-                    <div className="region-item"><span>{t('regions.venkatgiri')}</span></div>
-                    <div className="region-item"><span>{t('regions.uppada')}</span></div>
-                    <div className="region-item"><span>{t('regions.ananthapur')}</span></div>
-                    <div className="region-item"><span>{t('regions.eluru')}</span></div>
-                    <div className="region-item"><span>{t('regions.pochampalli')}</span></div>
-                    <div className="region-item"><span>{t('regions.banjara')}</span></div>
-                    <div className="region-item"><span>{t('regions.puttapaka')}</span></div>
-                    <div className="region-item"><span>{t('regions.gatuppal')}</span></div>
-                    <div className="region-item"><span>{t('regions.chautupal')}</span></div>
-                    <div className="region-item"><span>{t('regions.koyalguden')}</span></div>
-                    <div className="region-item"><span>{t('regions.chirala')}</span></div>
-                    <div className="region-item"><span>{t('regions.kadapa')}</span></div>
+                    <div className="region-item">{t('regions.rajahmundry')}</div>
+                    <div className="region-item">{t('regions.srikalahasti')}</div>
+                    <div className="region-item">{t('regions.mangalgiri')}</div>
+                    <div className="region-item">{t('regions.venkatgiri')}</div>
+                    <div className="region-item">{t('regions.uppada')}</div>
+                    <div className="region-item">{t('regions.ananthapur')}</div>
+                    <div className="region-item">{t('regions.eluru')}</div>
+                    <div className="region-item">{t('regions.pochampalli')}</div>
+                    <div className="region-item">{t('regions.banjara')}</div>
+                    <div className="region-item">{t('regions.puttapaka')}</div>
+                    <div className="region-item">{t('regions.gatuppal')}</div>
+                    <div className="region-item">{t('regions.chautupal')}</div>
+                    <div className="region-item">{t('regions.koyalguden')}</div>
+                    <div className="region-item">{t('regions.chirala')}</div>
+                    <div className="region-item">{t('regions.kadapa')}</div>
                   </div>
                 </div>
               </div>
@@ -460,7 +639,7 @@ const ProductSection = () => {
     {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: "/images/cotton.jpg",
+      image: "/images/cotton.jpg",  // Changed from require()
     },
     {
       id: 2,
@@ -520,22 +699,22 @@ const FeaturedProducts = () => {
     { 
       name: t("materials.cotton"),
       description: t("materials.cotton_description"), 
-      image: require("../../img/cotton.jpg") 
+      image: "/images/cotton.jpg"  // Changed from require()
     },
     { 
       name: t("materials.silk"),
       description: t("materials.silk_description"), 
-      image: require("../../img/cotton.jpg") 
+      image: "/images/cotton.jpg"  // Changed from require()
     },
     { 
       name: t("materials.wool"),
       description: t("materials.wool_description"), 
-      image: require("../../img/cotton.jpg") 
+      image: "/images/cotton.jpg"  // Changed from require()
     },
     { 
       name: t("materials.linen"),
       description: t("materials.linen_description"), 
-      image: require("../../img/cotton.jpg") 
+      image: "/images/cotton.jpg"  // Changed from require()
     }
   ];
 

@@ -1,10 +1,7 @@
-// First, let's fix the import statements at the top
-// Remove unused imports
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';  // Remove useRef
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './categories.css';
- 
+
 const categoriesData = [
   {
     title: "Fabrics",

@@ -41,5 +41,76 @@
       "nylon": "नायलॉन",
       "rayon": "रेयॉन"
     }
+  },
+  "home": {
+    "craft_stories": "शिल्प कथाएं",
+    "shop_by_trend": "ट्रेंड के अनुसार खरीदारी"
+  },
+  "categories": {
+    "shop_by_categories": "श्रेणियों के अनुसार खरीदें",
+    "handloom_heritage": "हथकरघा विरासत",
+    "handloom_description": "पारंपरिक हथकरघा बुनाई",
+    "ikat_traditions": "इकत परंपराएं",
+    "ikat_description": "पारंपरिक इकत डिज़ाइन",
+    "temple_designs": "मंदिर डिज़ाइन",
+    "temple_description": "पारंपरिक मंदिर डिज़ाइन"
+  },
+  "seasons": {
+    "favorites": {
+      "title": "मौसमी पसंदीदा",
+      "description": "हर मौसम के लिए उपयुक्त कपड़ों का हमारा चयन खोजें",
+      "spring": {
+        "name": "वसंत",
+        "fabrics": {
+          "cotton_lawn": {
+            "name": "कॉटन लॉन",
+            "description": "वसंत के मौसम के लिए हल्का और हवादार सूती कपड़ा"
+          },
+          "linen_blend": {
+            "name": "लिनन मिश्रण",
+            "description": "वसंत के परिधान के लिए ताज़ा और हवादार कपड़ा"
+          }
+        }
+      },
+      "summer": {
+        "name": "गर्मी",
+        "fabrics": {
+          "pure_cotton": {
+            "name": "शुद्ध सूती",
+            "description": "गर्मी के दिनों के लिए ठंडा और आरामदायक सूती कपड़ा"
+          },
+          "light_silk": {
+            "name": "हल्का रेशम",
+            "description": "गर्मी की शामों के लिए हवादार रेशम"
+          }
+        }
+      },
+      "fall": {
+        "name": "पतझड़",
+        "fabrics": {
+          "wool_blend": {
+            "name": "ऊन मिश्रण",
+            "description": "पतझड़ के मौसम के लिए गर्म और स्टाइलिश कपड़ा"
+          },
+          "cotton_twill": {
+            "name": "सूती ट्विल",
+            "description": "पतझड़ की गतिविधियों के लिए टिकाऊ और आरामदायक"
+          }
+        }
+      },
+      "winter": {
+        "name": "सर्दी",
+        "fabrics": {
+          "pure_wool": {
+            "name": "शुद्ध ऊन",
+            "description": "सर्दी के आराम के लिए मोटी और गर्म ऊन"
+          },
+          "velvet": {
+            "name": "मखमल",
+            "description": "सर्दी के अवसरों के लिए शानदार और गर्म कपड़ा"
+          }
+        }
+      }
+    }
   }
 }

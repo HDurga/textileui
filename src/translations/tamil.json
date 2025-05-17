@@ -1,0 +1,38 @@
+{
+  "navigation": {
+    "region": "பகுதி",
+    "materials": "பொருட்கள்"
+  },
+  "search": {
+    "placeholder": "தேடல்",
+    "products": "பொருட்கள்",
+    "categories": "வகைகள்"
+  },
+  "categories": {
+    "shop_by_categories": "வகைகளின் படி கடை",
+    "handloom_heritage": "கைத்தறி பாரம்பரியம்",
+    "handloom_description": "பாரம்பரிய கைத்தறி நெசவுகள்",
+    "ikat_traditions": "இக்காட் பாரம்பரியங்கள்",
+    "ikat_description": "பாரம்பரிய இக்காட் வடிவமைப்புகள்",
+    "temple_designs": "கோவில் வடிவமைப்புகள்",
+    "temple_description": "பாரம்பரிய கோவில் வடிவமைப்புகள்"
+  },
+  "materials": {
+    "cotton": "பருத்தி",
+    "cotton_description": "மென்மையான பருத்தி துணி",
+    "silk": "பட்டு",
+    "silk_description": "பிரகாசமான பட்டு துணி",
+    "wool": "கம்பளி",
+    "wool_description": "வெப்பமான கம்பளி துணி",
+    "linen": "லினன்",
+    "linen_description": "இயற்கை லினன் துணி"
+  },
+  "products": {
+    "select_prompt": "ஒரு பொருளைத் தேர்ந்தெடுக்கவும்"
+  },
+  "home": {
+    "craft_stories": "கைவினை கதைகள்",
+    "shop_by_trend": "போக்கின் படி கடை"
+  },
+  "Favorites": "பிடித்தவை"
+}

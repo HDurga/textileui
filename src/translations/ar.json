@@ -1,4 +1,24 @@
 {
+  "regions": {
+    "rajahmundry": "راجاموندري",
+    "srikalahasti": "سريكالاهاستي",
+    "mangalgiri": "مانجالجيري",
+    "venkatgiri": "فينكاتجيري",
+    "uppada": "أوبادا",
+    "ananthapur": "أنانتابور",
+    "eluru": "إيلورو",
+    "pochampalli": "بوتشامبالي",
+    "banjara": "بانجارا",
+    "puttapaka": "بوتاباكا",
+    "gatuppal": "جاتوبال",
+    "chautupal": "تشاوتوبال",
+    "koyalguden": "كويالجودين",
+    "chirala": "تشيرالا",
+    "kadapa": "كادابا"
+  }
+}
+
+{
   "materials": {
     "fabrics": "الأقمشة",
     "natural_fabrics": "أقمشة طبيعية",

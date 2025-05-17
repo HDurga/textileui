@@ -4,36 +4,154 @@
     "region": "অঞ্চল",
     "materials": "উপকরণ",
     "search": "অনুসন্ধান",
-    "favorites": "পছন্দ",
+    "favorites": "প্রিয়",
     "user": "ব্যবহারকারী",
     "signin": "সাইন ইন",
-    "signup": "নিবন্ধন",
+    "signup": "সাইন আপ",
     "home": "হোম",
     "products": "পণ্য",
     "about_us": "আমাদের সম্পর্কে",
-    "contact_us": "যোগাযোগ",
+    "contact_us": "যোগাযোগ করুন",
     "privacy_policy": "গোপনীয়তা নীতি",
     "terms_conditions": "শর্তাবলী",
     "material_types": "উপকরণের ধরন"
   },
+  "search": {
+    "placeholder": "অনুসন্ধান করুন",
+    "products": "পণ্যসমূহ",
+    "categories": "বিভাগসমূহ"
+  },
   "materials": {
     "fabrics": "কাপড়",
-    "natural_fabrics": "প্রাকৃতিক কাপড়",
-    "synthetic_fabrics": "সিনথেটিক কাপড়",
-    "cotton": "সুতি",
-    "silk": "রেশম",
-    "wool": "পশম",
-    "linen": "লিনেন",
-    "jute": "পাট",
-    "polyester": "পলিয়েস্টার",
-    "nylon": "নাইলন",
-    "rayon": "রেয়ন",
-    "traditional_laces": "ঐতিহ্যবাহী লেস",
-    "modern_laces": "আধুনিক লেস",
-    "traditional_sarees": "ঐতিহ্যবাহী শাড়ি",
-    "modern_sarees": "আধুনিক শাড়ি",
-    "traditional_carpets": "ঐতিহ্যবাহী কার্পেট",
-    "modern_carpets": "আধুনিক কার্পেট",
-    "Laces": "লেস"
+    "laces": "লেস",
+    "sarees": "শাড়ি",
+    "carpets": "কার্পেট",
+    "types": {
+      "natural_fabrics": "প্রাকৃতিক কাপড়",
+      "synthetic_fabrics": "সিনথেটিক কাপড়",
+      "traditional_laces": "ঐতিহ্যবাহী লেস",
+      "modern_laces": "আধুনিক লেস",
+      "traditional_sarees": "ঐতিহ্যবাহী শাড়ি",
+      "modern_sarees": "আধুনিক শাড়ি",
+      "traditional_carpets": "ঐতিহ্যবাহী কার্পেট",
+      "modern_carpets": "আধুনিক কার্পেট"
+    },
+    "varieties": {
+      "cotton": "সুতি",
+      "silk": "রেশম",
+      "wool": "পশম",
+      "linen": "লিনেন",
+      "jute": "পাট",
+      "polyester": "পলিয়েস্টার",
+      "nylon": "নাইলন",
+      "rayon": "রেয়ন",
+      "cotton_lace": "সুতি লেস",
+      "silk_lace": "রেশম লেস",
+      "crochet_lace": "ক্রোশে লেস",
+      "synthetic_lace": "সিনথেটিক লেস",
+      "embroidered_lace": "সূচিকর্ম লেস",
+      "metallic_lace": "মেটালিক লেস",
+      "handloom": "তাঁত",
+      "ikat": "ইকাট",
+      "temple": "মন্দির",
+      "banarasi": "বারাণসী",
+      "designer": "ডিজাইনার",
+      "fusion": "ফিউশন",
+      "printed": "ছাপা",
+      "persian": "পারস্য",
+      "turkish": "তুর্কি",
+      "indian": "ভারতীয়",
+      "contemporary": "সমসাময়িক",
+      "industrial": "শিল্প",
+      "eco_friendly": "পরিবেশ বান্ধব"
+    }
+  },
+  "home": {
+    "craft_stories": "শিল্প কাহিনী",
+    "shop_by_trend": "ট্রেন্ড অনুযায়ী কেনাকাটা"
+  },
+  "categories": {
+    "shop_by_categories": "বিভাগ অনুযায়ী কেনাকাটা",
+    "handloom_heritage": "তাঁত ঐতিহ্য",
+    "handloom_description": "ঐতিহ্যবাহী তাঁত বয়ন",
+    "ikat_traditions": "ইকাট ঐতিহ্য",
+    "ikat_description": "ঐতিহ্যবাহী ইকাট নকশা",
+    "temple_designs": "মন্দির নকশা",
+    "temple_description": "ঐতিহ্যবাহী মন্দির নকশা"
+  },
+  "seasons": {
+    "favorites": {
+      "title": "মৌসুমি পছন্দ",
+      "description": "প্রতিটি ঋতুর জন্য উপযুক্ত কাপড় খুঁজুন",
+      "spring": {
+        "name": "বসন্ত",
+        "fabrics": {
+          "cotton_lawn": {
+            "name": "সুতি লন",
+            "description": "বসন্তের জন্য হালকা ও নরম সুতি"
+          },
+          "linen_blend": {
+            "name": "লিনেন মিশ্রণ",
+            "description": "বসন্তের পোশাকের জন্য তাজা ও বাতাস চলাচলযোগ্য কাপড়"
+          }
+        }
+      },
+      "summer": {
+        "name": "গ্রীষ্ম",
+        "fabrics": {
+          "pure_cotton": {
+            "name": "খাঁটি সুতি",
+            "description": "গরমের দিনের জন্য ঠান্ডা ও আরামদায়ক সুতি"
+          },
+          "light_silk": {
+            "name": "হালকা রেশম",
+            "description": "গ্রীষ্মের সন্ধ্যার জন্য বাতাস চলাচলযোগ্য রেশম"
+          }
+        }
+      },
+      "fall": {
+        "name": "শরৎ",
+        "fabrics": {
+          "wool_blend": {
+            "name": "পশম মিশ্রণ",
+            "description": "শরতের আবহাওয়ার জন্য গরম ও স্টাইলিশ কাপড়"
+          },
+          "cotton_twill": {
+            "name": "সুতি টুইল",
+            "description": "শরতের কার্যক্রমের জন্য টেকসই ও আরামদায়ক"
+          }
+        }
+      },
+      "winter": {
+        "name": "শীত",
+        "fabrics": {
+          "pure_wool": {
+            "name": "খাঁটি পশম",
+            "description": "শীতের আরামের জন্য মোটা ও গরম পশম"
+          },
+          "velvet": {
+            "name": "ভেলভেট",
+            "description": "শীতের অনুষ্ঠানের জন্য বিলাসবহুল ও গরম কাপড়"
+          }
+        }
+      }
+    }
+  },
+  "regions": {
+    "rajahmundry": "রাজমুন্দ্রি",
+    "srikalahasti": "শ্রীকালাহস্তি",
+    "mangalgiri": "মঙ্গলগিরি",
+    "venkatgiri": "বেঙ্কটগিরি",
+    "uppada": "উপ্পাদা",
+    "ananthapur": "অনন্তপুর",
+    "eluru": "এলুরু",
+    "pochampalli": "পোচমপল্লি",
+    "banjara": "বাঞ্জারা",
+    "puttapaka": "পুট্টাপাকা",
+    "gatuppal": "গাটুপ্পাল",
+    "chautupal": "চৌটুপাল",
+    "koyalguden": "কোয়ালগুডেন",
+    "chirala": "চিরালা",
+    "kadapa": "কাদাপা"
   }
 }
