@@ -16,6 +16,23 @@
     "terms_conditions": "नियम और शर्तें",
     "material_types": "सामग्री के प्रकार"
   },
+  "regions": {
+    "rajahmundry": "राजमुंद्री",
+    "srikalahasti": "श्रीकालहस्ति",
+    "mangalgiri": "मंगलगिरी",
+    "venkatgiri": "वेंकटगिरी",
+    "uppada": "उप्पाडा",
+    "ananthapur": "अनंतपुर",
+    "eluru": "एलुरु",
+    "pochampalli": "पोचमपल्ली",
+    "banjara": "बंजारा",
+    "puttapaka": "पुट्टापका",
+    "gatuppal": "गटुप्पल",
+    "chautupal": "चौतुपल",
+    "koyalguden": "कोयलगुडेन",
+    "chirala": "चिराला",
+    "kadapa": "कडप्पा"
+  },
   "materials": {
     "fabrics": "कपड़े",
     "laces": "लेस",
@@ -44,7 +61,7 @@
   },
   "home": {
     "craft_stories": "शिल्प कथाएं",
-    "shop_by_trend": "ट्रेंड के अनुसार खरीदारी"
+    "shop_by_trend": "ट्रेंड के अनुसार खरीदें"
   },
   "categories": {
     "shop_by_categories": "श्रेणियों के अनुसार खरीदें",
@@ -112,5 +129,15 @@
         }
       }
     }
+  },  
+  "featured": {
+    "title": "ट्रेंड के अनुसार खरीदें",
+    "fabrics": {
+      "cotton": {
+        "name": "सूती कपड़ा",
+        "description": "प्राकृतिक और आरामदायक कपड़ा"
+      }
+    }
   }
 }
+

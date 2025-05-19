@@ -4,8 +4,9 @@ import { initReactI18next } from 'react-i18next';
 import enTranslations from './translations/en.json';
 import hiTranslations from './translations/hi.json';
 import teTranslations from './translations/te.json';
-import tamilTranslations from './translations/tamil.json';
-import kannadaTranslations from './translations/kannada.json';
+import taTranslations from './translations/ta.json';
+import knTranslations from './translations/kn.json';
+import bnTranslations from './translations/bn.json';  // Add Bengali import
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -19,13 +20,16 @@ i18n.use(initReactI18next).init({
       translation: teTranslations
     },
     ta: {
-      translation: tamilTranslations
+      translation: taTranslations
     },
     kn: {
-      translation: kannadaTranslations
+      translation: knTranslations
+    },
+    bn: {                          // Add Bengali resource
+      translation: bnTranslations
     }
   },
-  lng: 'en', // default language
+  lng: 'en',
   fallbackLng: 'en',
   interpolation: {
     escapeValue: false

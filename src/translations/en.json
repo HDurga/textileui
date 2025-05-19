@@ -13,57 +13,14 @@
     "about_us": "About Us",
     "contact_us": "Contact Us",
     "privacy_policy": "Privacy Policy",
-    "terms_conditions": "Terms and Conditions",
+    "terms_conditions": "Terms & Conditions",
     "material_types": "Material Types"
-  },
-  "user_menu": {
-    "greeting": "Good Morning",
-    "profile": "My Profile",
-    "orders": "My Orders",
-    "wishlist": "My Wishlist",
-    "offers": "Offers",
-    "settings": "Settings",
-    "logout": "Logout"
-  },
-  "search": {
-    "placeholder": "Search for fabrics, sarees, carpets..."
-  },
-  "regions": {
-    "rajahmundry": "Rajahmundry",
-    "srikalahasti": "Srikalahasti",
-    "mangalgiri": "Mangalgiri",
-    "venkatgiri": "Venkatgiri",
-    "uppada": "Uppada",
-    "ananthapur": "Ananthapur",
-    "eluru": "Eluru",
-    "pochampalli": "Pochampalli",
-    "banjara": "Banjara",
-    "puttapaka": "Puttapaka",
-    "gatuppal": "Gatuppal",
-    "chautupal": "Chautupal",
-    "koyalguden": "Koyalguden",
-    "chirala": "Chirala",
-    "kadapa": "Kadapa"
   },
   "materials": {
     "fabrics": "Fabrics",
-    "natural_fabrics": "Natural Fabrics",
-    "synthetic_fabrics": "Synthetic Fabrics",
-    "cotton": "Cotton",
-    "silk": "Silk",
-    "wool": "Wool",
-    "linen": "Linen",
-    "jute": "Jute",
-    "polyester": "Polyester",
-    "nylon": "Nylon",
-    "rayon": "Rayon",
-    "traditional_laces": "Traditional Laces",
-    "modern_laces": "Modern Laces",
-    "traditional_sarees": "Traditional Sarees",
-    "modern_sarees": "Modern Sarees",
-    "traditional_carpets": "Traditional Carpets",
-    "modern_carpets": "Modern Carpets",
-    "Laces": "Laces",
+    "laces": "Laces",
+    "sarees": "Sarees",
+    "carpets": "Carpets",
     "types": {
       "natural_fabrics": "Natural Fabrics",
       "synthetic_fabrics": "Synthetic Fabrics",
@@ -89,72 +46,65 @@
       "synthetic_lace": "Synthetic Lace",
       "embroidered_lace": "Embroidered Lace",
       "metallic_lace": "Metallic Lace",
-      "handloom_saree": "Handloom Saree",
-      "ikat_saree": "Ikat Saree",
-      "temple_saree": "Temple Saree",
-      "banarasi_saree": "Banarasi Saree",
-      "designer_saree": "Designer Saree",
-      "fusion_saree": "Fusion Saree",
-      "printed_saree": "Printed Saree",
-      "persian_carpet": "Persian Carpet",
-      "turkish_carpet": "Turkish Carpet",
-      "indian_carpet": "Indian Carpet",
-      "contemporary_carpet": "Contemporary Carpet",
-      "industrial_carpet": "Industrial Carpet",
-      "eco_friendly_carpet": "Eco-friendly Carpet"
+      "handloom": "Handloom",
+      "ikat": "Ikat",
+      "temple": "Temple",
+      "banarasi": "Banarasi",
+      "designer": "Designer",
+      "fusion": "Fusion",
+      "printed": "Printed",
+      "persian": "Persian",
+      "turkish": "Turkish",
+      "indian": "Indian",
+      "contemporary": "Contemporary",
+      "industrial": "Industrial",
+      "eco_friendly": "Eco-Friendly"
     }
   },
-  "products": {
-    "1": "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-    "2": "Sky Blue Pure Cotton Saree",
-    "3": "Designer Printed Cotton Saree"
-  },
-  "product_details": {
-    "description": "Description",
-    "specifications": "Specifications",
-    "reviews": "Reviews",
-    "add_to_cart": "Add to Cart",
-    "buy_now": "Buy Now",
-    "add_to_wishlist": "Add to Wishlist",
-    "remove_from_wishlist": "Remove from Wishlist",
-    "in_stock": "In Stock",
-    "out_of_stock": "Out of Stock",
-    "quantity": "Quantity",
-    "size": "Size",
-    "color": "Color"
-  },
-  "common": {
-    "ok": "OK",
-    "cancel": "Cancel",
-    "yes": "Yes",
-    "no": "No",
-    "loading": "Loading...",
-    "error": "Error",
-    "success": "Success",
-    "warning": "Warning",
-    "info": "Information"
+  "regions": {
+    "rajahmundry": "Rajahmundry",
+    "srikalahasti": "Srikalahasti",
+    "mangalgiri": "Mangalgiri",
+    "venkatgiri": "Venkatgiri",
+    "uppada": "Uppada",
+    "ananthapur": "Ananthapur",
+    "eluru": "Eluru",
+    "pochampalli": "Pochampalli",
+    "banjara": "Banjara",
+    "puttapaka": "Puttapaka",
+    "gatuppal": "Gatuppal",
+    "chautupal": "Chautupal",
+    "koyalguden": "Koyalguden",
+    "chirala": "Chirala",
+    "kadapa": "Kadapa"
   },
   "home": {
     "craft_stories": "Craft Stories",
     "shop_by_trend": "Shop by Trend"
   },
   "categories": {
-    "shop_by_categories": "Shop by Categories"
+    "shop_by_categories": "Shop by Categories",
+    "handloom_heritage": "Handloom Heritage",
+    "handloom_description": "Traditional Handloom Weaving",
+    "ikat_traditions": "Ikat Traditions",
+    "ikat_description": "Traditional Ikat Designs",
+    "temple_designs": "Temple Designs",
+    "temple_description": "Traditional Temple Designs"
   },
   "seasons": {
     "favorites": {
       "title": "Seasonal Favorites",
-      "description": "Discover our selection of fabrics perfect for every season",
+      "description": "Find fabrics suitable for every season",
       "spring": {
         "name": "Spring",
         "fabrics": {
           "cotton_lawn": {
             "name": "Cotton Lawn",
-            "description": "Light and breathable cotton perfect for spring weather"
+            "description": "Light and soft cotton suitable for spring"
           },
           "linen_blend": {
             "name": "Linen Blend",
-            "description": "Fresh and airy fabric for spring attire"
+            "description": "Fresh and breathable fabric for spring wear"
           }
         }
       },
@@ -167,7 +117,7 @@
           },
           "light_silk": {
             "name": "Light Silk",
-            "description": "Breathable silk perfect for summer evenings"
+            "description": "Breathable silk for summer evenings"
           }
         }
       },

@@ -15,28 +15,50 @@
     "koyalguden": "كويالجودين",
     "chirala": "تشيرالا",
     "kadapa": "كادابا"
-  }
-}
-
-{
+  },
   "materials": {
     "fabrics": "الأقمشة",
-    "natural_fabrics": "أقمشة طبيعية",
-    "synthetic_fabrics": "أقمشة صناعية",
-    "cotton": "قطن",
-    "silk": "حرير",
-    "wool": "صوف",
-    "linen": "كتان",
-    "jute": "جوت",
-    "polyester": "بوليستر",
-    "nylon": "نايلون",
-    "rayon": "رايون",
-    "traditional_laces": "دانتيل تقليدي",
-    "modern_laces": "دانتيل عصري",
-    "traditional_sarees": "ساري تقليدي",
-    "modern_sarees": "ساري عصري",
-    "traditional_carpets": "سجاد تقليدي",
-    "modern_carpets": "سجاد عصري",
-    "Laces": "دانتيل"
+    "laces": "دانتيل",
+    "types": {
+      "natural_fabrics": "أقمشة طبيعية",
+      "synthetic_fabrics": "أقمشة صناعية",
+      "traditional_laces": "دانتيل تقليدي",
+      "modern_laces": "دانتيل عصري",
+      "traditional_sarees": "ساري تقليدي",
+      "modern_sarees": "ساري عصري",
+      "traditional_carpets": "سجاد تقليدي",
+      "modern_carpets": "سجاد عصري"
+    },
+    "varieties": {
+      "cotton": "قطن",
+      "silk": "حرير",
+      "wool": "صوف",
+      "linen": "كتان",
+      "jute": "جوت",
+      "polyester": "بوليستر",
+      "nylon": "نايلون",
+      "rayon": "رايون"
+    }
+  },
+  "featured": {
+    "title": "تسوق حسب الاتجاهات",
+    "fabrics": {
+      "cotton": {
+        "name": "قماش قطني",
+        "description": "قماش طبيعي ومريح"
+      },
+      "silk": {
+        "name": "قماش حريري",
+        "description": "قماش فاخر وأنيق"
+      },
+      "wool": {
+        "name": "قماش صوفي",
+        "description": "قماش دافئ ومريح"
+      },
+      "linen": {
+        "name": "قماش كتاني",
+        "description": "قماش بارد ومتين"
+      }
+    }
   }
 }

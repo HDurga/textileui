@@ -681,7 +681,7 @@ export { NavBar };
 const SearchBar = () => null; // Already handled in NavBar
 
 const FeaturedProducts = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const settings = {
     dots: false, infinite: true, speed: 500,
@@ -697,24 +697,24 @@ const FeaturedProducts = () => {
 
   const fabrics = [
     { 
-      name: t("materials.cotton"),
-      description: t("materials.cotton_description"), 
-      image: "/images/cotton.jpg"  // Changed from require()
+      name: t("featured.fabrics.cotton.name"),
+      description: t("featured.fabrics.cotton.description"), 
+      image: "/images/cotton.jpg"
     },
     { 
-      name: t("materials.silk"),
-      description: t("materials.silk_description"), 
-      image: "/images/cotton.jpg"  // Changed from require()
+      name: t("featured.fabrics.silk.name"),
+      description: t("featured.fabrics.silk.description"), 
+      image: "/images/silk.jpg"
     },
     { 
-      name: t("materials.wool"),
-      description: t("materials.wool_description"), 
-      image: "/images/cotton.jpg"  // Changed from require()
+      name: t("featured.fabrics.wool.name"),
+      description: t("featured.fabrics.wool.description"), 
+      image: "/images/wool.jpg"
     },
     { 
-      name: t("materials.linen"),
-      description: t("materials.linen_description"), 
-      image: "/images/cotton.jpg"  // Changed from require()
+      name: t("featured.fabrics.linen.name"),
+      description: t("featured.fabrics.linen.description"), 
+      image: "/images/linen.jpg"
     }
   ];
 

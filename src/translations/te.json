@@ -13,8 +13,25 @@
     "about_us": "మా గురించి",
     "contact_us": "మమ్మల్ని సంప్రదించండి",
     "privacy_policy": "గోప్యతా విధానం",
-    "terms_conditions": "నియమ నిబంధనలు",
+    "terms_conditions": "నిబంధనలు & షరతులు",
     "material_types": "వస్తు రకాలు"
+  },
+  "regions": {
+    "rajahmundry": "రాజమండ్రి",
+    "srikalahasti": "శ్రీకాళహస్తి",
+    "mangalgiri": "మంగళగిరి",
+    "venkatgiri": "వెంకటగిరి",
+    "uppada": "ఉప్పాడ",
+    "ananthapur": "అనంతపూర్",
+    "eluru": "ఏలూరు",
+    "pochampalli": "పోచంపల్లి",
+    "banjara": "బంజారా",
+    "puttapaka": "పుట్టపాక",
+    "gatuppal": "గట్టుప్పల్",
+    "chautupal": "చౌటుపాల్",
+    "koyalguden": "కోయల్గూడెన్",
+    "chirala": "చిరాల",
+    "kadapa": "కడప"
   },
   "materials": {
     "fabrics": "వస్త్రాలు",
@@ -39,53 +56,17 @@
       "jute": "జనపనార",
       "polyester": "పాలిస్టర్",
       "nylon": "నైలాన్",
-      "rayon": "రేయాన్",
-      "cotton_lace": "పత్తి లేస్",
-      "silk_lace": "పట్టు లేస్",
-      "crochet_lace": "క్రోషియా లేస్",
-      "synthetic_lace": "సింథటిక్ లేస్",
-      "embroidered_lace": "అల్లిక లేస్",
-      "metallic_lace": "మెటాలిక్ లేస్",
-      "handloom": "చేనేత",
-      "ikat": "ఇకత్",
-      "temple": "దేవాలయ",
-      "banarasi": "బనారసి",
-      "designer": "డిజైనర్",
-      "fusion": "ఫ్యూజన్",
-      "printed": "ముద్రిత",
-      "persian": "పర్షియన్",
-      "turkish": "టర్కిష్",
-      "indian": "భారతీయ",
-      "contemporary": "సమకాలీన",
-      "industrial": "పారిశ్రామిక",
-      "eco_friendly": "పర్యావరణ అనుకూల"
+      "rayon": "రేయాన్"
     }
-  },
-  "regions": {
-    "rajahmundry": "రాజమండ్రి",
-    "srikalahasti": "శ్రీకాళహస్తి",
-    "mangalgiri": "మంగళగిరి",
-    "venkatgiri": "వెంకటగిరి",
-    "uppada": "ఉప్పాడ",
-    "ananthapur": "అనంతపూర్",
-    "eluru": "ఏలూరు",
-    "pochampalli": "పోచంపల్లి",
-    "banjara": "బంజారా",
-    "puttapaka": "పుట్టపాక",
-    "gatuppal": "గట్టుప్పల్",
-    "chautupal": "చౌటుపాల్",
-    "koyalguden": "కోయల్గూడెన్",
-    "chirala": "చిరాల",
-    "kadapa": "కడప"
   },
   "home": {
     "craft_stories": "చేతివృత్తి కథలు",
-    "shop_by_trend": "ట్రెండ్ ప్రకారం షాపింగ్"
+    "shop_by_trend": "ట్రెండ్ ప్రకారం కొనుగోలు"
   },
   "categories": {
-    "shop_by_categories": "వర్గాల వారీగా షాపింగ్",
+    "shop_by_categories": "వర్గాల వారీగా కొనుగోలు",
     "handloom_heritage": "చేనేత వారసత్వం",
-    "handloom_description": "సాంప్రదాయ చేనేత నేత పనులు",
+    "handloom_description": "సాంప్రదాయ చేనేత నేత",
     "ikat_traditions": "ఇకత్ సంప్రదాయాలు",
     "ikat_description": "సాంప్రదాయ ఇకత్ డిజైన్లు",
     "temple_designs": "దేవాలయ డిజైన్లు",
@@ -94,17 +75,17 @@
   "seasons": {
     "favorites": {
       "title": "కాలానుగుణ ఇష్టాలు",
-      "description": "ప్రతి సీజన్‌కు సరిపోయే వస్త్రాలను కనుగొనండి",
+      "description": "ప్రతి ఋతువుకు తగిన వస్త్రాలను కనుగొనండి",
       "spring": {
-        "name": "వసంత ఋతువు",
+        "name": "వసంతం",
         "fabrics": {
           "cotton_lawn": {
-            "name": "కాటన్ లాన్",
-            "description": "వసంత కాలానికి సరిపోయే తేలికపాటి మృదువైన పత్తి"
+            "name": "పత్తి లాన్",
+            "description": "వసంత ఋతువుకు తేలికపాటి మరియు గ��ाలి ఆడే పత్తి"
           },
           "linen_blend": {
             "name": "లినెన్ మిశ్రమం",
-            "description": "వసంత ఋతువు దుస్తులకు తాజా మరియు గాలి ఆరే వస్త్రం"
+            "description": "వసంత దుస్తులకు తాజా మరియు గ��ाలి ఆరే వస్త్రం"
           }
         }
       },
@@ -112,12 +93,12 @@
         "name": "వేసవి",
         "fabrics": {
           "pure_cotton": {
-            "name": "సుద్ధ పత్తి",
+            "name": "సుద్ద పత్తి",
             "description": "వేసవి రోజులకు చల్లని మరియు సౌకర్యవంతమైన పత్తి"
           },
           "light_silk": {
             "name": "తేలికపాటి పట్టు",
-            "description": "వేసవి సాయంత్రాలకు సరిపోయే గాలి ఆరే పట్టు"
+            "description": "వేసవి సాయంత్రాలకు గాలి ఆడే పట్టు"
           }
         }
       },
@@ -129,8 +110,8 @@
             "description": "శరదృతు వాతావరణానికి వెచ్చని మరియు స్టైలిష్ వస్త్రం"
           },
           "cotton_twill": {
-            "name": "కాటన్ ట్విల్",
-            "description": "శరదృతు కార్యకలాపాలకు మన్నికైన మరియు సౌకర్యవంతమైన వస్త్రం"
+            "name": "పత్తి ట్విల్",
+            "description": "శరదృతు కార్యకలాపాలకు మన్నికైన మరియు సౌకర్యవంతమైన"
           }
         }
       },
@@ -138,7 +119,7 @@
         "name": "శీతాకాలం",
         "fabrics": {
           "pure_wool": {
-            "name": "సుద్ధ ఉన్ని",
+            "name": "సుద్ద ఉన్ని",
             "description": "శీతాకాల సౌకర్యం కోసం దళసరి మరియు వెచ్చని ఉన్ని"
           },
           "velvet": {
@@ -146,6 +127,27 @@
             "description": "శీతాకాల సందర్భాలకు విలాసవంతమైన మరియు వెచ్చని వస్త్రం"
           }
         }
+      }
+    }
+  },
+  "featured": {
+    "title": "ట్రెండ్ ప్రకారం కొనుగోలు",
+    "fabrics": {
+      "cotton": {
+        "name": "పత్తి వస్త్రం",
+        "description": "సహజసిద్ధమైన మరియు సౌకర్యవంతమైన వస్త్రం"
+      },
+      "silk": {
+        "name": "పట్టు వస్త్రం",
+        "description": "విలాసవంతమైన మరియు అందమైన వస్త్రం"
+      },
+      "wool": {
+        "name": "ఉన్ని వస్త్రం",
+        "description": "వెచ్చని మరియు సౌకర్యవంతమైన వస్త్రం"
+      },
+      "linen": {
+        "name": "లినెన్ వస్త్రం",
+        "description": "చల్లని మరియు మన్నికైన వస్త్రం"
       }
     }
   }

@@ -1,7 +1,20 @@
 {
+  "app_name": "பாரம்பரிய ஆடைகள்",
   "navigation": {
     "region": "பகுதி",
-    "materials": "பொருட்கள்"
+    "materials": "பொருட்கள்",
+    "search": "தேடல்",
+    "favorites": "பிடித்தவை",
+    "user": "பயனர்",
+    "signin": "உள்நுழைக",
+    "signup": "பதிவு செய்க",
+    "home": "முகப்பு",
+    "products": "பொருட்கள்",
+    "about_us": "எங்களைப் பற்றி",
+    "contact_us": "தொடர்பு கொள்ள",
+    "privacy_policy": "தனியுரிமைக் கொள்கை",
+    "terms_conditions": "விதிமுறைகள் & நிபந்தனைகள்",
+    "material_types": "பொருள் வகைகள்"
   },
   "search": {
     "placeholder": "தேடல்",
@@ -18,6 +31,10 @@
     "temple_description": "பாரம்பரிய கோவில் வடிவமைப்புகள்"
   },
   "materials": {
+    "fabrics": "துணிகள்",
+    "laces": "லேஸ்கள்",
+    "sarees": "புடவைகள்",
+    "carpets": "கம்பளங்கள்",
     "cotton": "பருத்தி",
     "cotton_description": "மென்மையான பருத்தி துணி",
     "silk": "பட்டு",
@@ -34,9 +51,27 @@
     "craft_stories": "கைவினை கதைகள்",
     "shop_by_trend": "போக்கின் படி கடை"
   },
-  "Favorites": "பிடித்தவை"
-},
-{
+  "featured": {
+    "title": "டிரெண்ட் படி ஷாப்பிங்",
+    "fabrics": {
+      "cotton": {
+        "name": "பருத்தி துணி",
+        "description": "இயற்கையான மற்றும் வசதியான துணி"
+      },
+      "silk": {
+        "name": "பட்டு துணி",
+        "description": "ஆடம்பரமான மற்றும் அழகான துணி"
+      },
+      "wool": {
+        "name": "கம்பளி துணி",
+        "description": "வெதுவெதுப்பான மற்றும் வசதியான துணி"
+      },
+      "linen": {
+        "name": "லினன் துணி",
+        "description": "குளிர்ச்சியான மற்றும் நீடித்து உழைக்கும் துணி"
+      }
+    }
+  },
   "regions": {
     "rajahmundry": "ராஜமுந்திரி",
     "srikalahasti": "ஸ்ரீகாளஹஸ்தி",
