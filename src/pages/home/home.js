@@ -12,40 +12,42 @@ import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
 
-const categoriesData = [
-  {
-    title: 'Fabrics',
-    items: [
-      {
-        type: 'Natural',
-        varieties: [
-          { name: 'Cotton', translationKey: 'materials.varieties.cotton' },
-          { name: 'Silk', translationKey: 'materials.varieties.silk' },
-          { name: 'Wool', translationKey: 'materials.varieties.wool' }
-        ]
-      },
-      {
-        type: 'Synthetic',
-        varieties: [
-          { name: 'Polyester', translationKey: 'materials.varieties.polyester' },
-          { name: 'Nylon', translationKey: 'materials.varieties.nylon' }
-        ]
-      }
-    ]
-  },
-  {
-    title: 'Laces',
-    items: [
-      {
-        type: 'Traditional',
-        varieties: [
-          { name: 'Cotton Lace', translationKey: 'materials.varieties.cotton_lace' },
-          { name: 'Silk Lace', translationKey: 'materials.varieties.silk_lace' }
-        ]
-      }
-    ]
-  }
-];
+  const categoriesData = [
+    {
+      title: 'Fabrics',
+      items: [
+        {
+          type: 'Natural',
+          varieties: [
+            { name: 'Cotton', translationKey: 'materials.varieties.cotton' },
+            { name: 'Silk', translationKey: 'materials.varieties.silk' },
+            { name: 'Wool', translationKey: 'materials.varieties.wool' }
+          ]
+        },
+        {
+          type: 'Synthetic',
+          varieties: [
+            { name: 'Polyester', translationKey: 'materials.varieties.polyester' },
+            { name: 'Nylon', translationKey: 'materials.varieties.nylon' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Laces',
+      items: [
+        {
+          type: 'Traditional',
+          varieties: [
+            { name: 'Cotton Lace', translationKey: 'materials.varieties.cotton_lace' },
+            { name: 'Silk Lace', translationKey: 'materials.varieties.silk_lace' }
+          ]
+        }
+      ]
+    }
+  ];
+
+
 
 const Slideshow = () => {
   const { t } = useTranslation();

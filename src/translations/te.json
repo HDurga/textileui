@@ -3,7 +3,11 @@
   "navigation": {
     "region": "ప్రాంతం",
     "materials": "వస్తువులు",
-    "search": "వెతకండి",
+    "search": {
+      "placeholder": "వెతకండి",
+      "products": "ఉత్పత్తులు",
+      "categories": "వర్గాలు"
+    },
     "favorites": "ఇష్టమైనవి",
     "user": "వినియోగదారు",
     "signin": "సైన్ ఇన్",
