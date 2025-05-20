@@ -3,7 +3,7 @@
   "navigation": {
     "region": "क्षेत्र",
     "materials": "सामग्री",
-    "search": "खोज",
+    "search": "खोजें",
     "favorites": "पसंदीदा",
     "user": "उपयोगकर्ता",
     "signin": "साइन इन",
@@ -40,7 +40,7 @@
     "carpets": "कालीन",
     "types": {
       "natural_fabrics": "प्राकृतिक कपड़े",
-      "synthetic_fabrics": "सिंथेटिक कपड़े",
+      "synthetic_fabrics": "कृत्रिम कपड़े",
       "traditional_laces": "पारंपरिक लेस",
       "modern_laces": "आधुनिक लेस",
       "traditional_sarees": "पारंपरिक साड़ियाँ",
@@ -60,7 +60,7 @@
     }
   },
   "home": {
-    "craft_stories": "शिल्प कथाएं",
+    "craft_stories": "शिल्प कहानियाँ",
     "shop_by_trend": "ट्रेंड के अनुसार खरीदें"
   },
   "categories": {
@@ -75,13 +75,13 @@
   "seasons": {
     "favorites": {
       "title": "मौसमी पसंदीदा",
-      "description": "हर मौसम के लिए उपयुक्त कपड़ों का हमारा चयन खोजें",
+      "description": "हर मौसम के लिए उपयुक्त कपड़े खोजें",
       "spring": {
         "name": "वसंत",
         "fabrics": {
           "cotton_lawn": {
             "name": "कॉटन लॉन",
-            "description": "वसंत के मौसम के लिए हल्का और हवादार सूती कपड़ा"
+            "description": "वसंत के लिए हल्का और मुलायम सूती कपड़ा"
           },
           "linen_blend": {
             "name": "लिनन मिश्रण",
@@ -129,13 +129,25 @@
         }
       }
     }
-  },  
+  },
   "featured": {
     "title": "ट्रेंड के अनुसार खरीदें",
     "fabrics": {
       "cotton": {
         "name": "सूती कपड़ा",
         "description": "प्राकृतिक और आरामदायक कपड़ा"
+      },
+      "silk": {
+        "name": "रेशमी कपड़ा",
+        "description": "शानदार और सुंदर कपड़ा"
+      },
+      "wool": {
+        "name": "ऊनी कपड़ा",
+        "description": "गर्म और आरामदायक कपड़ा"
+      },
+      "linen": {
+        "name": "लिनन कपड़ा",
+        "description": "ठंडा और टिकाऊ कपड़ा"
       }
     }
   }
