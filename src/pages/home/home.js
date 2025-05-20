@@ -5,7 +5,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import logo from '../../img/logo.jpeg';
-import backgroundImage from '../../img/back4.jpeg';
+import backgroundImage from '../../img/background image.jpg';
 import ShopByCategory from "../shopbycategory/shopbycategory";
 import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
 
@@ -641,17 +641,17 @@ const ProductSection = () => {
     {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: "/images/cotton.jpg",  // Changed from require()
+      image: require("../../img/sarees.jpg") // Changed from require()
     },
     {
       id: 2,
       name: "Sky Blue Pure Cotton Saree",
-      image: "/images/cotton.jpg",
+      image: require("../../img/temple  sarees.jpg"),
     },
     {
       id: 3,
       name: "Designer Printed Cotton Saree",
-      image: "/images/cotton.jpg",
+      image: require("../../img/printed cotton fabrics.jpg"),
     }
   ];
 
@@ -701,22 +701,22 @@ const FeaturedProducts = () => {
     { 
       name: t("featured.fabrics.cotton.name"),
       description: t("featured.fabrics.cotton.description"), 
-      image: "/images/cotton.jpg"
+      image: require("../../img/jute.jpeg"),
     },
     { 
       name: t("featured.fabrics.silk.name"),
       description: t("featured.fabrics.silk.description"), 
-      image: "/images/silk.jpg"
+      image: require("../../img/uppada jam.jpg"),
     },
     { 
       name: t("featured.fabrics.wool.name"),
       description: t("featured.fabrics.wool.description"), 
-      image: "/images/wool.jpg"
+      image: require("../../img/fabrics.jpg"),
     },
     { 
       name: t("featured.fabrics.linen.name"),
       description: t("featured.fabrics.linen.description"), 
-      image: "/images/linen.jpg"
+      image: require("../../img/Handloom Heritage.jpg")
     }
   ];
 
