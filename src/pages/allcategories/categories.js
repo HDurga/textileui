@@ -5,7 +5,7 @@ import './categories.css';
 const categoriesData = [
   {
     title: "Fabrics",
-    image: "/images/fabrics.jpg",  // Changed from require()
+    image: "/images/fabrics.jpg",  // Make sure this image exists in public/images
     description: "Premium quality fabrics featuring traditional varieties",
     items: [
       {
@@ -169,8 +169,8 @@ const Categories = ({ categoryData }) => {
   // Add image data for fabric types
   const fabricImages = {
     Cotton: [
-      { url: "../../img/cotton1.jpg", info: "Premium Cotton Fabric" },
-      { url: "../../img/cotton2.jpg", info: "Organic Cotton Material" },
+      { url: "/images/cotton1.jpg", info: "Premium Cotton Fabric" },
+      { url: "/images/cotton2.jpg", info: "Organic Cotton Material" },
     ],
     Silk: [
       { url: "../../img/silk1.jpg", info: "Pure Silk Fabric" },

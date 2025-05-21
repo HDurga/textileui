@@ -2,6 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './seasonsfabrics.css';
 
+// Use a different name for the placeholder image URL
+const placeholderImage = "https://via.placeholder.com/300x200?text=Cotton+Fabric";
+
 const SeasonsFabrics = () => {
   const { t } = useTranslation();
 
@@ -23,7 +26,7 @@ const SeasonsFabrics = () => {
                 <div key={index} className="fabric-card">
                   <div className="fabric-image">
                     <img 
-                      src="/images/cotton.jpg" // Changed from require()
+                      src={placeholderImage}  // Use the placeholder image URL
                       alt={t(`seasons.favorites.${season}.fabrics.${fabricKey}.name`)} 
                     />
                   </div>

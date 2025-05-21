@@ -1,10 +1,9 @@
 {
-  "app_name": "ಸಾಂಪ್ರದಾಯಿಕ ವಸ್ತ್ರಗಳು",
   "navigation": {
     "region": "ಪ್ರದೇಶ",
     "materials": "ವಸ್ತುಗಳು",
     "search": "ಹುಡುಕಿ",
-    "favorites": "ಮೆಚ್ಚಿನವು",
+    "favorites": "ಇಷ್ಟವಾದವು",
     "user": "ಬಳಕೆದಾರ",
     "signin": "ಸೈನ್ ಇನ್",
     "signup": "ಸೈನ್ ಅಪ್",
@@ -14,7 +13,7 @@
     "contact_us": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
     "privacy_policy": "ಗೌಪ್ಯತೆ ನೀತಿ",
     "terms_conditions": "ನಿಯಮಗಳು & ಷರತ್ತುಗಳು",
-    "material_types": "ವಸ್ತುಗಳ ಪ್ರಕಾರಗಳು"
+    "material_types": "ವಸ್ತು ಪ್ರಕಾರಗಳು"
   },
   "search": {
     "placeholder": "ಹುಡುಕಿ",
@@ -23,52 +22,24 @@
   },
   "materials": {
     "fabrics": "ಬಟ್ಟೆಗಳು",
-    "laces": "ಲೇಸ್‌ಗಳು",
+    "laces": "ಲೇಸ್",
     "sarees": "ಸೀರೆಗಳು",
-    "carpets": "ಜಮಖಾನೆಗಳು",
-    "types": {
-      "natural_fabrics": "ನೈಸರ್ಗಿಕ ಬಟ್ಟೆಗಳು",
-      "synthetic_fabrics": "ಕೃತಕ ಬಟ್ಟೆಗಳು",
-      "traditional_laces": "ಸಾಂಪ್ರದಾಯಿಕ ಲೇಸ್‌ಗಳು",
-      "modern_laces": "ಆಧುನಿಕ ಲೇಸ್‌ಗಳು",
-      "traditional_sarees": "ಸಾಂಪ್ರದಾಯಿಕ ಸೀರೆಗಳು",
-      "modern_sarees": "ಆಧುನಿಕ ಸೀರೆಗಳು",
-      "traditional_carpets": "ಸಾಂಪ್ರದಾಯಿಕ ಜಮಖಾನೆಗಳು",
-      "modern_carpets": "ಆಧುನಿಕ ಜಮಖಾನೆಗಳು"
-    },
-    "varieties": {
-      "cotton": "ಹತ್ತಿ",
-      "silk": "ರೇಷ್ಮೆ",
-      "wool": "ಉಣ್ಣೆ",
-      "linen": "ನಾರುಬಟ್ಟೆ",
-      "jute": "ನಾರು",
-      "polyester": "ಪಾಲಿಯೆಸ್ಟರ್",
-      "nylon": "ನೈಲಾನ್",
-      "rayon": "ರೇಯಾನ್",
-      "cotton_lace": "ಹತ್ತಿ ಲೇಸ್",
-      "silk_lace": "ರೇಷ್ಮೆ ಲೇಸ್",
-      "crochet_lace": "ಕ್ರೋಷೆ ಲೇಸ್",
-      "synthetic_lace": "ಕೃತಕ ಲೇಸ್",
-      "embroidered_lace": "ಕಸೂತಿ ಲೇಸ್",
-      "metallic_lace": "ಲೋಹದ ಲೇಸ್",
-      "handloom": "ಕೈಮಗ್ಗ",
-      "ikat": "ಇಕತ್",
-      "temple": "ದೇವಾಲಯ",
-      "banarasi": "ಬನಾರಸಿ",
-      "designer": "ವಿನ್ಯಾಸಕ",
-      "fusion": "ಫ್ಯೂಷನ್",
-      "printed": "ಮುದ್ರಿತ",
-      "persian": "ಪರ್ಷಿಯನ್",
-      "turkish": "ಟರ್ಕಿಷ್",
-      "indian": "ಭಾರತೀಯ",
-      "contemporary": "ಸಮಕಾಲೀನ",
-      "industrial": "ಕೈಗಾರಿಕಾ",
-      "eco_friendly": "ಪರಿಸರ ಸ್ನೇಹಿ"
-    }
+    "carpets": "ಕಾರ್ಪೆಟ್‌ಗಳು",
+    "cotton": "ಹತ್ತಿ",
+    "cotton_description": "ಮೃದುವಾದ ಹತ್ತಿ ಬಟ್ಟೆ",
+    "silk": "ರೇಷ್ಮೆ",
+    "silk_description": "ಹೊಳಪಾದ ರೇಷ್ಮೆ ಬಟ್ಟೆ",
+    "wool": "ಉಣ್ಣೆ",
+    "wool_description": "ಬೆಚ್ಚಗಿನ ಉಣ್ಣೆ ಬಟ್ಟೆ",
+    "linen": "ಲಿನೆನ್",
+    "linen_description": "ನೈಸರ್ಗಿಕ ಲಿನೆನ್ ಬಟ್ಟೆ"
+  },
+  "products": {
+    "select_prompt": "ಉತ್ಪನ್ನವನ್ನು ಆಯ್ಕೆಮಾಡಿ"
   },
   "home": {
     "craft_stories": "ಕರಕುಶಲ ಕಥೆಗಳು",
-    "shop_by_trend": "ಟ್ರೆಂಡ್ ಪ್ರಕಾರ ಶಾಪಿಂಗ್"
+    "shop_by_trend": "ಟ್ರೆಂಡ್ ಮೂಲಕ ಶಾಪಿಂಗ್"
   },
   "categories": {
     "shop_by_categories": "ವರ್ಗಗಳ ಪ್ರಕಾರ ಶಾಪಿಂಗ್",
@@ -148,31 +119,10 @@
     "pochampalli": "ಪೋಚಂಪಲ್ಲಿ",
     "banjara": "ಬಂಜಾರ",
     "puttapaka": "ಪುಟ್ಟಪಾಕ",
-    "gatuppal": "ಗಟುಪ್ಪಲ್",
+    "gatuppal": "ಗಟ್ಟುಪ್ಪಲ್",
     "chautupal": "ಚೌಟುಪಾಲ್",
-    "koyalguden": "ಕೋಯಲ್ಗುಡೆನ್",
+    "koyalguden": "ಕೋಯಲ್ಗೂಡೆನ್",
     "chirala": "ಚಿರಾಲ",
     "kadapa": "ಕಡಪ"
-  },
-  "featured": {
-    "title": "ಟ್ರೆಂಡ್ ಪ್ರಕಾರ ಶಾಪಿಂಗ್",
-    "fabrics": {
-      "cotton": {
-        "name": "ಹತ್ತಿ ಬಟ್ಟೆ",
-        "description": "ನೈಸರ್ಗಿಕ ಮತ್ತು ಆರಾಮದಾಯಕ ಬಟ್ಟೆ"
-      },
-      "silk": {
-        "name": "ರೇಷ್ಮೆ ಬಟ್ಟೆ",
-        "description": "ಆಡಂಬರ ಮತ್ತು ಸುಂದರವಾದ ಬಟ್ಟೆ"
-      },
-      "wool": {
-        "name": "ಉಣ್ಣೆ ಬಟ್ಟೆ",
-        "description": "ಬೆಚ್ಚಗಿನ ಮತ್ತು ಆರಾಮದಾಯಕ ಬಟ್ಟೆ"
-      },
-      "linen": {
-        "name": "ನಾರುಬಟ್ಟೆ",
-        "description": "ತಂಪಾದ ಮತ್ತು ಬಾಳಿಕೆ ಬರುವ ಬಟ್ಟೆ"
-      }
-    }
   }
 }
