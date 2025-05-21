@@ -5,7 +5,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import logo from '../../img/logo.jpeg';
-import backgroundImage from '../../img/background image.jpg';
+import backgroundImage from '../../img/background 5.jpg';
 import ShopByCategory from "../shopbycategory/shopbycategory";
 import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
 
@@ -256,57 +256,18 @@ const Slideshow = () => {
             )}
           </div>
 
-          {/* Favorites Button */}
-          <div className="favorites-container">
-            <button className="favorites-btn" onClick={() => navigate('/favorites')}>
-              <i className="fas fa-heart"></i>
-              <span className="favorites-count">{t('Favorites')}</span>
+          {/* User Profile */}
+          <div className="w-10 h-10 flex items-center justify-center">
+            <button className="text-gray-700 hover:text-primary">
+              <i className="ri-user-line text-xl"></i>
             </button>
           </div>
 
-          {/* User Profile */}
-          <div className="user-profile-container">
-            <button className="user-profile-btn">
-              <i className="fas fa-user-circle"></i>
-              <div className="user-info">
-                <span className="user-label">User</span>
-              </div>
+          {/* Mobile menu button */}
+          <div className="md:hidden w-10 h-10 flex items-center justify-center">
+            <button id="mobile-menu-button" className="text-gray-700">
+              <i className="ri-menu-line text-xl"></i>
             </button>
-            <div className="user-dropdown">
-              <div className="dropdown-header">
-                <i className="fas fa-user-circle"></i>
-                <div className="header-info">
-                  <span className="greeting">Welcome</span>
-                </div>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div className="dropdown-item" onClick={() => navigate('/profile')}>
-                <i className="fas fa-user"></i>
-                <span>My Profile</span>
-              </div>
-              <div className="dropdown-item" onClick={() => navigate('/orders')}>
-                <i className="fas fa-shopping-bag"></i>
-                <span>My Orders</span>
-              </div>
-              <div className="dropdown-item" onClick={() => navigate('/wishlist')}>
-                <i className="fas fa-heart"></i>
-                <span>My Wishlist</span>
-              </div>
-              <div className="dropdown-item">
-                <i className="fas fa-tag"></i>
-                <span>Offers</span>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div className="dropdown-item" onClick={() => navigate('/settings')}>
-                <i className="fas fa-cog"></i>
-                <span>Settings</span>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div className="dropdown-item">
-                <i className="fas fa-sign-out-alt"></i>
-                <span>Log Out</span>
-              </div>
-            </div>
           </div>
 
           {/* Auth Buttons */}
@@ -555,14 +516,6 @@ const NavBar = () => {
                 </div>
               </div>
             )}
-          </div>
-
-          {/* Favorites Button */}
-          <div className="favorites-container">
-            <button className="favorites-btn" onClick={() => navigate('/favorites')}>
-              <i className="fas fa-heart"></i>
-              <span className="favorites-count">{t('Favorites')}</span>
-            </button>
           </div>
 
           {/* User Profile */}

@@ -4637,13 +4637,34 @@ html {
 }
 
 .site-header {
-  position: fixed;
+  background-image: url('../../img/background\ 5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  background: white;
+  bottom: 0;
+  z-index: 1;
+}
+
+.nav-barhome {
+  position: relative;
+  z-index: 2;
+  background: rgba(233, 228, 228, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  position: relative;
+  z-index: 3;
 }
 
 .circle-fabric-card {
