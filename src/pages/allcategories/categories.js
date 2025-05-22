@@ -189,83 +189,82 @@ const Categories = ({ categoryData }) => {
   };
 
   // Update the return JSX
+  // Update the main structure of the component
   return (
     <div className="categories-container">
       <NavBar />
-      <div className="fabric-filter-container">
-
-        <div className="categories-main-content">
-          <div className="left-content">
-            <div className="categories-circle-grid">
-              {displayData.map((category, index) => (
-                <div 
-                  key={index} 
-                  className="category-circle-card"
-                  onClick={() => setSelectedCategory(category.title)}
-                >
-                  <div className="category-circle-image">
-                    <img 
-                      src={category.image}
-                      alt={category.title}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = fallbackImage;
-                      }}
-                    />
-                  </div>
-                  <div className="category-circle-info">
-                    <h3>{category.title}</h3>
-                    <p>{category.description}</p>
-                  </div>
+      <div className="categories-layout">
+        {/* Category Circles at the top */}
+        <div className="categories-circle-section">
+          <h2>Browse Categories</h2>
+          <div className="categories-circle-grid">
+            {displayData.map((category, index) => (
+              <div 
+                key={index} 
+                className="category-circle-card"
+                onClick={() => setSelectedCategory(category.title)}
+              >
+                <div className="category-circle-image">
+                  <img 
+                    src={category.image}
+                    alt={category.title}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = fallbackImage;
+                    }}
+                  />
                 </div>
-              ))}
-            </div>
-
-            <div className="categories-list">
-              {dataToUse.map((category, index) => (
-                <div key={index} className={`category-item ${selectedCategory === category.title ? 'active' : ''}`}>
-                  <div className="category-header" onClick={() => setSelectedCategory(category.title)}>
-                    <div className="category-item-image">
-                      <img 
-                        src={category.image} 
-                        alt={category.title}
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = fallbackImage;
-                        }}
-                      />
-                    </div>
-                    <span>{category.title}</span>
-                  </div>
-                  <div className={`category-items-list ${selectedCategory === category.title ? 'open' : ''}`}>
-                    {category.items && category.items.map((item, idx) => (
+                <h3>{category.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+  
+        {/* Main content area */}
+        <div className="categories-content">
+          {/* Left sidebar with category list */}
+          <div className="categories-sidebar">
+            {dataToUse.map((category, index) => (
+              <div key={index} className={`category-item ${selectedCategory === category.title ? 'active' : ''}`}>
+                <div className="category-header" onClick={() => setSelectedCategory(category.title)}>
+                  <span>{category.title}</span>
+                </div>
+                {selectedCategory === category.title && (
+                  <div className="category-types">
+                    {category.items.map((item, idx) => (
                       <div key={idx}>
                         <div 
-                          className={`item-type ${selectedType === item.type ? 'active' : ''}`}
+                          className={`type-header ${selectedType === item.type ? 'active' : ''}`}
                           onClick={() => handleTypeClick(item.type)}
                         >
                           {item.type}
                         </div>
-                        {item.varieties && item.varieties.map((variety, vIdx) => (
-                          <div 
-                            key={vIdx}
-                            className={`item-variety ${selectedVariety === variety ? 'active' : ''}`}
-                            onClick={() => handleVarietyClick(variety)}
-                          >
-                            {variety}
+                        {selectedType === item.type && (
+                          <div className="variety-list">
+                            {item.varieties.map((variety, vIdx) => (
+                              <div 
+                                key={vIdx}
+                                className={`variety-item ${selectedVariety === variety ? 'active' : ''}`}
+                                onClick={() => handleVarietyClick(variety)}
+                              >
+                                {variety}
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        )}
                       </div>
                     ))}
                   </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Add image display section */}
+                )}
+              </div>
+            ))}
+          </div>
+  
+          {/* Right content area showing selected category details */}
+          <div className="category-details">
             {selectedType && fabricImages[selectedType] && (
               <div className="type-images-container">
-                <h3>{selectedType} Images</h3>
+                <h3>{selectedType}</h3>
                 <div className="images-grid">
                   {fabricImages[selectedType].map((img, index) => (
                     <div key={index} className="image-box">

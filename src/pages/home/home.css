@@ -693,9 +693,7 @@ html {
 .category-list::-webkit-scrollbar,
 .subcategory-content::-webkit-scrollbar {
   width: 6px;
-}
-
-.category-list::-webkit-scrollbar-track,
+}.category-list::-webkit-scrollbar-track,
 .subcategory-content::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 3px;
@@ -4574,15 +4572,16 @@ html {
   background: #0056b3;
   border-color: #0056b3;
 }
-
-.hero-search-section {
+.search-section {
   position: relative;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../img/background\ 5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .search-overlay {
   position: absolute;
@@ -4598,9 +4597,16 @@ html {
   max-width: 600px;
   padding: 0 20px;
   position: relative;
-  z-index: 2;
+}
+.search-content {
+  text-align: center;
 }
 
+.search-content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
 .search-box {
   position: relative;
   width: 100%;
@@ -4608,7 +4614,22 @@ html {
   border-radius: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+.search-bar {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
 
+.search-bar input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  font-size: 1.1rem;
+}
 .search-box input {
   width: 100%;
   padding: 20px 60px 20px 30px;
@@ -4618,7 +4639,9 @@ html {
   outline: none;
   background: transparent;
 }
-
+.search-bar button:hover {
+  background: #357abd;
+}
 .search-button {
   position: absolute;
   right: 20px;
@@ -4636,14 +4659,29 @@ html {
   color: #333;
 }
 
-.site-header {
-  position: fixed;
+
+
+
+.site-header::before {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  background: white;
+  bottom: 0;
+  z-index: 1;
+}
+
+.nav-barhome {
+  position: relative;
+  z-index: 2;
+  background: rgba(233, 228, 228, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  position: relative;
+  z-index: 3;
 }
 
 .circle-fabric-card {
@@ -4692,7 +4730,7 @@ html {
 .products-section {
   display: flex;
   gap: 30px;
-  padding: 20px;
+  padding: 40px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -4734,6 +4772,50 @@ html {
   flex: 1;
   padding: 20px;
 }
+product-card {
+  width: 100%;
+  max-width: 350px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-details h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  height: 45px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 
 
 .sort-section {
@@ -4755,14 +4837,13 @@ html {
   color: #333;
   cursor: pointer;
 }
-.products-grid-header {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px 20px;
-  background: #ffffff;
-  z-index: 1;
+products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
 }
+
 
 .products-fabrics {
   font-size: 20px;
@@ -4825,11 +4906,7 @@ html {
   color: #333;
 }
 
-.product-details .price {
-  color: #4a90e2;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin: 0;
-}
+
+
 
  

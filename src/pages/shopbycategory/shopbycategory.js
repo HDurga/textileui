@@ -12,37 +12,37 @@ const ShopByCategory = () => {
     {
       title: t("materials.cotton"),
       description: t("materials.cotton_description"),
-      image: "/images/cotton.jpg",  // Changed from require()
+      image: require("../../img/printed cotton fabrics.jpg"),
       link: "/materials/cotton"
     },
     {
       title: t("materials.silk"),
       description: t("materials.silk_description"),
-      image: "/images/cotton.jpg", // Changed from require()
+      image: require("../../img/sarees.jpg"),
       link: "/materials/silk"
     },
     {
       title: t("materials.linen"),
       description: t("materials.linen_description"),
-      image: "/images/cotton.jpg",  // Changed from require()
+      image: require("../../img/fabrics.jpg"),
       link: "/materials/linen"
     },
     {
       title: t("materials.wool"),
       description: t("materials.wool_description"),
-      image: "/images/cotton.jpg", // Changed from require()
+      image: require("../../img/temple  sarees.jpg"),
       link: "/materials/wool"
     },
     {
       title: t("materials.synthetic_fabrics"),
       description: t("materials.synthetic_description"),
-      image: "/images/cotton.jpg",  // Changed from require()
+      image: require("../../img/jute.jpeg"),
       link: "/materials/synthetic"
     },
     {
       title: t("materials.blended_fabrics"),
       description: t("materials.blended_description"),
-      image: "/images/cotton.jpg",  // Changed from require()
+      image: require("../../img/uppada jam.jpg"),
       link: "/materials/blended"
     }
   ];

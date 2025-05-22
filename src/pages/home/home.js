@@ -5,47 +5,117 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import logo from '../../img/logo.jpeg';
-import backgroundImage from '../../img/back4.jpeg';
+
 import ShopByCategory from "../shopbycategory/shopbycategory";
 import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
 
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
+import backgroundImage from '../../img/background 5.jpg';
 
-  const categoriesData = [
-    {
-      title: 'Fabrics',
-      items: [
-        {
-          type: 'Natural',
-          varieties: [
-            { name: 'Cotton', translationKey: 'materials.varieties.cotton' },
-            { name: 'Silk', translationKey: 'materials.varieties.silk' },
-            { name: 'Wool', translationKey: 'materials.varieties.wool' }
-          ]
-        },
-        {
-          type: 'Synthetic',
-          varieties: [
-            { name: 'Polyester', translationKey: 'materials.varieties.polyester' },
-            { name: 'Nylon', translationKey: 'materials.varieties.nylon' }
-          ]
-        }
-      ]
-    },
-    {
-      title: 'Laces',
-      items: [
-        {
-          type: 'Traditional',
-          varieties: [
-            { name: 'Cotton Lace', translationKey: 'materials.varieties.cotton_lace' },
-            { name: 'Silk Lace', translationKey: 'materials.varieties.silk_lace' }
-          ]
-        }
-      ]
-    }
-  ];
+
+
+
+
+
+
+
+
+
+const categoriesData = [
+  {
+    title: "Fabrics",
+    image: require("../../img/carpetes.jpg"),
+    items: [
+      {
+        type: "Natural Fabrics",
+        varieties: [
+          { name: "Cotton", translationKey: "materials.cotton" },
+          { name: "Silk", translationKey: "materials.silk" },
+          { name: "Wool", translationKey: "materials.wool" },
+          { name: "Linen", translationKey: "materials.linen" },
+          { name: "Jute", translationKey: "materials.jute" }
+        ]
+      },
+      {
+        type: "Synthetic Fabrics",
+        varieties: [
+          { name: "Polyester", translationKey: "materials.polyester" },
+          { name: "Nylon", translationKey: "materials.nylon" },
+          { name: "Rayon", translationKey: "materials.rayon" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Laces",
+    image: require("../../img/laces.jpg"),
+    items: [
+      {
+        type: "Traditional Laces",
+        varieties: [
+          { name: "Cotton Lace" },
+          { name: "Silk Lace" },
+          { name: "Crochet Lace" }
+        ]
+      },
+      {
+        type: "Modern Laces",
+        varieties: [
+          { name: "Synthetic Lace" },
+          { name: "Embroidered Lace" },
+          { name: "Metallic Lace" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Sarees",
+    image: require("../../img/ikat sarees.jpg"),
+    items: [
+      {
+        type: "Traditional Sarees",
+        varieties: [
+          { name: "Handloom" },
+          { name: "Ikat" },
+          { name: "Temple" },
+          { name: "Banarasi" }
+        ]
+      },
+      {
+        type: "Modern Sarees",
+        varieties: [
+          { name: "Designer" },
+          { name: "Fusion" },
+          { name: "Printed" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Carpets",
+    image: require("../../img/carpetes.jpg"),
+    items: [
+      {
+        type: "Traditional Carpets",
+        varieties: [
+          { name: "Persian" },
+          { name: "Turkish" },
+          { name: "Indian" }
+        ]
+      },
+      {
+        type: "Modern Carpets",
+        varieties: [
+          { name: "Contemporary" },
+          { name: "Industrial" },
+          { name: "Eco-friendly" }
+        ]
+      }
+    ]
+  }
+];
+
 
 
 
@@ -107,7 +177,6 @@ const Slideshow = () => {
   ];
 
   return (
-    <header className="site-header">
       <nav className="nav-barhome">
         <div className="nav-container">
           {/* Logo */}
@@ -320,7 +389,7 @@ const Slideshow = () => {
           </div>
         </div>
       </nav>
-    </header>
+    
   );
 };
 
@@ -627,41 +696,32 @@ const NavBar = () => {
 
 
 const ProductSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
-  const [selectedFilters, setSelectedFilters] = useState({
-    priceRange: '',
-    fabric: '',
-    colour: '',
-    craft: '',
-    occasion: ''
-  });
 
   const products = [
     {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: "/images/cotton.jpg",  // Changed from require()
+      image: "/images/cotton.jpg",
+      
     },
     {
       id: 2,
       name: "Sky Blue Pure Cotton Saree",
       image: "/images/cotton.jpg",
+      
     },
     {
       id: 3,
       name: "Designer Printed Cotton Saree",
       image: "/images/cotton.jpg",
+      
     }
   ];
 
   return (
     <section className="products-section">
-      <div className="section-header">
-        <h2 className="section-title">{t('home.craft_stories')}</h2>
-        <div className="section-divider"></div>
-      </div>
-
       <div className="products-grid">
         {products.map(product => (
           <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
@@ -669,7 +729,7 @@ const ProductSection = () => {
               <img src={product.image} alt={t(product.name)} />
             </div>
             <div className="product-details">
-              <h3>{t(`products.${product.id}`)}</h3>
+              <h3>{product.name}</h3>
               <p className="price">₹{product.price}</p>
             </div>
           </div>
@@ -748,57 +808,27 @@ const SearchSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
 
-  const suggestions = {
-    products: ['Cotton', 'Silk', 'Wool', 'Synthetic', 'Linen', 'Denim', 'Georgette'],
-    categories: ['Fabrics', 'Laces', 'Sarees', 'Carpets']
-  };
-
-  const handleSearch = () => {
-    const lowerSearchTerm = searchTerm.toLowerCase();
-    if (lowerSearchTerm.includes('fabric') || suggestions.products.some(p => lowerSearchTerm.toLowerCase().includes(p.toLowerCase()))) {
-      navigate('/products');
-    } else if (lowerSearchTerm.includes('saree') || lowerSearchTerm.includes('carpet') || lowerSearchTerm.includes('lace')) {
-      navigate('/categories');
-    } else {
-      navigate('/products');
-    }
-  };
-
   return (
-    <section className="hero-search-section">
-      <div className="search-overlay" style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        opacity: '0.9'
-      }}></div>
-      <div className="search-container">
-      
-        {showSuggestions && (
-          <div className="search-suggestions">
-            {Object.entries(suggestions).map(([section, items]) => (
-              <div className="suggestion-section" key={section}>
-                <h3>{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
-                <div className="suggestion-items">
-                  {items.map((item, i) => (
-                    <div 
-                      key={i} 
-                      className="suggestion-item" 
-                      onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/products');
-                      }}
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+    <section className="search-section">
+      <div className="search-overlay">
+        <div className="search-container">
+          <div className="search-content">
+            <h1>Discover Quality Fabrics</h1>
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search for fabrics, designs, or collections..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onFocus={() => setShowSuggestions(true)}
+              />
+              <button onClick={() => navigate('/search')}>
+                <i className="fas fa-search"></i>
+              </button>
+            </div>
           </div>
-        )}
+          {/* ... rest of the suggestions code ... */}
+        </div>
       </div>
     </section>
   );
@@ -806,13 +836,19 @@ const SearchSection = () => {
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-container"> 
       <NavBar />
       <SearchSection />
+      <section className="products-section">
+        <div className="section-header">
+          <h2 className="section-title">Craft Stories</h2>
+          <div className="section-divider"></div>
+        </div>
+      </section>
       <ProductSection />
       <FeaturedProducts />
-       <ShopByCategory />
-       <SeasonsFabrics />
+      <ShopByCategory />
+      <SeasonsFabrics />
     </div>
   );
 };

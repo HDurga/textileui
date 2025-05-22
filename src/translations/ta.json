@@ -3,124 +3,68 @@
   "navigation": {
     "region": "பகுதி",
     "materials": "பொருட்கள்",
-    "search": "தேடல்",
+    "search": "தேடு",
     "favorites": "பிடித்தவை",
     "user": "பயனர்",
-    "signin": "உள்நுழைக",
-    "signup": "பதிவு செய்க",
+    "signin": "உள்நுழை",
+    "signup": "பதிவு செய்",
     "home": "முகப்பு",
     "products": "பொருட்கள்",
     "about_us": "எங்களைப் பற்றி",
     "contact_us": "தொடர்பு கொள்க",
     "privacy_policy": "தனியுரிமைக் கொள்கை",
     "terms_conditions": "விதிமுறைகள் & நிபந்தனைகள்",
-    "material_types": "பொருட்களின் வகைகள்"
+    "material_types": "பொருள் வகைகள்"
   },
   "search": {
-    "placeholder": "தேடுக",
+    "placeholder": "தேடல்",
     "products": "பொருட்கள்",
-    "categories": "பிரிவுகள்"
+    "categories": "வகைகள்"
+  },
+  "categories": {
+    "shop_by_categories": "வகைகளின் படி கடை",
+    "handloom_heritage": "கைத்தறி பாரம்பரியம்",
+    "handloom_description": "பாரம்பரிய கைத்தறி நெசவுகள்",
+    "ikat_traditions": "இக்காட் பாரம்பரியங்கள்",
+    "ikat_description": "பாரம்பரிய இக்காட் வடிவமைப்புகள்",
+    "temple_designs": "கோவில் வடிவமைப்புகள்",
+    "temple_description": "பாரம்பரிய கோவில் வடிவமைப்புகள்"
   },
   "materials": {
     "fabrics": "துணிகள்",
-    "laces": "லேஸ்கள்",
+    "laces": "லேஸ்",
     "sarees": "புடவைகள்",
     "carpets": "கம்பளங்கள்",
-    "types": {
-      "natural_fabrics": "இயற்கை துணிகள்",
-      "synthetic_fabrics": "செயற்கை துணிகள்",
-      "traditional_laces": "பாரம்பரிய லேஸ்கள்",
-      "modern_laces": "நவீன லேஸ்கள்",
-      "traditional_sarees": "பாரம்பரிய புடவைகள்",
-      "modern_sarees": "நவீன புடவைகள்",
-      "traditional_carpets": "பாரம்பரிய கம்பளங்கள்",
-      "modern_carpets": "நவீன கம்பளங்கள்"
-    },
-    "varieties": {
-      "cotton": "பருத்தி",
-      "silk": "பட்டு",
-      "wool": "கம்பளி",
-      "linen": "லினன்",
-      "jute": "சணல்",
-      "polyester": "பாலியெஸ்டர்",
-      "nylon": "நைலான்",
-      "rayon": "ரேயான்",
-      "cotton_lace": "பருத்தி லேஸ்",
-      "silk_lace": "பட்டு லேஸ்",
-      "crochet_lace": "குரோஷே லேஸ்",
-      "synthetic_lace": "செயற்கை லேஸ்",
-      "embroidered_lace": "எம்பிராய்டரி லேஸ்",
-      "metallic_lace": "உலோக லேஸ்",
-      "handloom": "கைத்தறி",
-      "ikat": "இகத்",
-      "temple": "கோயில்",
-      "banarasi": "பனாரஸ்",
-      "designer": "வடிவமைப்பாளர்",
-      "fusion": "கலப்பு",
-      "printed": "அச்சிடப்பட்ட",
-      "persian": "பாரசீக",
-      "turkish": "துருக்கி",
-      "indian": "இந்திய",
-      "contemporary": "சமகால",
-      "industrial": "தொழில்துறை",
-      "eco_friendly": "சுற்றுச்சூழல் நட்பு"
-    }
+    "cotton": "பருத்தி",
+    "cotton_description": "மென்மையான பருத்தி துணி",
+    "silk": "பட்டு",
+    "silk_description": "பிரகாசமான பட்டு துணி",
+    "wool": "கம்பளி",
+    "wool_description": "வெப்பமான கம்பளி துணி",
+    "linen": "லினன்",
+    "linen_description": "இயற்கை லினன் துணி"
+  },
+  "products": {
+    "select_prompt": "ஒரு பொருளைத் தேர்ந்தெடுக்கவும்"
   },
   "home": {
     "craft_stories": "கைவினை கதைகள்",
     "shop_by_trend": "போக்கின்படி கடை"
   },
-  "categories": {
-    "shop_by_categories": "வகைகளின்படி கடை",
-    "handloom_heritage": "கைத்தறி பாரம்பரியம்",
-    "handloom_description": "பாரம்பரிய கைத்தறி நெசவு",
-    "ikat_traditions": "இகத் பாரம்பரியம்",
-    "ikat_description": "பாரம்பரிய இகத் வடிவமைப்புகள்",
-    "temple_designs": "கோயில் வடிவமைப்புகள்",
-    "temple_description": "பாரம்பரிய கோயில் வடிவமைப்புகள்"
-  },
-  "seasons": {
-    "favorites": {
-      "title": "பருவகால விருப்பங்கள்",
-      "description": "ஒவ்வொரு பருவத்திற்கும் பொருத்தமான துணிகளைக் கண்டறியுங்கள்",
-      "spring": {
-        "name": "வசந்தம்",
-        "fabrics": {
-          "cotton_lawn": {
-            "name": "பருத்தி லான்",
-            "description": "வசந்த காலத்திற்கான மென்மையான இலேசான பருத்தி"
-          },
-          "linen_blend": {
-            "name": "லினன் கலவை",
-            "description": "வசந்த கால ஆடைகளுக்கான புத்துணர்ச்சியான காற்றோட்டமான துணி"
-          }
-        }
+  "featured": {
+    "title": "டிரெண்ட் படி ஷாப்பிங்",
+    "fabrics": {
+      "cotton": {
+        "name": "பருத்தி துணி",
+        "description": "இயற்கையான மற்றும் வசதியான துணி"
       },
-      "summer": {
-        "name": "கோடை",
-        "fabrics": {
-          "pure_cotton": {
-            "name": "தனி பருத்தி",
-            "description": "கோடை நாட்களுக்கான குளிர்ந்த மற்றும் வசதியான பருத்தி"
-          },
-          "light_silk": {
-            "name": "மெல்லிய பட்டு",
-            "description": "கோடை மாலைகளுக்கான காற்றோட்டமான பட்டு"
-          }
-        }
+      "silk": {
+        "name": "பட்டு துணி",
+        "description": "ஆடம்பரமான மற்றும் அழகான துணி"
       },
-      "fall": {
-        "name": "இலையுதிர்",
-        "fabrics": {
-          "wool_blend": {
-            "name": "கம்பளி கலவை",
-            "description": "இலையுதிர் காலத்திற்கான வெதுவெதுப்பான மற்றும் நாகரீகமான துணி"
-          },
-          "cotton_twill": {
-            "name": "பருத்தி ட்வில்",
-            "description": "இலையுதிர் கால செயல்பாடுகளுக்கான நீடித்து உழைக்கும் மற்றும் வசதியான"
-          }
-        }
+      "wool": {
+        "name": "கம்பளி துணி",
+        "description": "வெதுவெதுப்பான மற்றும் வசதியான துணி"
       },
       "winter": {
         "name": "குளிர்காலம்",
@@ -153,26 +97,5 @@
     "koyalguden": "கோயல்குடன்",
     "chirala": "சிராலா",
     "kadapa": "கடப்பா"
-  },
-  "featured": {
-    "title": "போக்க்கின்படி கடை",
-    "fabrics": {
-      "cotton": {
-        "name": "பருத்தி துணி",
-        "description": "இயற்கையான மற்றும் வசதியான துணி"
-      },
-      "silk": {
-        "name": "பட்டு துணி",
-        "description": "ஆடம்பரமான மற்றும் அழகான துணி"
-      },
-      "wool": {
-        "name": "கம்பளி துணி",
-        "description": "வெதுவெதுப்பான மற்றும் வசதியான துணி"
-      },
-      "linen": {
-        "name": "லினன் துணி",
-        "description": "குளிர்ச்சியான மற்றும் நீடித்து உழைக்கும் துணி"
-      }
-    }
   }
 }
