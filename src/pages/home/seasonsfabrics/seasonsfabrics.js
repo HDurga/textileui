@@ -4,28 +4,29 @@ import './seasonsfabrics.css';
 
 const seasonalFabrics = {
   spring: [
-    { name: 'Cotton Lawn', image: '/images/seasons/spring/polka-dot-dress.jpg' },
-    { name: 'Light Linen', image: '/images/seasons/spring/polka-dot-dress.jpg' },
-    { name: 'Floral Cotton', image: '/images/seasons/spring/polka-dot-dress.jpg' }
+    { name: 'Cotton Lawn', image: '/seasonal.jpg' },  // Path relative to public directory
+    { name: 'Light Linen', image: '/seasonal.jpg' },
+    { name: 'Floral Cotton', image: '/seasonal.jpg' }
   ],
   summer: [
-    { name: 'Cotton Voile', image: '/images/seasons/summer/cotton-voile.jpg' },
-    { name: 'Silk Chiffon', image: '/images/seasons/summer/silk-chiffon.jpg' },
-    { name: 'Bamboo Cotton', image: '/images/seasons/summer/bamboo-cotton.jpg' }
+    { name: 'Cotton Voile', image: '/seasonal1.jpg' },
+    { name: 'Silk Chiffon', image: '/seasonal1.jpg' },
+    { name: 'Bamboo Cotton', image: '/seasonal1.jpg' }
   ],
   fall: [
-    { name: 'Wool Blend', image: '/images/seasons/fall/wool-blend.jpg' },
-    { name: 'Tweed', image: '/images/seasons/fall/tweed.jpg' },
-    { name: 'Corduroy', image: '/images/seasons/fall/corduroy.jpg' }
+    { name: 'Wool Blend', image: '/seasonal2.jpg' },
+    { name: 'Tweed', image: 'public/img/seas.jpg' },
+    { name: 'Corduroy', image: '/season.jpg' }
   ],
   winter: [
-    { name: 'Wool Cashmere', image: '/images/seasons/winter/wool-cashmere.jpg' },
-    { name: 'Velvet', image: '/images/seasons/winter/velvet.jpg' },
-    { name: 'Flannel', image: '/images/seasons/winter/flannel.jpg' }
+    { name: 'Wool Cashmere', image: '/summer.jpg' },
+    { name: 'Velvet', image: '/seasonal.jpg' },
+    { name: 'Flannel', image: '/seasonal.jpg' }
   ]
 };
 
 const SeasonsFabrics = () => {
+
   const { t } = useTranslation();
 
   const seasons = ['spring', 'summer', 'fall', 'winter'];
@@ -37,28 +38,30 @@ const SeasonsFabrics = () => {
         <p>{t('seasons.favorites.description')}</p>
       </div>
       
-      <div className="seasons-grid">
-        {seasons.map((season) => (
-          <div key={season} className="season-section">
-            <h2 className="season-title">{t(`seasons.favorites.${season}.name`)}</h2>
-            <div className="fabrics-grid">
-              {seasonalFabrics[season].map((fabric, index) => (
-                <div key={index} className="fabric-card">
-                  <div className="fabric-image">
-                    <img 
-                      src={fabric.image}
-                      alt={t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.name`)} 
-                    />
+      <div className="seasons-slider">
+        <div className="seasons-track">
+          {seasons.map((season) => (
+            <div key={season} className="season-section">
+              <h2 className="season-title">{t(`seasons.favorites.${season}.name`)}</h2>
+              <div className="fabrics-grid">
+                {seasonalFabrics[season].map((fabric, index) => (
+                  <div key={index} className="fabric-card">
+                    <div className="fabric-image">
+                      <img 
+                        src={fabric.image}
+                        alt={t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.name`)} 
+                      />
+                    </div>
+                    <div className="fabric-content">
+                      <h3>{t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.name`)}</h3>
+                      <p>{t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.description`)}</p>
+                    </div>
                   </div>
-                  <div className="fabric-content">
-                    <h3>{t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.name`)}</h3>
-                    <p>{t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.description`)}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

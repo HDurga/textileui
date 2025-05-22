@@ -120,7 +120,7 @@ const categoriesData = [
 
 
 const Slideshow = () => {
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -214,6 +214,7 @@ const Slideshow = () => {
                     <div className="region-item">{t('regions.srikalahasti')}</div>
                     <div className="region-item">{t('regions.mangalgiri')}</div>
                     <div className="region-item">{t('regions.venkatgiri')}</div>
+                    
                     <div className="region-item">{t('regions.uppada')}</div>
                     <div className="region-item">{t('regions.ananthapur')}</div>
                     <div className="region-item">{t('regions.eluru')}</div>
@@ -340,7 +341,7 @@ const Slideshow = () => {
               <div className="user-info">
                 <span className="user-label">User</span>
               </div>
-            </button>
+            </button>//U
             <div className="user-dropdown">
               <div className="dropdown-header">
                 <i className="fas fa-user-circle"></i>
@@ -395,7 +396,7 @@ const Slideshow = () => {
 
 
 const CategoryList = () => {
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState(categoriesData[0]);
 
   return (
@@ -642,43 +643,6 @@ const NavBar = () => {
                 <span className="user-label">User</span>
               </div>
             </button>
-            <div className="user-dropdown">
-              <div className="dropdown-header">
-                <i className="fas fa-user-circle"></i>
-                <div className="header-info">
-                  <span className="greeting">Welcome</span>
-                </div>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div className="dropdown-item" onClick={() => navigate('/profile')}>
-                <i className="fas fa-user"></i>
-                <span>My Profile</span>
-              </div>
-              <div className="dropdown-item" onClick={() => navigate('/orders')}>
-                <i className="fas fa-shopping-bag"></i>
-                <span>My Orders</span>
-              </div>
-              <div className="dropdown-item" onClick={() => navigate('/wishlist')}>
-                <i className="fas fa-heart"></i>
-                <span>My Wishlist</span>
-              </div>
-              <div className="dropdown-item">
-                <i className="fas fa-tag"></i>
-                <span>Offers</span>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div className="dropdown-item" onClick={() => navigate('/settings')}>
-                <i className="fas fa-cog"></i>
-                <span>Settings</span>
-              </div>
-              <div className="dropdown-divider"></div>
-              <div className="dropdown-item">
-                <i className="fas fa-sign-out-alt"></i>
-                <span>Log Out</span>
-              </div>
-            </div>
-          </div>
-
           {/* Auth Buttons */}
           <div className="auth-buttons">
             <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
@@ -703,19 +667,19 @@ const ProductSection = () => {
     {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: "/images/cotton.jpg",
+      image: require("../../img/"),
       
     },
     {
       id: 2,
       name: "Sky Blue Pure Cotton Saree",
-      image: "/images/cotton.jpg",
+      image: require("../../img/printed cotton fabrics.jpg"),
       
     },
     {
       id: 3,
       name: "Designer Printed Cotton Saree",
-      image: "/images/cotton.jpg",
+      image: require("../../img/winter.jpg"),
       
     }
   ];
@@ -761,22 +725,22 @@ const FeaturedProducts = () => {
     { 
       name: t("featured.fabrics.cotton.name"),
       description: t("featured.fabrics.cotton.description"), 
-      image: "/images/cotton.jpg"
+      image: require("../../img/festival collection.jpg"),
     },
     { 
       name: t("featured.fabrics.silk.name"),
       description: t("featured.fabrics.silk.description"), 
-      image: "/images/silk.jpg"
+      image: require("../../img/jute.jpeg"),
     },
     { 
       name: t("featured.fabrics.wool.name"),
       description: t("featured.fabrics.wool.description"), 
-      image: "/images/wool.jpg"
+      image: require("../../img/printed cotton fabrics.jpg"),
     },
     { 
       name: t("featured.fabrics.linen.name"),
       description: t("featured.fabrics.linen.description"), 
-      image: "/images/linen.jpg"
+      image: require("../../img/fabrics.jpg"),
     }
   ];
 
