@@ -26,9 +26,7 @@ const seasonalFabrics = {
 };
 
 const SeasonsFabrics = () => {
-
   const { t } = useTranslation();
-
   const seasons = ['spring', 'summer', 'fall', 'winter'];
 
   return (

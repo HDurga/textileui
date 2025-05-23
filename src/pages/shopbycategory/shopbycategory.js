@@ -12,13 +12,13 @@ const ShopByCategory = () => {
     {
       title: t("materials.cotton"),
       description: t("materials.cotton_description"),
-      image: require("../../img/printed cotton fabrics.jpg"),
+      image: require("../../img/printedcottonfabrics.jpg"),
       link: "/materials/cotton"
     },
     {
       title: t("materials.silk"),
       description: t("materials.silk_description"),
-      image: require("../../img/sarees.jpg"),
+      image: require("../../img/ikat sarees.jpg"),
       link: "/materials/silk"
     },
     {

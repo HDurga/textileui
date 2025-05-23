@@ -6,15 +6,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import logo from '../../img/logo.jpeg';
 
+
 import ShopByCategory from "../shopbycategory/shopbycategory";
-import SeasonsFabrics from "./seasonsfabrics/seasonsfabrics";
+import SeasonsFabrics from "./seasonalfavorites/seasonsfabrics";
 
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
-import backgroundImage from '../../img/background 5.jpg';
-
-
-
 
 
 
@@ -30,19 +27,19 @@ const categoriesData = [
       {
         type: "Natural Fabrics",
         varieties: [
-          { name: "Cotton", translationKey: "materials.cotton" },
-          { name: "Silk", translationKey: "materials.silk" },
-          { name: "Wool", translationKey: "materials.wool" },
-          { name: "Linen", translationKey: "materials.linen" },
-          { name: "Jute", translationKey: "materials.jute" }
+          { name: "Cotton" },
+          { name: "Silk"},
+          { name: "Wool" },
+          { name: "Linen" },
+          { name: "Jute" }
         ]
       },
       {
         type: "Synthetic Fabrics",
         varieties: [
-          { name: "Polyester", translationKey: "materials.polyester" },
-          { name: "Nylon", translationKey: "materials.nylon" },
-          { name: "Rayon", translationKey: "materials.rayon" }
+          { name: "Polyester" },
+          { name: "Nylon"},
+          { name: "Rayon" }
         ]
       }
     ]
@@ -125,11 +122,12 @@ const Slideshow = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(categoriesData[0]); // Add this state
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -653,6 +651,7 @@ const NavBar = () => {
             </button>
           </div>
         </div>
+      </div>
       </nav>
     </header>
   );
@@ -667,13 +666,13 @@ const ProductSection = () => {
     {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: require("../../img/"),
+      image: require("../../img/festivalcollection.jpg"),
       
     },
     {
       id: 2,
       name: "Sky Blue Pure Cotton Saree",
-      image: require("../../img/printed cotton fabrics.jpg"),
+      image: require("../../img/printedcottonfabrics.jpg"),
       
     },
     {
@@ -725,7 +724,7 @@ const FeaturedProducts = () => {
     { 
       name: t("featured.fabrics.cotton.name"),
       description: t("featured.fabrics.cotton.description"), 
-      image: require("../../img/festival collection.jpg"),
+      image: require("../../img/festivalcollection.jpg"),
     },
     { 
       name: t("featured.fabrics.silk.name"),
@@ -735,7 +734,7 @@ const FeaturedProducts = () => {
     { 
       name: t("featured.fabrics.wool.name"),
       description: t("featured.fabrics.wool.description"), 
-      image: require("../../img/printed cotton fabrics.jpg"),
+      image: require("../../img/printedcottonfabrics.jpg"),
     },
     { 
       name: t("featured.fabrics.linen.name"),
@@ -777,7 +776,6 @@ const SearchSection = () => {
       <div className="search-overlay">
         <div className="search-container">
           <div className="search-content">
-            <h1>Discover Quality Fabrics</h1>
             <div className="search-bar">
               <input
                 type="text"
@@ -805,7 +803,6 @@ const Home = () => {
       <SearchSection />
       <section className="products-section">
         <div className="section-header">
-          <h2 className="section-title">Craft Stories</h2>
           <div className="section-divider"></div>
         </div>
       </section>

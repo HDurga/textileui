@@ -20,7 +20,7 @@ const Products = () => {
           descriptionKey: "products.cotton.upland.description",
           detailsKey: "products.cotton.upland.details",
           type: "Upland Cotton",
-          image: "/images/cotton.jpg"
+          image: "/images/cotton.jpg",
         },
         {
           id: 2,
@@ -28,7 +28,7 @@ const Products = () => {
           descriptionKey: "products.cotton.desi.description",
           detailsKey: "products.cotton.desi.details",
           type: "Desi Cotton",
-          image: "/images/cotton.jpg"
+          image: "/images/",
         },
         {
           id: 3,
@@ -36,7 +36,7 @@ const Products = () => {
           descriptionKey: "products.cotton.egyptian.description",
           detailsKey: "products.cotton.egyptian.details",
           type: "Egyptian/EIL Cotton",
-          image: "/images/cotton.jpg"
+        image:  "/images/cotton.jpg",
         },
         {
           id: 4,
@@ -45,7 +45,7 @@ const Products = () => {
           detailsKey: "products.cotton.tree.details",
           type: "Tree Cotton",
           subtitle: "(Least grown)",
-          image: "/images/cotton.jpg"
+           image :  "/images/cotton.jpg",
         }
       ]
     },
@@ -56,9 +56,8 @@ const Products = () => {
           id: 3,
           nameKey: "products.lace.name",
           descriptionKey: "products.lace.description",
-          detailsKey: "products.lace.details",
-          price: "₹599",
-          image: "/images/cotton.jpg"
+          detailsKey: "products",
+          image: "/images/fabrics/lace-category.jpg"  // Updated image path
         }
       ]
     },
@@ -70,8 +69,7 @@ const Products = () => {
           nameKey: "products.saree.name",
           descriptionKey: "products.saree.description",
           detailsKey: "products.saree.details",
-          price: "₹3,499",
-          image: "/images/cotton.jpg"
+          image: "/images/fabrics/saree-category.jpg"  // Updated image path
         }
       ]
     },
@@ -84,7 +82,7 @@ const Products = () => {
           descriptionKey: "products.carpet.description",
           detailsKey: "products.carpet.details",
           price: "₹4,999",
-          image: "/images/cotton.jpg"
+          image: "/images/fabrics/carpet-category.jpg"  // Updated image path
         }
       ]
     }
