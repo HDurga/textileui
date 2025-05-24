@@ -18,7 +18,7 @@ const ShopByCategory = () => {
     {
       title: t("materials.silk"),
       description: t("materials.silk_description"),
-      image: require("../../img/ikat sarees.jpg"),
+      image: '/ikatsarees.jpg',
       link: "/materials/silk"
     },
     {
