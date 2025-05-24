@@ -46,7 +46,7 @@ const categoriesData = [
   },
   {
     title: "Laces",
-    image: require("../../img/laces.jpg"),
+    image: '/laces.jpg',
     items: [
       {
         type: "Traditional Laces",
@@ -68,7 +68,7 @@ const categoriesData = [
   },
   {
     title: "Sarees",
-    image: require("../../img/ikat sarees.jpg"),
+    image: '/sarees.jpg',
     items: [
       {
         type: "Traditional Sarees",
@@ -254,7 +254,15 @@ const Slideshow = () => {
                             <h3>{t(`materials.types.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
                             <div className="variety-list">
                               {item.varieties.map((variety, i) => (
-                                <div key={i} className="variety-item" onClick={() => navigate('/products')}>
+                                <div 
+                                  key={i} 
+                                  className="variety-item" 
+                                  onClick={() => {
+                                    const category = selectedCategory.title.toLowerCase();
+                                    const type = variety.name.toLowerCase().replace(' ', '_');
+                                    navigate(`/products/${category}/${type}`);
+                                  }}
+                                >
                                   <span>{variety.translationKey ? t(variety.translationKey) : t(`materials.varieties.${variety.name.toLowerCase().replace(' ', '_')}`)}</span>
                                 </div>
                               ))}
@@ -555,7 +563,15 @@ const NavBar = () => {
                             <h3>{t(`materials.types.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
                             <div className="variety-list">
                               {item.varieties.map((variety, i) => (
-                                <div key={i} className="variety-item" onClick={() => navigate('/products')}>
+                                <div 
+                                  key={i} 
+                                  className="variety-item" 
+                                  onClick={() => {
+                                    const category = selectedCategory.title.toLowerCase();
+                                    const type = variety.name.toLowerCase().replace(' ', '_');
+                                    navigate(`/products/${category}/${type}`);
+                                  }}
+                                >
                                   <span>{variety.translationKey ? t(variety.translationKey) : t(`materials.varieties.${variety.name.toLowerCase().replace(' ', '_')}`)}</span>
                                 </div>
                               ))}
@@ -568,62 +584,6 @@ const NavBar = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Search Bar */}
-          <div className="nav-search">
-            <div className="search-input-wrapper">
-              <div className="search-icon">
-                <i className="fas fa-search"></i>
-              </div>
-              <input
-                type="text"
-                placeholder={t('search.placeholder')}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                onFocus={() => setShowSuggestions(true)}
-                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-              />
-            </div>
-            
-            {showSuggestions && searchTerm && (
-              <div className="search-suggestions">
-                <div className="suggestion-group">
-                  <h4>{t('search.products')}</h4>
-                  {suggestions.products
-                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((item, index) => (
-                      <div key={index} className="suggestion-item" onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/products');
-                      }}>
-                        <i className="fas fa-tag"></i>
-                        <span>{t(`products.${item.toLowerCase().replace(' ', '_')}`)}</span>
-                      </div>
-                    ))
-                  }
-                </div>
-                <div className="suggestion-group">
-                  <h4>{t('search.categories')}</h4>
-                  {suggestions.categories
-                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((item, index) => (
-                      <div key={index} className="suggestion-item" onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/categories');
-                      }}>
-                        <i className="fas fa-folder"></i>
-                        <span>{t(`categories.${item.toLowerCase().replace(' ', '_')}`)}</span>
-                      </div>
-                    ))
-                  }
-                </div>
-              </div>
-            )}
-          </div>
 
           {/* Favorites Button */}
           <div className="favorites-container">
@@ -651,6 +611,7 @@ const NavBar = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
       </nav>
     </header>

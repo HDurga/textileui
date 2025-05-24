@@ -1,154 +1,144 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams, useNavigate } from 'react-router-dom';
 import './products.css';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Products = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const { t, i18n } = useTranslation();
+  const { category, type } = useParams();
+  const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState(category || 'fabrics');
+  const [selectedType, setSelectedType] = useState(type || null);
+  const { t } = useTranslation();
 
-  const productCategories = [
-    {
-      category: "Cotton",
-      products: [
+  useEffect(() => {
+    if (category) {
+      setSelectedCategory(category);
+    }
+    if (type) {
+      setSelectedType(type);
+    }
+  }, [category, type]);
+
+  const productCategories = {
+    fabrics: {
+      title: "Fabrics",
+      types: [
         {
-          id: 1,
-          nameKey: "products.cotton.upland.name",
-          descriptionKey: "products.cotton.upland.description",
-          detailsKey: "products.cotton.upland.details",
-          type: "Upland Cotton",
-          image: "/images/cotton.jpg",
+          name: "Cotton",
+          description: "Natural and breathable cotton fabrics",
+          varieties: ["Handloom Cotton", "Organic Cotton", "Blended Cotton"],
+          image: '/cotton.j.jpg',
         },
         {
-          id: 2,
-          nameKey: "products.cotton.desi.name",
-          descriptionKey: "products.cotton.desi.description",
-          detailsKey: "products.cotton.desi.details",
-          type: "Desi Cotton",
-          image: "/images/",
+          name: "Silk",
+          description: "Luxurious and elegant silk varieties",
+          varieties: ["Pure Silk", "Raw Silk", "Art Silk"],
+          image: '/uppadajam.jpg',
         },
         {
-          id: 3,
-          nameKey: "products.cotton.egyptian.name",
-          descriptionKey: "products.cotton.egyptian.description",
-          detailsKey: "products.cotton.egyptian.details",
-          type: "Egyptian/EIL Cotton",
-        image:  "/images/cotton.jpg",
-        },
-        {
-          id: 4,
-          nameKey: "products.cotton.tree.name",
-          descriptionKey: "products.cotton.tree.description",
-          detailsKey: "products.cotton.tree.details",
-          type: "Tree Cotton",
-          subtitle: "(Least grown)",
-           image :  "/images/cotton.jpg",
+          name: "Wool",
+          description: "Warm and cozy wool fabrics",
+          varieties: ["Merino Wool", "Cashmere", "Tweed"],
+          image: '/treecotton.jpg',
         }
       ]
     },
-    {
-      category: "Laces",
-      products: [
+    laces: {
+      title: "Laces",
+      types: [
         {
-          id: 3,
-          nameKey: "products.lace.name",
-          descriptionKey: "products.lace.description",
-          detailsKey: "products",
-          image: "/images/fabrics/lace-category.jpg"  // Updated image path
+          name: "Traditional",
+          description: "Classic lace designs",
+          varieties: ["Cotton Lace", "Silk Lace", "Crochet Lace"],
+          image: '/desginercotton.jpg',
+        },
+        {
+          name: "Modern",
+          description: "Contemporary lace patterns",
+          varieties: ["Synthetic Lace", "Embroidered Lace", "Metallic Lace"],
+          image: "/seasonal.jpg",
         }
       ]
     },
-    {
-      category: "Sarees",
-      products: [
+    sarees: {
+      title: "Sarees",
+      types: [
         {
-          id: 4,
-          nameKey: "products.saree.name",
-          descriptionKey: "products.saree.description",
-          detailsKey: "products.saree.details",
-          image: "/images/fabrics/saree-category.jpg"  // Updated image path
+          name: "Traditional",
+          description: "Classic saree collections",
+          varieties: ["Handloom", "Ikat", "Temple", "Banarasi"],
+
+          image: '/sarees.jpg',
+        },
+        {
+          name: "Modern",
+          description: "Contemporary saree designs",
+          varieties: ["Designer", "Fusion", "Printed"],
+          image: '/ikatsarees.jpg',
         }
       ]
     },
-    {
-      category: "Carpets",
-      products: [
+    carpets: {
+      title: "Carpets",
+      types: [
         {
-          id: 5,
-          nameKey: "products.carpet.name",
-          descriptionKey: "products.carpet.description",
-          detailsKey: "products.carpet.details",
-          price: "₹4,999",
-          image: "/images/fabrics/carpet-category.jpg"  // Updated image path
+          name: "Traditional",
+          description: "Classic carpet designs",
+          varieties: ["Persian", "Turkish", "Indian"],
+          image: "/images/carpets/traditional.jpg"
+        },
+        {
+          name: "Modern",
+          description: "Contemporary carpet styles",
+          varieties: ["Contemporary", "Industrial", "Eco-friendly"],
+          image: "/images/carpets/modern.jpg"
         }
       ]
     }
-  ];
+  };
 
   return (
-    <div className="products-page">
-      <h2 className="section-title">Explore Our Fabric Categories</h2>
-      <div className="fabric-grid">
-        {productCategories.map(category => (
-          <div key={category.category} 
-               className="fabric-card" 
-               onClick={() => setSelectedCategory(category.category)}>
-            <div className="fabric-image">
-              <img src={category.products[0].image} alt={category.category} />
-            </div>
-            <div className="fabric-info">
-              <h3>{category.category}</h3>
-              <button className="explore-btn">Explore →</button>
-            </div>
+    <div className="products-container">
+      <div className="category-navigation">
+        {Object.entries(productCategories).map(([key, category]) => (
+          <div 
+            key={key}
+            className={`category-tab ${selectedCategory === key ? 'active' : ''}`}
+            onClick={() => {
+              setSelectedCategory(key);
+              navigate(`/products/${key}`);
+            }}
+          >
+            {category.title}
           </div>
         ))}
       </div>
 
-      {selectedCategory === "Cotton" && (
-        <div className="cotton-types-section">
-          <h3>Types of Cotton</h3>
-          <Slider
-            dots={true}
-            infinite={true}
-            speed={500}
-            slidesToShow={3}
-            slidesToScroll={1}
-            autoplay={true}
-            autoplaySpeed={3000}
-            responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 2,
-                }
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 1,
-                }
-              }
-            ]}
-          >
-            {productCategories[0].products.map(cotton => (
-              <div key={cotton.id} className="cotton-card">
-                <div className="cotton-image">
-                  <img src={cotton.image} alt={t(cotton.nameKey)} />
-                </div>
-                <div className="cotton-info">
-                  <h4>{cotton.type}</h4>
-                  {cotton.subtitle && <span className="subtitle">{cotton.subtitle}</span>}
-                  <p>{t(cotton.descriptionKey)}</p>
-                  <button className="view-details-btn">View Details</button>
-                </div>
+      <div className="category-content">
+        <h2>{productCategories[selectedCategory].title}</h2>
+        <div className="types-grid">
+          {productCategories[selectedCategory].types.map((type, index) => (
+            <div key={index} className="type-card">
+              <div className="type-image">
+                <img src={type.image} alt={type.name} />
               </div>
-            ))}
-          </Slider>
+              <div className="type-info">
+                <h3>{type.name}</h3>
+                <p>{type.description}</p>
+                <div className="varieties-list">
+                  {type.varieties.map((variety, i) => (
+                    <span key={i} className="variety-tag">{variety}</span>
+                  ))}
+                </div>
+                <button className="explore-btn">Explore →</button>
+              </div>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 };

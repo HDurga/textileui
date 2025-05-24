@@ -24,7 +24,7 @@ const ShopByCategory = () => {
     {
       title: t("materials.linen"),
       description: t("materials.linen_description"),
-      image: require("../../img/fabrics.jpg"),
+      image: '/ikatsarees.jpg',
       link: "/materials/linen"
     },
     {
@@ -42,8 +42,8 @@ const ShopByCategory = () => {
     {
       title: t("materials.blended_fabrics"),
       description: t("materials.blended_description"),
-      image: require("../../img/uppada jam.jpg"),
-      link: "/materials/blended"
+      image: '/uppadajam.jpg',
+      link: "/materials/blended",
     }
   ];
 
