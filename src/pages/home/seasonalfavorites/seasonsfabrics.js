@@ -14,14 +14,14 @@ const seasonalFabrics = {
     { name: 'Bamboo Cotton', image: '/seasonal1.jpg' }
   ],
   fall: [
-    { name: 'Wool Blend', image: '/seasonal2.jpg' },
-    { name: 'Tweed', image: 'public/img/seas.jpg' },
-    { name: 'Corduroy', image: '/season.jpg' }
+    { name: 'Wool Blend', image: '/seasonal2.jpg'}, 
+    { name: 'Tweed', image: '/seasonal2.jpg' },  
+    { name: 'Corduroy', image: '/seasonal2.jpg' }
   ],
   winter: [
     { name: 'Wool Cashmere', image: '/summer.jpg' },
-    { name: 'Velvet', image: '/seasonal.jpg' },
-    { name: 'Flannel', image: '/seasonal.jpg' }
+    { name: 'Velvet', image: '/summer.jpg' },
+    { name: 'Flannel', image: '/summer.jpg' }
   ]
 };
 
