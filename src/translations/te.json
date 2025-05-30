@@ -88,24 +88,7 @@
     "temple_designs": "దేవాలయ డిజైన్లు",
     "temple_description": "సాంప్రదాయ దేవాలయ డిజైన్లు"
   },
-  "regions": {
-    "rajahmundry": "రాజమండ్రి",
-    "srikalahasti": "శ్రీకాళహస్తి",
-    "mangalgiri": "మంగళగిరి",
-    "venkatgiri": "వెంకటగిరి",
-    "uppada": "ఉప్పాడ",
-    "ananthapur": "అనంతపూర్",
-    "eluru": "ఏలూరు",
-    "pochampalli": "పోచంపల్లి",
-    "banjara": "బంజారా",
-    "puttapaka": "పుట్టపాక",
-    "gatuppal": "గట్టుప్పల్",
-    "chautupal": "చౌటుపాల్",
-    "koyalguden": "కోయల్గూడెన్",
-    "chirala": "చిరాల",
-    "kadapa": "కడప"
-  },
-  "featured": {
+    "featured": {
     "title": "ట్రెండ్ ప్రకారం షాపింగ్",
     "fabrics": {
       "cotton": {

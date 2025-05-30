@@ -50,7 +50,7 @@ const categoriesData = [
   },
   {
     title: "Laces",
-    image: require("../../img/laces.jpg"),
+    image: '/laces.jpg',
     items: [
       {
         type: "Traditional Laces",
@@ -72,7 +72,7 @@ const categoriesData = [
   },
   {
     title: "Sarees",
-    image: require("../../img/ikat sarees.jpg"),
+    image: '/sarees.jpg',
     items: [
       {
         type: "Traditional Sarees",
@@ -257,7 +257,15 @@ const Slideshow = () => {
                             <h3>{t(`materials.types.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
                             <div className="variety-list">
                               {item.varieties.map((variety, i) => (
-                                <div key={i} className="variety-item" onClick={() => navigate('/products')}>
+                                <div 
+                                  key={i} 
+                                  className="variety-item" 
+                                  onClick={() => {
+                                    const category = selectedCategory.title.toLowerCase();
+                                    const type = variety.name.toLowerCase().replace(' ', '_');
+                                    navigate(`/products/${category}/${type}`);
+                                  }}
+                                >
                                   <span>{variety.translationKey ? t(variety.translationKey) : t(`materials.varieties.${variety.name.toLowerCase().replace(' ', '_')}`)}</span>
                                 </div>
                               ))}
@@ -535,7 +543,15 @@ const NavBar = () => {
                             <h3>{t(`materials.types.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
                             <div className="variety-list">
                               {item.varieties.map((variety, i) => (
-                                <div key={i} className="variety-item" onClick={() => navigate('/products')}>
+                                <div 
+                                  key={i} 
+                                  className="variety-item" 
+                                  onClick={() => {
+                                    const category = selectedCategory.title.toLowerCase();
+                                    const type = variety.name.toLowerCase().replace(' ', '_');
+                                    navigate(`/products/${category}/${type}`);
+                                  }}
+                                >
                                   <span>{variety.translationKey ? t(variety.translationKey) : t(`materials.varieties.${variety.name.toLowerCase().replace(' ', '_')}`)}</span>
                                 </div>
                               ))}
@@ -548,7 +564,7 @@ const NavBar = () => {
                 </div>
               </div>
             </div>
-    
+          </div>
 
           {/* Search Bar */}
           <div className="nav-search">
@@ -625,7 +641,7 @@ const NavBar = () => {
             </button>
           </div>
         </div>
- 
+      </div>
       </nav>
     </header>
   );
