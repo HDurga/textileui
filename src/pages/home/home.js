@@ -8,14 +8,10 @@ import logo from '../../img/logo1.png';
 
 
 import ShopByCategory from "../shopbycategory/shopbycategory";
-import SeasonsFabrics from './seasonalfavorites/seasonsfabrics';
+import SeasonsFabrics from "./seasonalfavorites/seasonsfabrics";
 
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
-import backgroundImage from '../../img/background 5.jpg';
-
-
-
 
 
 
@@ -31,19 +27,19 @@ const categoriesData = [
       {
         type: "Natural Fabrics",
         varieties: [
-          { name: "Cotton", translationKey: "materials.cotton" },
-          { name: "Silk", translationKey: "materials.silk" },
-          { name: "Wool", translationKey: "materials.wool" },
-          { name: "Linen", translationKey: "materials.linen" },
-          { name: "Jute", translationKey: "materials.jute" }
+          { name: "Cotton" },
+          { name: "Silk"},
+          { name: "Wool" },
+          { name: "Linen" },
+          { name: "Jute" }
         ]
       },
       {
         type: "Synthetic Fabrics",
         varieties: [
-          { name: "Polyester", translationKey: "materials.polyester" },
-          { name: "Nylon", translationKey: "materials.nylon" },
-          { name: "Rayon", translationKey: "materials.rayon" }
+          { name: "Polyester" },
+          { name: "Nylon"},
+          { name: "Rayon" }
         ]
       }
     ]
@@ -126,11 +122,12 @@ const Slideshow = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(categoriesData[0]); // Add this state
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -513,10 +510,33 @@ const NavBar = () => {
                 </div>
               </div>
             </div>
-            </div>  
-            </div>
+
             {/* Region dropdown */}
-            
+            <div className="nav-item dropdown">
+              <span>{t('navigation.region')}</span>
+              <div className="dropdown-content">
+                <div className="region-grid">
+                  <div className="region-list">
+                    <div className="region-item">{t('regions.rajahmundry')}</div>
+                    <div className="region-item">{t('regions.srikalahasti')}</div>
+                    <div className="region-item">{t('regions.mangalgiri')}</div>
+                    <div className="region-item">{t('regions.venkatgiri')}</div>
+                    <div className="region-item">{t('regions.uppada')}</div>
+                    <div className="region-item">{t('regions.ananthapur')}</div>
+                    <div className="region-item">{t('regions.eluru')}</div>
+                    <div className="region-item">{t('regions.pochampalli')}</div>
+                    <div className="region-item">{t('regions.banjara')}</div>
+                    <div className="region-item">{t('regions.puttapaka')}</div>
+                    <div className="region-item">{t('regions.gatuppal')}</div>
+                    <div className="region-item">{t('regions.chautupal')}</div>
+                    <div className="region-item">{t('regions.koyalguden')}</div>
+                    <div className="region-item">{t('regions.chirala')}</div>
+                    <div className="region-item">{t('regions.kadapa')}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Materials dropdown */}
             <div className="nav-item dropdown">
               <span>{t('navigation.materials')}</span>
@@ -563,64 +583,14 @@ const NavBar = () => {
                 </div>
               </div>
             </div>
-          
 
-          {/* Search Bar */}
-          <div className="nav-search">
-            <div className="search-input-wrapper">
-              <div className="search-icon">
-                <i className="fas fa-search"></i>
-              </div>
-              <input
-                type="text"
-                placeholder={t('search.placeholder')}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                onFocus={() => setShowSuggestions(true)}
-                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-              />
-            </div>
-            
-            {showSuggestions && searchTerm && (
-              <div className="search-suggestions">
-                <div className="suggestion-group">
-                  <h4>{t('search.products')}</h4>
-                  {suggestions.products
-                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((item, index) => (
-                      <div key={index} className="suggestion-item" onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/products');
-                      }}>
-                        <i className="fas fa-tag"></i>
-                        <span>{t(`products.${item.toLowerCase().replace(' ', '_')}`)}</span>
-                      </div>
-                    ))
-                  }
-                </div>
-                <div className="suggestion-group">
-                  <h4>{t('search.categories')}</h4>
-                  {suggestions.categories
-                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((item, index) => (
-                      <div key={index} className="suggestion-item" onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/categories');
-                      }}>
-                        <i className="fas fa-folder"></i>
-                        <span>{t(`categories.${item.toLowerCase().replace(' ', '_')}`)}</span>
-                      </div>
-                    ))
-                  }
-                </div>
-              </div>
-            )}
+          {/* Favorites Button */}
+          <div className="favorites-container">
+            <button className="favorites-btn" onClick={() => navigate('/favorites')}>
+              <i className="fas fa-heart"></i>
+              <span className="favorites-count">{t('Favorites')}</span>
+            </button>
           </div>
-
-          
 
           {/* User Profile */}
           <div className="user-profile-container">
@@ -640,7 +610,8 @@ const NavBar = () => {
             </button>
           </div>
         </div>
-    
+      </div>
+      </div>
       </nav>
     </header>
   );
@@ -655,13 +626,13 @@ const ProductSection = () => {
     {
       id: 1,
       name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: require("../../img/pure cotton.jpg"),
+      image: require("../../img/festivalcollection.jpg"),
       
     },
     {
       id: 2,
       name: "Sky Blue Pure Cotton Saree",
-      image: require("../../img/pure cotton.jpg"),
+      image: require("../../img/printedcottonfabrics.jpg"),
       
     },
     {
@@ -765,7 +736,6 @@ const SearchSection = () => {
       <div className="search-overlay">
         <div className="search-container">
           <div className="search-content">
-            <h1>Discover Quality Fabrics</h1>
             <div className="search-bar">
               <input
                 type="text"
@@ -790,11 +760,6 @@ const Home = () => {
     <div className="home-container"> 
       <NavBar />
       <SearchSection />
-      <section className="products-section">
-        <div className="section-header">
-          <div className="section-divider"></div>
-        </div>
-      </section>
       <ProductSection />
       <FeaturedProducts />
       <ShopByCategory />
