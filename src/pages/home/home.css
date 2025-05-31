@@ -23,21 +23,36 @@ html {
 }
 
 /* Navigation Bar */
-.nav-barhome {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background-color: #ffffff; /* Solid background for a clean look */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  transition: all 0.3s ease-in-out;
+  /* New styles for background image */
+  background-image: url('/public/homebg.jpg'); /* Replace with your desired image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 120px; /* Ensure enough height to see the background image */
+  display: flex; /* Use flexbox to center content vertically */
+  align-items: center; /* Center content vertically */
+  margin-bottom: 30px; /* Add space below the header */
+}
+
+.nav-barhome {
+  padding: 1rem 0;
+  width: 100%; /* Ensure nav-barhome takes full width within site-header */
 }
 
 .nav-container {
+  max-width: 1300px; /* Slightly wider container */
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 0 20px; /* Add horizontal padding */
 }
 
 .nav-menu {
@@ -756,6 +771,14 @@ html {
   .favorites-btn i {
     font-size: 1.2rem;
   }
+
+  .nav-search {
+    order: 2;
+    max-width: 100%;
+    margin: 10px 0; /* Adjust margin for mobile */
+    /* Removed padding for mobile as it's now on site-header */
+    /* padding: 15px 0; */
+  }
 }
 
 .logo {
@@ -884,20 +907,42 @@ html {
 
 .nav-search {
   position: relative;
-  margin-left: auto;
-  margin-right: px;
-  width: 400px;
-  transition: width 0.3s ease;
+  flex-grow: 1; /* Allows search bar to take available space */
+  max-width: 400px; /* Max width for search bar */
+  margin: 0 20px;
+  /* Removed background image and centering properties from here */
+  /* background-image: url('/public/homebg.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* padding: 20px 0; */
+  /* border-radius: 12px; */
+  /* overflow: hidden; */
 }
 
 .nav-search input {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  flex: 1;
+  padding: 0;
+  border: none;
   font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Pill shape */
+  padding: 8px 15px;
+  background-color: #f8f8f8;
   transition: all 0.3s ease;
-  background: #f8f8f8;
+  /* Ensure the search bar itself is centered within its flex container */
+  width: 100%; /* Take full width of its parent (.nav-search) */
+  max-width: 350px; /* Limit the width of the search input wrapper */
 }
 
 .nav-search input:focus {
@@ -1611,13 +1656,25 @@ html {
 }
 
 .nav-search input {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  flex: 1;
+  padding: 0;
+  border: none;
   font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Pill shape */
+  padding: 8px 15px;
+  background-color: #f8f8f8;
   transition: all 0.3s ease;
-  background: #f8f8f8;
+  /* Ensure the search bar itself is centered within its flex container */
+  width: 100%; /* Take full width of its parent (.nav-search) */
+  max-width: 350px; /* Limit the width of the search input wrapper */
 }
 
 .nav-search input:focus {
@@ -2333,13 +2390,25 @@ html {
 }
 
 .nav-search input {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  flex: 1;
+  padding: 0;
+  border: none;
   font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Pill shape */
+  padding: 8px 15px;
+  background-color: #f8f8f8;
   transition: all 0.3s ease;
-  background: #f8f8f8;
+  /* Ensure the search bar itself is centered within its flex container */
+  width: 100%; /* Take full width of its parent (.nav-search) */
+  max-width: 350px; /* Limit the width of the search input wrapper */
 }
 
 .nav-search input:focus {
@@ -3055,13 +3124,25 @@ html {
 }
 
 .nav-search input {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  flex: 1;
+  padding: 0;
+  border: none;
   font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Pill shape */
+  padding: 8px 15px;
+  background-color: #f8f8f8;
   transition: all 0.3s ease;
-  background: #f8f8f8;
+  /* Ensure the search bar itself is centered within its flex container */
+  width: 100%; /* Take full width of its parent (.nav-search) */
+  max-width: 350px; /* Limit the width of the search input wrapper */
 }
 
 .nav-search input:focus {
@@ -3777,13 +3858,25 @@ html {
 }
 
 .nav-search input {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  flex: 1;
+  padding: 0;
+  border: none;
   font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Pill shape */
+  padding: 8px 15px;
+  background-color: #f8f8f8;
   transition: all 0.3s ease;
-  background: #f8f8f8;
+  /* Ensure the search bar itself is centered within its flex container */
+  width: 100%; /* Take full width of its parent (.nav-search) */
+  max-width: 350px; /* Limit the width of the search input wrapper */
 }
 
 .nav-search input:focus {
@@ -4489,13 +4582,25 @@ html {
 }
 
 .nav-search input {
-  width: 100%;
-  padding: 10px 40px 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  flex: 1;
+  padding: 0;
+  border: none;
   font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Pill shape */
+  padding: 8px 15px;
+  background-color: #f8f8f8;
   transition: all 0.3s ease;
-  background: #f8f8f8;
+  /* Ensure the search bar itself is centered within its flex container */
+  width: 100%; /* Take full width of its parent (.nav-search) */
+  max-width: 350px; /* Limit the width of the search input wrapper */
 }
 
 .nav-search input:focus {
@@ -4575,92 +4680,77 @@ html {
 .search-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 300px; /* Adjust height as needed */
+  background-image: url('/public/homebg.jpg'); /* Use your preferred image path */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
 .search-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3); /* Optional: darken for contrast */
 }
 
 .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 600px;
-  padding: 0 20px;
-  position: relative;
-}
-.search-content {
-  text-align: center;
 }
 
-.search-content h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
-}
-.search-box {
-  position: relative;
+.search-content {
   width: 100%;
-  background: white;
-  border-radius: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar input[type="text"] {
+  width: 350px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  font-size: 1.1rem;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.search-bar input[type="text"]:focus {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+.search-bar button {
+  padding: 0 22px;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  background: #2d8cf0;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-bar button:hover {
+  background: #1766b3;
 }
 .search-bar {
   display: flex;
-  max-width: 600px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-
-.search-bar input {
-  flex: 1;
-  padding: 15px 20px;
-  border: none;
-  font-size: 1.1rem;
-}
-.search-box input {
-  width: 100%;
-  padding: 20px 60px 20px 30px;
-  border: none;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   border-radius: 30px;
-  font-size: 16px;
-  outline: none;
   background: transparent;
 }
-.search-bar button:hover {
-  background: #357abd;
-}
-.search-button {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: #666;
-  transition: color 0.3s ease;
-}
-
-.search-button:hover {
-  color: #333;
-}
-
-
-
-
 .site-header::before {
   content: '';
   position: absolute;

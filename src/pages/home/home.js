@@ -4,7 +4,7 @@ import "./home.css";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
-import logo from '../../img/logo.jpeg';
+import logo from '../../img/logo1.png';
 
 
 import ShopByCategory from "../shopbycategory/shopbycategory";
@@ -334,9 +334,8 @@ const Slideshow = () => {
 
           {/* Favorites Button */}
           <div className="favorites-container">
-            <button className="favorites-btn" onClick={() => navigate('/favorites')}>
-              <i className="fas fa-heart"></i>
-              <span className="favorites-count">{t('Favorites')}</span>
+            <button className="favorites-btn" title="Favorites" style={{background: 'none', border: 'none', fontSize: '1.5rem', color: '#e25555', cursor: 'pointer'}}>
+              ♥
             </button>
           </div>
 
@@ -750,7 +749,6 @@ const SearchSection = () => {
               </button>
             </div>
           </div>
-          {/* ... rest of the suggestions code ... */}
         </div>
       </div>
     </section>
@@ -762,11 +760,6 @@ const Home = () => {
     <div className="home-container"> 
       <NavBar />
       <SearchSection />
-      <section className="products-section">
-        <div className="section-header">
-          <div className="section-divider"></div>
-        </div>
-      </section>
       <ProductSection />
       <FeaturedProducts />
       <ShopByCategory />
