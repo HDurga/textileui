@@ -564,7 +564,7 @@ const NavBar = () => {
                 </div>
               </div>
             </div>
-          </div>
+          
 
           {/* Search Bar */}
           <div className="nav-search">
@@ -641,7 +641,7 @@ const NavBar = () => {
             </button>
           </div>
         </div>
-      </div>
+    
       </nav>
     </header>
   );
