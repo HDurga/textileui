@@ -12,7 +12,8 @@ import SeasonsFabrics from './seasonalfavorites/seasonsfabrics';
 
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
-import backgroundImage from '../../img/background 5.jpg';
+
+
 
 
 
@@ -180,12 +181,14 @@ const Slideshow = () => {
   return (
       <nav className="nav-barhome">
         <div className="nav-container">
-          {/* Logo */}
-          <div className="logo" onClick={() => navigate('/')}>
-            <img src={logo} alt="Logo" className="transparent-logo" />
+          {/* Left Section with Logo */}
+          <div className="nav-left">
+            <div className="logo" onClick={() => navigate('/')}>
+              <img src={logo} alt="Logo" className="transparent-logo" />
+            </div>
           </div>
 
-          {/* Navigation Links and Categories */}
+          {/* Center Section with Navigation Menu */}
           <div className="nav-menu">
             {/* Language Selector */}
             <div className="nav-item dropdown">
@@ -335,13 +338,7 @@ const Slideshow = () => {
             )}
           </div>
 
-          {/* Favorites Button */}
-          <div className="favorites-container">
-            <button className="favorites-btn" onClick={() => navigate('/favorites')}>
-              <i className="fas fa-heart"></i>
-              <span className="favorites-count">{t('Favorites')}</span>
-            </button>
-          </div>
+      
 
           {/* User Profile */}
           <div className="user-profile-container">
@@ -488,35 +485,35 @@ const NavBar = () => {
 
   return (
     <header className="site-header">
-      <nav className="nav-barhome">
-        <div className="nav-container">
-          {/* Logo */}
-          <div className="logo" onClick={() => navigate('/')}>
-            <img src={logo} alt="Logo" className="transparent-logo" />
-          </div>
-
-          {/* Navigation Links and Categories */}
-          <div className="nav-menu">
-            {/* Language Selector */}
-            <div className="nav-item dropdown">
-              <span>
-                <i className="fas fa-globe"></i>
-                {i18n.language.toUpperCase()}
-              </span>
-              <div className="dropdown-content">
-                <div className="language-list">
-                  <button onClick={() => handleLanguageChange('en')} lang="en">English</button>
-                  <button onClick={() => handleLanguageChange('hi')} lang="hi">हिंदी</button>
-                  <button onClick={() => handleLanguageChange('te')} lang="te">తెలుగు</button>
-                  <button onClick={() => handleLanguageChange('ta')} lang="ta">தமிழ்</button>
-                  <button onClick={() => handleLanguageChange('kn')} lang="kn">ಕನ್ನಡ</button>
-                  <button onClick={() => handleLanguageChange('bn')} lang="bn">বাংলা</button>
-                </div>
+      return (
+        <nav className="nav-barhome">
+          <div className="nav-container">
+            {/* Left Section with Logo */}
+            <div className="nav-left">
+              <div className="logo" onClick={() => navigate('/')}>
+                <img src={logo} alt="Logo" className="transparent-logo" />
               </div>
             </div>
-            </div>  
-            </div>
-            {/* Region dropdown */}
+            
+            {/* Center Section with Navigation Menu */}
+            <div className="nav-menu">
+              {/* Language Selector */}
+              <div className="nav-item dropdown">
+                <span>
+                  <i className="fas fa-globe"></i>
+                  {i18n.language.toUpperCase()}
+                </span>
+                <div className="dropdown-content">
+                  <div className="language-list">
+                    <button onClick={() => handleLanguageChange('en')} lang="en">English</button>
+                    <button onClick={() => handleLanguageChange('hi')} lang="hi">हिंदी</button>
+                    <button onClick={() => handleLanguageChange('te')} lang="te">తెలుగు</button>
+                    <button onClick={() => handleLanguageChange('ta')} lang="ta">தமிழ்</button>
+                    <button onClick={() => handleLanguageChange('kn')} lang="kn">ಕನ್ನಡ</button>
+                    <button onClick={() => handleLanguageChange('bn')} lang="bn">বাংলা</button>
+                  </div>
+                </div>
+              </div>
             
             {/* Materials dropdown */}
             <div className="nav-item dropdown">
@@ -564,84 +561,123 @@ const NavBar = () => {
                 </div>
               </div>
             </div>
-          
-
-          {/* Search Bar */}
-          <div className="nav-search">
-            <div className="search-input-wrapper">
-              <div className="search-icon">
-                <i className="fas fa-search"></i>
-              </div>
-              <input
-                type="text"
-                placeholder={t('search.placeholder')}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                onFocus={() => setShowSuggestions(true)}
-                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-              />
-            </div>
-            
-            {showSuggestions && searchTerm && (
-              <div className="search-suggestions">
-                <div className="suggestion-group">
-                  <h4>{t('search.products')}</h4>
-                  {suggestions.products
-                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((item, index) => (
-                      <div key={index} className="suggestion-item" onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/products');
-                      }}>
-                        <i className="fas fa-tag"></i>
-                        <span>{t(`products.${item.toLowerCase().replace(' ', '_')}`)}</span>
-                      </div>
-                    ))
-                  }
-                </div>
-                <div className="suggestion-group">
-                  <h4>{t('search.categories')}</h4>
-                  {suggestions.categories
-                    .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((item, index) => (
-                      <div key={index} className="suggestion-item" onClick={() => {
-                        setSearchTerm(item);
-                        setShowSuggestions(false);
-                        navigate('/categories');
-                      }}>
-                        <i className="fas fa-folder"></i>
-                        <span>{t(`categories.${item.toLowerCase().replace(' ', '_')}`)}</span>
-                      </div>
-                    ))
-                  }
-                </div>
-              </div>
-            )}
           </div>
-
           
-
-          {/* User Profile */}
-          <div className="user-profile-container">
-            <button className="user-profile-btn">
-              <i className="fas fa-user-circle"></i>
-              <div className="user-info">
-                <span className="user-label">User</span>
+          {/* Right Section */}
+          <div className="nav-right">
+            {/* Search Bar */}
+            <div className="nav-search">
+              <div className="search-input-wrapper">
+                <div className="search-icon">
+                  <i className="fas fa-search"></i>
+                </div>
+                <input
+                  type="text"
+                  placeholder={t('search.placeholder')}
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                  onFocus={() => setShowSuggestions(true)}
+                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                />
               </div>
-            </button>
-          {/* Auth Buttons */}
-          <div className="auth-buttons">
-            <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
-              Sign In
-            </button>
-            <button className="auth-btn signup-btn" onClick={() => navigate('/signup')}>
-              Sign Up
-            </button>
+              
+              {showSuggestions && searchTerm && (
+                <div className="search-suggestions">
+                  <div className="suggestion-group">
+                    <h4>{t('search.products')}</h4>
+                    {suggestions.products
+                      .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
+                      .map((item, index) => (
+                        <div key={index} className="suggestion-item" onClick={() => {
+                          setSearchTerm(item);
+                          setShowSuggestions(false);
+                          navigate('/products');
+                        }}>
+                          <i className="fas fa-tag"></i>
+                          <span>{t(`products.${item.toLowerCase().replace(' ', '_')}`)}</span>
+                        </div>
+                      ))
+                    }
+                  </div>
+                  <div className="suggestion-group">
+                    <h4>{t('search.categories')}</h4>
+                    {suggestions.categories
+                      .filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()))
+                      .map((item, index) => (
+                        <div key={index} className="suggestion-item" onClick={() => {
+                          setSearchTerm(item);
+                          setShowSuggestions(false);
+                          navigate('/categories');
+                        }}>
+                          <i className="fas fa-folder"></i>
+                          <span>{t(`categories.${item.toLowerCase().replace(' ', '_')}`)}</span>
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+              )}
+            </div>
+
+            
+
+            {/* User Profile */}
+            <div className="user-profile-container">
+              <button className="user-profile-btn">
+                <i className="fas fa-user-circle"></i>
+                <div className="user-info">
+                  <span className="user-label">User</span>
+                </div>
+              </button>
+              <div className="user-dropdown">
+                <div className="dropdown-header">
+                  <i className="fas fa-user-circle"></i>
+                  <div className="header-info">
+                    <span className="greeting">Welcome</span>
+                  </div>
+                </div>
+                <div className="dropdown-divider"></div>
+                <div className="dropdown-item" onClick={() => navigate('/profile')}>
+                  <i className="fas fa-user"></i>
+                  <span>My Profile</span>
+                </div>
+                <div className="dropdown-item" onClick={() => navigate('/orders')}>
+                  <i className="fas fa-shopping-bag"></i>
+                  <span>My Orders</span>
+                </div>
+                <div className="dropdown-item" onClick={() => navigate('/wishlist')}>
+                  <i className="fas fa-heart"></i>
+                  <span>My Wishlist</span>
+                </div>
+                <div className="dropdown-item">
+                  <i className="fas fa-tag"></i>
+                  <span>Offers</span>
+                </div>
+                <div className="dropdown-divider"></div>
+                <div className="dropdown-item" onClick={() => navigate('/settings')}>
+                  <i className="fas fa-cog"></i>
+                  <span>Settings</span>
+                </div>
+                <div className="dropdown-divider"></div>
+                <div className="dropdown-item">
+                  <i className="fas fa-sign-out-alt"></i>
+                  <span>Log Out</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Auth Buttons */}
+            <div className="auth-buttons">
+              <button className="auth-btn signin-btn" onClick={() => navigate('/signin')}>
+                Sign In
+              </button>
+              <button className="auth-btn signup-btn" onClick={() => navigate('/signup')}>
+                Sign Up
+              </button>
+            </div>
           </div>
         </div>
-    
       </nav>
     </header>
   );
@@ -766,23 +802,13 @@ const SearchSection = () => {
       <div className="search-overlay">
         <div className="search-container">
           <div className="search-content">
-            <h1>Discover Quality Fabrics</h1>
-            <div className="search-bar">
-              <input
-                type="text"
-                placeholder="Search for fabrics, designs, or collections..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onFocus={() => setShowSuggestions(true)}
-              />
-              <button onClick={() => navigate('/search')}>
-                <i className="fas fa-search"></i>
-              </button>
+             
+
             </div>
           </div>
           {/* ... rest of the suggestions code ... */}
         </div>
-      </div>
+    
     </section>
   );
 };

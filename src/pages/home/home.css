@@ -34,24 +34,55 @@ html {
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 10px 30px;
   max-width: 1400px;
   margin: 0 auto;
+  height: 80px;
+  gap: 30px;
 }
 
+/* Left Section */
+.nav-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Center Section */
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-right: auto; /* Pushes the search and auth buttons to the right */
+}
+
+/* Right Section */
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-search {
+  min-width: 250px;
 }
 
 .nav-item {
   position: relative;
   padding: 15px 20px;
   cursor: pointer;
-  white-space: nowrap; /* Prevents text wrapping */
+  white-space: nowrap;
 }
 
 .nav-item span {
