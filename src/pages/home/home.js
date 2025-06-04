@@ -258,6 +258,7 @@ const Slideshow = () => {
                         {selectedCategory.items.map((item, idx) => (
                           <div key={idx} className="subcategory-card">
                             <h3>{t(`materials.types.${item.type.toLowerCase().replace(' ', '_')}`)}</h3>
+                            // In the Materials dropdown section, update the variety-item rendering:
                             <div className="variety-list">
                               {item.varieties.map((variety, i) => (
                                 <div 
@@ -269,7 +270,11 @@ const Slideshow = () => {
                                     navigate(`/products/${category}/${type}`);
                                   }}
                                 >
-                                  <span>{variety.translationKey ? t(variety.translationKey) : t(`materials.varieties.${variety.name.toLowerCase().replace(' ', '_')}`)}</span>
+                                  <span>
+                                    {variety.translationKey 
+                                      ? t(variety.translationKey) 
+                                      : variety.name}
+                                  </span>
                                 </div>
                               ))}
                             </div>
@@ -485,36 +490,62 @@ const NavBar = () => {
 
   return (
     <header className="site-header">
-      return (
-        <nav className="nav-barhome">
-          <div className="nav-container">
-            {/* Left Section with Logo */}
-            <div className="nav-left">
-              <div className="logo" onClick={() => navigate('/')}>
-                <img src={logo} alt="Logo" className="transparent-logo" />
+      <nav className="nav-barhome">
+        <div className="nav-container">
+          {/* Left Section with Logo */}
+          <div className="nav-left">
+            <div className="logo" onClick={() => navigate('/')}>
+              <img src={logo} alt="Logo" className="transparent-logo" />
+            </div>
+          </div>
+          
+          {/* Center Section with Navigation Menu */}
+          <div className="nav-menu">
+            {/* Language Selector */}
+            <div className="nav-item dropdown">
+              <span>
+                <i className="fas fa-globe"></i>
+                {i18n.language.toUpperCase()}
+              </span>
+              <div className="dropdown-content">
+                <div className="language-list">
+                  <button onClick={() => handleLanguageChange('en')} lang="en">English</button>
+                  <button onClick={() => handleLanguageChange('hi')} lang="hi">हिंदी</button>
+                  <button onClick={() => handleLanguageChange('te')} lang="te">తెలుగు</button>
+                  <button onClick={() => handleLanguageChange('ta')} lang="ta">தமிழ்</button>
+                  <button onClick={() => handleLanguageChange('kn')} lang="kn">ಕನ್ನಡ</button>
+                  <button onClick={() => handleLanguageChange('bn')} lang="bn">বাংলা</button>
+                </div>
               </div>
             </div>
-            
-            {/* Center Section with Navigation Menu */}
-            <div className="nav-menu">
-              {/* Language Selector */}
-              <div className="nav-item dropdown">
-                <span>
-                  <i className="fas fa-globe"></i>
-                  {i18n.language.toUpperCase()}
-                </span>
-                <div className="dropdown-content">
-                  <div className="language-list">
-                    <button onClick={() => handleLanguageChange('en')} lang="en">English</button>
-                    <button onClick={() => handleLanguageChange('hi')} lang="hi">हिंदी</button>
-                    <button onClick={() => handleLanguageChange('te')} lang="te">తెలుగు</button>
-                    <button onClick={() => handleLanguageChange('ta')} lang="ta">தமிழ்</button>
-                    <button onClick={() => handleLanguageChange('kn')} lang="kn">ಕನ್ನಡ</button>
-                    <button onClick={() => handleLanguageChange('bn')} lang="bn">বাংলা</button>
+
+            {/* Region dropdown */}
+            <div className="nav-item dropdown">
+              <span>{t('navigation.region')}</span>
+              <div className="dropdown-content">
+                <div className="region-grid">
+                  <div className="region-list">
+                    <div className="region-item">{t('regions.rajahmundry')}</div>
+                    <div className="region-item">{t('regions.srikalahasti')}</div>
+                    <div className="region-item">{t('regions.mangalgiri')}</div>
+                    <div className="region-item">{t('regions.venkatgiri')}</div>
+                    
+                    <div className="region-item">{t('regions.uppada')}</div>
+                    <div className="region-item">{t('regions.ananthapur')}</div>
+                    <div className="region-item">{t('regions.eluru')}</div>
+                    <div className="region-item">{t('regions.pochampalli')}</div>
+                    <div className="region-item">{t('regions.banjara')}</div>
+                    <div className="region-item">{t('regions.puttapaka')}</div>
+                    <div className="region-item">{t('regions.gatuppal')}</div>
+                    <div className="region-item">{t('regions.chautupal')}</div>
+                    <div className="region-item">{t('regions.koyalguden')}</div>
+                    <div className="region-item">{t('regions.chirala')}</div>
+                    <div className="region-item">{t('regions.kadapa')}</div>
                   </div>
                 </div>
               </div>
-            
+            </div>
+
             {/* Materials dropdown */}
             <div className="nav-item dropdown">
               <span>{t('navigation.materials')}</span>
@@ -562,7 +593,7 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Right Section */}
           <div className="nav-right">
             {/* Search Bar */}
@@ -685,44 +716,55 @@ const NavBar = () => {
 
 
 const ProductSection = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-
   const products = [
     {
       id: 1,
-      name: "Light Green Rajasthani Screen Printed Pure Cotton Saree",
-      image: require("../../img/pure cotton.jpg"),
-      
+      name: 'Georgette Embroidery',
+      image: require('../../img/fabrics.jpg'),
+      description: 'Elegant embroidered georgette fabric with delicate patterns'
     },
     {
       id: 2,
-      name: "Sky Blue Pure Cotton Saree",
-      image: require("../../img/pure cotton.jpg"),
-      
+      name: 'Linen Printed',
+      image: require('../../img/printedcottonfabrics.jpg'),
+      description: 'Premium printed linen with floral designs'
     },
     {
       id: 3,
-      name: "Designer Printed Cotton Saree",
-      image: require("../../img/winter.jpg"),
-      
+      name: 'Linen Embroidery',
+      image: require('../../img/pure cotton.jpg'),
+      description: 'Embroidered linen fabric with intricate detailing'
+    },
+    {
+      id: 4,
+      name: 'Modal Printed',
+      image: require('../../img/desicotton.jpg'),
+      description: 'Soft modal fabric with paisley prints'
+    },
+    {
+      id: 5,
+      name: 'Cotton Lawn Printed',
+      image: require('../../img/fabricsk.jpg'),
+      description: 'Light cotton lawn with beautiful prints'
     }
   ];
 
   return (
-    <section className="products-section">
-      <div className="products-grid">
-        {products.map(product => (
-          <div key={product.id} className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
-            <div className="product-image">
-              <img src={product.image} alt={t(product.name)} />
+    <section className="product-section">
+      <div className="product-container">
+        <div className="product-grid">
+          {products.map((product) => (
+            <div key={product.id} className="product-card">
+              <div className="product-image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <div className="product-info">
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+              </div>
             </div>
-            <div className="product-details">
-              <h3>{product.name}</h3>
-              <p className="price">₹{product.price}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -799,16 +841,21 @@ const SearchSection = () => {
 
   return (
     <section className="search-section">
-      <div className="search-overlay">
-        <div className="search-container">
-          <div className="search-content">
-             
+      <div className="search-container">
+        <div className="search-content">
+          <div className="search-input-wrapper">
+            <input
+              type="text"
+              placeholder="Search for fabrics, sarees, and more..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+            />
 
-            </div>
           </div>
-          {/* ... rest of the suggestions code ... */}
         </div>
-    
+      </div>
     </section>
   );
 };
@@ -818,12 +865,7 @@ const Home = () => {
     <div className="home-container"> 
       <NavBar />
       <SearchSection />
-      <section className="products-section">
-        <div className="section-header">
-          <h2 className="section-title">Craft Stories</h2>
-          <div className="section-divider"></div>
-        </div>
-      </section>
+
       <ProductSection />
       <FeaturedProducts />
       <ShopByCategory />

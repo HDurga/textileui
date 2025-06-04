@@ -16,6 +16,11 @@
     "terms_conditions": "Terms & Conditions",
     "material_types": "Material Types"
   },
+  "search": {
+    "placeholder": "Search",
+    "products": "Products",
+    "categories": "Categories"
+  },
   "materials": {
     "fabrics": "Fabrics",
     "laces": "Laces",
@@ -58,25 +63,8 @@
       "indian": "Indian",
       "contemporary": "Contemporary",
       "industrial": "Industrial",
-      "eco_friendly": "Eco-Friendly"
+      "eco_friendly": "Eco-friendly"
     }
-  },
-  "regions": {
-    "rajahmundry": "Rajahmundry",
-    "srikalahasti": "Srikalahasti",
-    "mangalgiri": "Mangalgiri",
-    "venkatgiri": "Venkatgiri",
-    "uppada": "Uppada",
-    "ananthapur": "Ananthapur",
-    "eluru": "Eluru",
-    "pochampalli": "Pochampalli",
-    "banjara": "Banjara",
-    "puttapaka": "Puttapaka",
-    "gatuppal": "Gatuppal",
-    "chautupal": "Chautupal",
-    "koyalguden": "Koyalguden",
-    "chirala": "Chirala",
-    "kadapa": "Kadapa"
   },
   "home": {
     "craft_stories": "Craft Stories",
@@ -87,20 +75,20 @@
     "handloom_heritage": "Handloom Heritage",
     "handloom_description": "Traditional Handloom Weaving",
     "ikat_traditions": "Ikat Traditions",
-    "ikat_description": "Traditional Ikat Designs",
+    "ikat_description": "Traditional Ikat Patterns",
     "temple_designs": "Temple Designs",
-    "temple_description": "Traditional Temple Designs"
+    "temple_description": "Traditional Temple Patterns"
   },
   "seasons": {
     "favorites": {
       "title": "Seasonal Favorites",
-      "description": "Find fabrics suitable for every season",
+      "description": "Find suitable fabrics for each season",
       "spring": {
         "name": "Spring",
         "fabrics": {
           "cotton_lawn": {
             "name": "Cotton Lawn",
-            "description": "Light and soft cotton suitable for spring"
+            "description": "Light and soft cotton for spring"
           },
           "linen_blend": {
             "name": "Linen Blend",
@@ -113,7 +101,7 @@
         "fabrics": {
           "pure_cotton": {
             "name": "Pure Cotton",
-            "description": "Cool and comfortable cotton for summer days"
+            "description": "Cool and comfortable cotton for hot days"
           },
           "light_silk": {
             "name": "Light Silk",
@@ -146,6 +134,44 @@
             "description": "Luxurious and warm fabric for winter occasions"
           }
         }
+      }
+    }
+  },
+  "regions": {
+    "rajahmundry": "Rajahmundry",
+    "srikalahasti": "Srikalahasti",
+    "mangalgiri": "Mangalgiri",
+    "venkatgiri": "Venkatgiri",
+    "uppada": "Uppada",
+    "ananthapur": "Ananthapur",
+    "eluru": "Eluru",
+    "pochampalli": "Pochampalli",
+    "banjara": "Banjara",
+    "puttapaka": "Puttapaka",
+    "gatuppal": "Gatuppal",
+    "chautupal": "Chautupal",
+    "koyalguden": "Koyalguden",
+    "chirala": "Chirala",
+    "kadapa": "Kadapa"
+  },
+  "featured": {
+    "title": "Shop by Trend",
+    "fabrics": {
+      "cotton": {
+        "name": "Cotton Fabric",
+        "description": "Natural and comfortable fabric"
+      },
+      "silk": {
+        "name": "Silk Fabric",
+        "description": "Luxurious and beautiful fabric"
+      },
+      "wool": {
+        "name": "Woolen Fabric",
+        "description": "Warm and comfortable fabric"
+      },
+      "linen": {
+        "name": "Linen Fabric",
+        "description": "Cool and durable fabric"
       }
     }
   }
