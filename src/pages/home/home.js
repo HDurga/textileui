@@ -4,7 +4,7 @@ import "./home.css";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
-import logo from '../../img/logo.jpeg';
+import logo from '../../img/logo-removebg-preview.png';
 
 
 import ShopByCategory from "../shopbycategory/shopbycategory";
@@ -27,7 +27,7 @@ import i18n from '../../i18n';
 const categoriesData = [
   {
     title: "Fabrics",
-    image: require("../../img/carpetes.jpg"),
+    image: require("../../img/fabrics.jpg"),
     items: [
       {
         type: "Natural Fabrics",
@@ -96,7 +96,7 @@ const categoriesData = [
   },
   {
     title: "Carpets",
-    image: require("../../img/carpetes.jpg"),
+    image: require("../../img/carpets1.jpg"),
     items: [
       {
         type: "Traditional Carpets",
@@ -498,7 +498,7 @@ const NavBar = () => {
               <img src={logo} alt="Logo" className="transparent-logo" />
             </div>
           </div>
-          
+           
           {/* Center Section with Navigation Menu */}
           <div className="nav-menu">
             {/* Language Selector */}

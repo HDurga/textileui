@@ -42,17 +42,17 @@ const SeasonsFabrics = () => {
             <div key={season} className="season-section">
               <h2 className="season-title">{t(`seasons.favorites.${season}.name`)}</h2>
               <div className="fabrics-grid">
-                {seasonalFabrics[season].map((fabric, index) => (
-                  <div key={index} className="fabric-card">
+                {seasonalFabrics[season].map((fabric) => (
+                  <div key={fabric.name} className="fabric-card">
                     <div className="fabric-image">
                       <img 
                         src={fabric.image}
-                        alt={t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.name`)} 
+                        alt={t(`seasons.favorites.${season}.fabrics.${fabric.name}.name`)} 
                       />
                     </div>
                     <div className="fabric-content">
-                      <h3>{t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.name`)}</h3>
-                      <p>{t(`seasons.favorites.${season}.fabrics.${fabric.name.toLowerCase()}.description`)}</p>
+                      <h3>{t(`seasons.favorites.${season}.fabrics.${fabric.name}.name`)}</h3>
+                      <p>{t(`seasons.favorites.${season}.fabrics.${fabric.name}.description`)}</p>
                     </div>
                   </div>
                 ))}

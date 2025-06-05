@@ -88,13 +88,13 @@ const Products = () => {
           name: "Traditional",
           description: "Classic carpet designs",
           varieties: ["Persian", "Turkish", "Indian"],
-          image: "/images/carpets/traditional.jpg"
+          image: '/carpets3.jpg',
         },
         {
           name: "Modern",
           description: "Contemporary carpet styles",
           varieties: ["Contemporary", "Industrial", "Eco-friendly"],
-          image: "/images/carpets/modern.jpg"
+          image: '/carpets2.jpg',
         }
       ]
     }

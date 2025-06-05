@@ -24,7 +24,7 @@ html {
 
 /* Navigation Bar */
 .nav-barhome {
-  background-color: #ffffff;
+  background-color: #7a7676;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -33,37 +33,51 @@ html {
 
 .nav-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-start;
-  padding: 10px 30px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 0 20px;
   height: 80px;
   gap: 30px;
 }
 
-/* Left Section */
 .nav-left {
-  flex: 1;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  gap: 20px;
+  flex: 0 0 auto;
 }
 
 .logo {
-  flex-shrink: 0;
+  order: -1;
+  margin-right: 30px;
 }
 
 .logo img {
   height: 50px;
   width: auto;
+  background: transparent;
+  object-fit: contain;
 }
 
-/* Center Section */
+.transparent-logo {
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  background: transparent;
+}
+
+.transparent-logo:hover {
+  opacity: 1;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
 }
 
 /* Right Section */
@@ -73,7 +87,7 @@ html {
   justify-content: flex-end;
   align-items: center;
 }
-
+  
 .nav-search {
   min-width: 250px;
 }
@@ -799,11 +813,13 @@ html {
   width: 80px;
   height: 80px;
   object-fit: contain;
+  background: transparent;
 }
 
 .transparent-logo {
-  opacity: 0.9;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
+  background: transparent;
 }
 
 .transparent-logo:hover {
@@ -1521,11 +1537,13 @@ html {
   width: 80px;
   height: 80px;
   object-fit: contain;
+  background: transparent;
 }
 
 .transparent-logo {
-  opacity: 0.9;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
+  background: transparent;
 }
 
 .transparent-logo:hover {
@@ -2241,11 +2259,13 @@ html {
   width: 80px;
   height: 80px;
   object-fit: contain;
+  background: transparent;
 }
 
 .transparent-logo {
-  opacity: 0.9;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
+  background: transparent;
 }
 
 .transparent-logo:hover {
@@ -2963,11 +2983,13 @@ html {
   width: 80px;
   height: 80px;
   object-fit: contain;
+  background: transparent;
 }
 
 .transparent-logo {
-  opacity: 0.9;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
+  background: transparent;
 }
 
 .transparent-logo:hover {
@@ -3685,11 +3707,13 @@ html {
   width: 80px;
   height: 80px;
   object-fit: contain;
+  background: transparent;
 }
 
 .transparent-logo {
-  opacity: 0.9;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
+  background: transparent;
 }
 
 .transparent-logo:hover {
@@ -4607,9 +4631,10 @@ html {
   position: relative;
   background-image: url('../../img/background.jpg');
   background-size: cover;
+  background-color: #fff;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 300px 0;
+  padding: 400px;
   margin-bottom: 200px;
 }
 
@@ -4685,7 +4710,7 @@ html {
 .nav-barhome {
   position: relative;
   z-index: 2;
-  background: rgba(233, 228, 228, 0.95);
+  background: rgba(235, 232, 232, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
