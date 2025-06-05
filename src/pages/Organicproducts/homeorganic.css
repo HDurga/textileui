@@ -1,0 +1,132 @@
+.organic-products-page {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.organic-products-page h1 {
+  font-size: 3em;
+  color: #4CAF50; /* Green for organic theme */
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.organic-products-page h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background-color: #8BC34A; /* Lighter green */
+  border-radius: 2.5px;
+}
+
+.page-description {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.organic-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.organic-product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.organic-product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.organic-product-image {
+  width: 100%;
+  height: 220px; /* Fixed height for images */
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.organic-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  transition: transform 0.3s ease;
+}
+
+.organic-product-card:hover .organic-product-image img {
+  transform: scale(1.05);
+}
+
+.organic-product-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.organic-product-details h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+  height: 2.8em; /* Limit height for two lines of text */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.organic-product-details p {
+  font-size: 1em;
+  color: #777;
+  line-height: 1.5;
+  height: 4.5em; /* Limit height for three lines of text */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .organic-products-page h1 {
+    font-size: 2.5em;
+  }
+
+  .page-description {
+    font-size: 1em;
+  }
+
+  .organic-products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .organic-products-page {
+    padding: 20px 10px;
+  }
+
+  .organic-products-page h1 {
+    font-size: 2em;
+  }
+
+  .organic-product-card {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+}
