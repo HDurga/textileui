@@ -32,19 +32,19 @@ const categoriesData = [
       {
         type: "Natural Fabrics",
         varieties: [
-          { name: "Cotton", translationKey: "materials.cotton" },
-          { name: "Silk", translationKey: "materials.silk" },
-          { name: "Wool", translationKey: "materials.wool" },
-          { name: "Linen", translationKey: "materials.linen" },
-          { name: "Jute", translationKey: "materials.jute" }
+          { name: "Cotton", translationKey: "cotton" },
+          { name: "Silk", translationKey: "silk" },
+          { name: "Wool", translationKey: "wool" },
+          { name: "Linen", translationKey: "linen" },
+          { name: "Jute", translationKey: "jute" }
         ]
       },
       {
         type: "Synthetic Fabrics",
         varieties: [
-          { name: "Polyester", translationKey: "materials.polyester" },
-          { name: "Nylon", translationKey: "materials.nylon" },
-          { name: "Rayon", translationKey: "materials.rayon" }
+          { name: "Polyester", translationKey: "polyester" },
+          { name: "Nylon", translationKey: "nylon" },
+          { name: "Rayon", translationKey: "rayon" }
         ]
       }
     ]

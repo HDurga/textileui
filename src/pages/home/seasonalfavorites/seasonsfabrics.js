@@ -32,8 +32,8 @@ const SeasonsFabrics = () => {
   return (
     <div className="seasons-fabrics-container">
       <div className="seasons-header">
-        <h1>{t('seasons.favorites.title')}</h1>
-        <p>{t('seasons.favorites.description')}</p>
+        <h1>{t('favorites.title')}</h1>
+        <p>{t('favorites.description')}</p>
       </div>
       
       <div className="seasons-slider">

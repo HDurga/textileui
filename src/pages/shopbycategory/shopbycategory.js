@@ -10,37 +10,37 @@ const ShopByCategory = () => {
   const materials = [
     
     {
-      title: t("materials.cotton"),
+      title: t("cotton"),
       description: t("materials.cotton_description"),
       image: require("../../img/printedcottonfabrics.jpg"),
       link: "/materials/cotton"
     },
     {
-      title: t("materials.silk"),
+      title: t("silk"),
       description: t("materials.silk_description"),
       image: '/ikatsarees.jpg',
       link: "/materials/silk"
     },
     {
-      title: t("materials.linen"),
+      title: t("linen"),
       description: t("materials.linen_description"),
       image: '/ikatsarees.jpg',
       link: "/materials/linen"
     },
     {
-      title: t("materials.wool"),
+      title: t("wool"),
       description: t("materials.wool_description"),
       image: require("../../img/temple  sarees.jpg"),
       link: "/materials/wool"
     },
     {
-      title: t("materials.synthetic_fabrics"),
+      title: t("synthetic fabrics"),
       description: t("materials.synthetic_description"),
       image: require("../../img/jute.jpeg"),
       link: "/materials/synthetic"
     },
     {
-      title: t("materials.blended_fabrics"),
+      title: t("blended fabrics"),
       description: t("materials.blended_description"),
       image: '/uppadajam.jpg',
       link: "/materials/blended",
