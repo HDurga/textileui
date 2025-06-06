@@ -1,0 +1,89 @@
+.about-us-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.page-description {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Sidebar 250px, content takes remaining space */
+  gap: 30px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.filters-sidebar {
+  padding: 20px;
+  border-right: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.filters-sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.filters-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.filters-sidebar li {
+  margin-bottom: 8px;
+}
+
+.filters-sidebar a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.filters-sidebar a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.main-content section {
+  margin-bottom: 30px;
+}
+
+.main-content h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.main-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr; /* Stack sidebar and main content on smaller screens */
+  }
+
+  .filters-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.hero-background-image {
+  /* Replace with your actual image path */
+  background-color: #e0e0e0; /* Your desired background color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -80px; /* Adjust this value to move it up behind the navbar if needed */
+  z-index: -1; /* Ensure it stays behind the navbar */
+  position: relative; /* Needed for z-index to work */
+}

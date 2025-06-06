@@ -3,10 +3,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height:100%;
+  height: 90px; /* Adjust height as needed */
   display: flex;
   background: linear-gradient(to top, #e7e4e4, #147e26);
-  justify-content: space-betwen;
+  justify-content: space-between; /* Changed from space-between to space-around */
   align-items: center;
   color: white;
   z-index: 1000; /* Ensure it stays on top */
@@ -27,10 +27,18 @@
   font-weight: bold;
 }
 
+.navbar-links {
+  /* Added to center the links */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .navbar-links a {
-  color: white;
+  color: rgb(2, 0, 0);
   text-decoration: none;
   margin-left: 20px;
+  font-right: 20px;
   font-size: 1.1em;
   transition: color 0.3s ease;
 }
@@ -39,8 +47,15 @@
   color: #5cb85c; /* Green highlight on hover */
 }
 
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 20px; /* Add some space between search bar and login link */
+}
+
 .search-bar {
-  margin-left: 20px;
+  /* No change needed here, as its position is now controlled by flexbox on .navbar-right */
   padding: 8px 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -56,6 +71,8 @@
 
   .navbar-links {
     margin-top: 10px;
+    width: 100%; /* Ensure links take full width on smaller screens */
+    justify-content: space-around; /* Distribute links evenly */
   }
 
   .navbar-links a {
@@ -63,6 +80,6 @@
   }
   .search-bar {
     width: 80%;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 }

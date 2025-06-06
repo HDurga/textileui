@@ -51,7 +51,6 @@ const OrganicProductsPage = () => {
   return (
     <div className="organic-products-page">
       <TransparentNavbar />
-      <h1>{t('organicProducts.pageTitle')}</h1>
       <p className="page-description">{t('organicProducts.pageDescription')}</p>
       <div className="organic-products-grid">
         {organicProductsData.map((product) => (

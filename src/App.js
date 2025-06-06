@@ -1,21 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home/home';
-import Products from './pages/home/products/products';
-import OrganicProductsPage from './pages/Organicproducts/homeorganic'; // Import the new page
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import OrganicProductsPage from './pages/Organicproducts/homeorganic';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage'; // Import your new page
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Add a route for the new Organic Products page */}
-        <Route path="/organic-products" element={<OrganicProductsPage />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:category" element={<Products />} />
-        <Route path="/products/:category/:type" element={<Products />} />
-         
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/organic-products" element={<OrganicProductsPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} /> {/* Add route for new page */}
+        </Routes>
+      </div>
     </Router>
   );
 }
